@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg stroke="gray" stroke-linejoin="round" stroke-linecap="round" version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="3.5" width="9" height="12" rx="4" ry="4" fill="none" />
+<path d="m1 8.5h8" />
+<path d="m5 3.5v5h-4.5s0-5+4-5z" stroke="none" fill="gray"/>
+<text x='13' y='9' stroke='none' font-weight='bold' font-size='12' font-family='sans-serif' text-anchor='middle' fill='gray'>2</text>
+</svg>

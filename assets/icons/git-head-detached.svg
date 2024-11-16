@@ -1,0 +1,11 @@
+<svg paint-order="stroke fill" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(-1,0,0,1,14,0)" fill="gray">
+        <path d="m7 2c-2.5 0-5 1.5-5 5s2.5 4 7 6h2c.5 0 1-.5 1-1v-5c0-3.5-1.5-5-5-5zm4 5v1c0 .654-1 .654-1 0v-1c0-.652 1-.657 1 0z"/>
+        <path d="m4.5 7 4.5 2v6h-4.5z"/>
+        <path d="m12 7c1.21 1.5 2.66 2.78 0 3h-1z"/>
+    </g>
+    <g fill="red" stroke="white">
+        <path d="m11 2.95c0-3 4-3 4 0-.000924.945-2.01 8.05-2.01 8.05h-1.99v-8.05z"/>
+        <ellipse cx="11.7" cy="13.7" rx="1.73" ry="1.73"/>
+    </g>
+</svg>

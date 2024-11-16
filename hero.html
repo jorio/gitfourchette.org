@@ -1,0 +1,48 @@
+<svg id="svgdefs" style="display: none;">
+<defs>
+<symbol id="icon-package" viewBox="0 0 16 16">
+    <path d="m8.878.392 5.25 3.045c.54.314.872.89.872 1.514v6.098a1.75 1.75 0 0 1-.872 1.514l-5.25 3.045a1.75 1.75 0 0 1-1.756 0l-5.25-3.045A1.75 1.75 0 0 1 1 11.049V4.951c0-.624.332-1.201.872-1.514L7.122.392a1.75 1.75 0 0 1 1.756 0ZM7.875 1.69l-4.63 2.685L8 7.133l4.755-2.758-4.63-2.685a.248.248 0 0 0-.25 0ZM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432Zm6.25 8.271 4.625-2.683a.25.25 0 0 0 .125-.216V5.677L8.75 8.432Z" />
+</symbol>
+<symbol id="icon-gh" viewBox="0 0 16 16">
+    <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" />
+</symbol>
+<symbol id="icon-book" viewBox="0 0 448 512">
+    <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+    <path d="M448 360V24c0-13.3-10.7-24-24-24H96C43 0 0 43 0 96v320c0 53 43 96 96 96h328c13.3 0 24-10.7 24-24v-16c0-7.5-3.5-14.3-8.9-18.7-4.2-15.4-4.2-59.3 0-74.7 5.4-4.3 8.9-11.1 8.9-18.6zM128 134c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm0 64c0-3.3 2.7-6 6-6h212c3.3 0 6 2.7 6 6v20c0 3.3-2.7 6-6 6H134c-3.3 0-6-2.7-6-6v-20zm253.4 250H96c-17.7 0-32-14.3-32-32 0-17.6 14.4-32 32-32h285.4c-1.9 17.1-1.9 46.9 0 64z"/>
+</symbol>
+</defs>
+</svg>
+
+<div class="megaheader">
+    <img alt="GitFourchette logo" src="_static/gf.svg" width="64">
+    <div>
+        <div class="megaheader1">GitFourchette</div>
+        <div class="megaheader2">The comfortable Git UI for Linux.</div>
+    </div>
+</div>
+
+<div class='hero'>
+    <!-- can't use picture with srcset + media queries because furo does it its way-->
+    <img alt="GitFourchette screenshot (light theme)" src="_images/packshotlight.png" class="only-light">
+    <img alt="GitFourchette screenshot (dark theme)" src="_images/packshotdark.png" class="only-dark">
+    <div class='hero-blur'></div>
+    <div class='hero-fade'></div>
+    <section>
+        <p>Explore your repos <em>easily</em>. <span class='ib'>Craft commits <em>intuitively</em>.</span></p>
+        <p style="font-size: smaller;">
+            With its comfortable Qt UI, GitFourchette will become your
+            new home to get work done in your Git repositories.
+        </p>
+    </section>
+    <nav>
+        <a href="install.html" class="btn btn-primary">
+            <svg class="myicon"><use href="#icon-package"/></svg>
+            <div>Try it out
+                <span class="ib" style="font-size: small;">Get the AppImage <span class="ib">or run from source</span></span></div>
+        </a>
+        <a href="guide/index.html" class="btn">
+            <svg class="myicon"><use href="#icon-book"/></svg>
+            <div>User&rsquo;s Guide</div>
+        </a>
+    </nav>
+</div>

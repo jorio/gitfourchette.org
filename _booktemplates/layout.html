@@ -1,0 +1,14 @@
+{# see what we can override in: /usr/lib/python3.12/site-packages/sphinx/themes/basic/layout.html #}
+{% extends "!layout.html" %}
+
+{%- block relbar1 %}{% endblock %} {# kill relbars #}
+{%- block relbar2 %}{% endblock %}
+
+{%- block content %}
+<div class="document body single-page-book" role="main">
+{%- block document %}
+  {% block body %} {% endblock %}
+  <div class="clearer"></div>
+{%- endblock %}
+</div>
+{%- endblock %}
