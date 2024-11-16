@@ -1,0 +1,328 @@
+body {
+    --FORE: var(--color-content-foreground);  /* from furo */
+    --BACK: var(--color-background-primary);  /* from furo */
+    --gf-accent-light: #00b3dd;
+    --gf-accent-dark: #3a80c2;
+    --wordmark-offblack: #404040;
+    --wordmark-offblack: color-mix(in srgb-linear, var(--FORE), var(--BACK) 8%);
+}
+
+span.ib { display: inline-block; }
+
+kbd { font-family: system-ui; }
+
+.gficon {
+    height: 16px;
+    max-height: 1em;
+    margin-bottom: -2px;
+}
+
+.gfnew {color: #3d9970;}
+.gfold {color: #ff4136;}
+.gfhunk {color: #0074d9;}
+
+/**********************************************************************
+* FIGURES
+**********************************************************************/
+
+figcaption {
+    color: gray;
+    font-style: italic;
+}
+
+figure img {
+    /* Screenshots are captured at DPI factor 2x. Display them at their "actual size". */
+    zoom: 50%;
+    box-shadow: 0 2px 8px 0px rgba(0,0,0,0.1);
+    border: 2px solid gray;
+    border-radius: 16px; 
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+figure.imgpin-parent {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+figure.imgpin img {
+    filter: saturate(50%);
+}
+
+.imgpin {
+    box-sizing: border-box;
+    position: absolute;
+    background: rgba(49, 174, 49, 0.5);
+    color: white;
+    font-size: larger;
+    line-height: 1.5em;
+    width: 1lh;
+    height: 1lh;
+    margin-top: -.5lh;
+    margin-left: -.5lh;
+    border-radius: .5lh;
+    text-align: center;
+    box-shadow: 0px 0px 4px 4px white;
+    font-style: normal;
+    font-weight: 900;
+    backdrop-filter: blur(1px);
+    cursor: help;
+}
+
+/**********************************************************************
+* USER'S GUIDE TABLE OF CONTENTS
+**********************************************************************/
+
+.usersguide-toc>ul>li { font-weight: bold;  list-style-type: decimal; margin-bottom: 1em; }
+.usersguide-toc>ul>li>ul { font-weight: normal; padding-inline-start: 0; list-style-type: none; }
+
+/**********************************************************************
+* FURO PATCHES
+**********************************************************************/
+
+body {
+    /* These can also be overridden in conf.py, e.g.:
+    html_theme_options = { "light_css_variables": { "font-stack": "system-ui" } }
+    But I find it more convenient to do it here since I have a CSS file anyway. 
+    See: https://github.com/pradyunsg/furo/blob/main/src/furo/assets/styles/variables/_colors.scss
+    All the "!important" tags are needed for dark mode.
+    */
+    --font-stack: system-ui;
+
+    --color-guilabel-border: transparent !important;
+    --color-guilabel-background: color-mix(in hsl, var(--FORE), var(--BACK) 92%) !important;
+    --color-sidebar-brand-text: var(--wordmark-offblack) !important;
+
+    --color-brand-primary: var(--gf-accent-dark) !important;
+    --color-brand-content: var(--gf-accent-dark) !important;
+    --color-brand-visited: var(--gf-accent-dark) !important;
+}
+
+.sidebar-brand { flex-direction: row; gap: .5em; align-items: center; }
+.sidebar-logo-container { flex: auto; max-width: 32px; }
+.sidebar-logo { width: 100%; }
+
+kbd.compound { display: inline-flex; gap: 2px; }
+kbd:not(.compound) { font-size: 80%; margin: 0; min-width: 1em; text-align: center; line-height: 1.4; }
+
+h1,h2,h3,h4,h5,h6 { line-height: 1; }
+.rubric { margin-top: 1.5em; }
+
+/**********************************************************************
+* MEGAHEADER
+**********************************************************************/
+
+.megaheader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    container-type: inline-size;  /* for 'cqw' units in font-size */
+    font-weight: bold;
+    line-height: 1;
+}
+
+.megaheader img {
+    width: 15cqw;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+}
+
+.megaheader .megaheader1 {
+    font-size: 9.5cqw;
+}
+
+.megaheader .megaheader2 {
+    font-size: 4cqw;
+    background-image: linear-gradient(to right, var(--gf-accent-light), var(--gf-accent-dark));
+    background-clip: text;
+    color: transparent;
+}
+
+@media print {
+    .megaheader .megaheader2 {
+        background-image: none !important;
+        background-clip: none !important;
+        color: var(--gf-accent-dark) !important;
+    }
+}
+
+/**********************************************************************
+* BUTTONS
+**********************************************************************/
+
+svg.myicon {
+    fill: currentColor;
+}
+
+.btn {
+    background: color-mix(in srgb-linear, var(--FORE), var(--BACK) 96%);
+    border: 1px solid color-mix(in srgb, var(--FORE), transparent 85%);
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    text-decoration: none;
+    display: inline-flex;
+    gap: .6em;
+    padding: .3em 1em;
+    margin-inline-end: .5em;
+    align-items: center;
+}
+
+.btn>div {
+    flex-grow: 1;
+}
+
+.btn .myicon {
+    max-height: 1.5em;
+    flex: 0 0 2.2em;  /* don't grow/shrink, fixed size */
+    align-self: center;
+}
+
+.btn:hover {
+    background: var(--gf-accent-light);
+    /* background-image: linear-gradient(to bottom right, var(--gf-accent-light), var(--gf-accent-dark)); */
+}
+
+.btn-primary {
+    background-color: var(--gf-accent-dark);
+}
+
+.btn-primary, .btn-primary:visited, .btn:hover, .btn:visited:hover {
+    color: white;
+}
+
+/**********************************************************************
+* HERO PACKSHOT
+**********************************************************************/
+
+.hero, .megaheader1 {
+    color: var(--wordmark-offblack);
+}
+
+.hero * {
+    box-sizing: border-box;
+}
+
+.hero {
+    font-size: 130%;
+    --hero-aside-x: 64%;
+    --hero-blur-stop1: 45%;
+    --hero-blur-stop2: 60%;
+    --hero-fade-stop1: 50%;
+    --hero-fade-stop2: 75%;
+    position: relative;
+    margin-top: 2em;
+    line-height: 1;
+    text-align: left;
+}
+
+.hero .hero-blur {
+    position: absolute;
+    inset: 0 0 0 0;
+    backdrop-filter: blur(8px);
+    mask: linear-gradient(to right, transparent var(--hero-blur-stop1), white var(--hero-blur-stop2));
+}
+
+.hero section, .hero nav {
+    position: absolute;
+    left: var(--hero-aside-x);
+    right: 0;
+}
+
+.hero section { bottom: 54%; }
+.hero nav { top: 48%; }
+
+.hero section {
+    text-align: center;
+    text-shadow: 0px 0px 20px var(--BACK);
+}
+
+.hero img {
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.hero-fade {
+    position: absolute;
+    inset: -4px -4px -8px 0; /* t,r,b,l */
+    background: var(--BACK);
+    mask: linear-gradient(to right, transparent var(--hero-fade-stop1), white var(--hero-fade-stop2));
+}
+
+.hero .btn {
+    display: flex;
+    width: 100%;
+    padding: .7em;
+    margin: 1em auto;
+    box-shadow: 
+        0 2px 2px rgba(0, 0, 0, .2),
+        0 0 20px var(--BACK),
+        0 0 20px var(--BACK);
+}
+
+@media (max-width: 760px) {
+    .hero { 
+        --hero-aside-x: 50%;
+        --hero-blur-stop1: 35%;
+        --hero-blur-stop2: 50%;
+        --hero-fade-stop1: 40%;
+        --hero-fade-stop2: 60%;
+
+        /* furo's _layout.css defines $content-padding--small as 1em */
+        width: calc(1rem * 2 + 100%);
+        margin-left: -1rem;
+    }
+
+    .hero section, .hero nav { padding: 0 1rem; }  /* make up for lost margin above */
+    .hero-fade { right: 0; }  /* avoid horizontal overflow */
+    .hero nav { right: 0; padding-right: 0; }
+
+    .hero .btn {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .hero img {
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero { font-size: 115%; }
+}
+
+@media (max-width: 500px) {
+    .megaheader .megaheader2 { font-size: 4.5cqw; }
+
+    .hero .hero-blur { display: none; }
+    .hero .hero-fade { display: none; }
+    .hero img { mask: linear-gradient(to bottom, white 80%, transparent 100%); }
+
+    .hero section, .hero nav {
+        position: relative;
+        left: unset;
+        right: unset;
+    }
+}
+
+/**********************************************************************
+* DARK THEME
+**********************************************************************/
+
+/* furo explicit dark mode */
+body[data-theme=dark] {
+    --gf-accent-dark: #5798dc;
+    --wordmark-offblack: #eaeaea;
+}
+
+/* furo auto mode + system dark mode (must duplicate everything...) */
+@media (prefers-color-scheme: dark) { body:not([data-theme="light"]) {
+    --gf-accent-dark: #5798dc;
+    --wordmark-offblack: #eaeaea;
+}}

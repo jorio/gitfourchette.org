@@ -1,0 +1,193 @@
+/**********************************************************************
+* PRINT
+**********************************************************************/
+
+:root {
+    --screenfont: 'Inter Display', Inter, system-ui, sans-serif;
+    --bodyfont: 'Source Serif 4', 'Palatino Linotype', P052, Palatino, serif;
+    --codefont: 'Fira Mono', 'Fira Code', monospace;
+    --bqcolor-note: #e7af06;
+    --bqcolor-shortcut: #183385;
+    --bqcolor-warning: #dd2e2e;
+    --heading-indent: 10mm;
+}
+
+@media screen {
+    body {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+body {
+    font-family: var(--bodyfont);
+    color: black;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+code {font-family: var(--screenfont);}
+
+.megaheader, h1, h2, h3, h4, h5, h6, .rubric, .imgpin, kbd, .book-cover-page-footer {
+    font-family: var(--screenfont); 
+    font-feature-settings: "dlig", "ss02", "ss03";
+}
+
+.book-cover-page-footer {
+    text-align: left;
+    margin-bottom: 8em;
+    margin-left: calc(2em + 20%);
+}
+
+@media print {
+    .book-cover-page-footer {
+        margin-top: 75%;
+    }
+}
+
+* {
+    box-shadow: none !important;
+    filter: unset !important;
+    backdrop-filter: unset !important;
+    hyphens: manual !important;
+}
+
+/************** LISTS **************/
+
+ul, ol { padding-inline-start: 1.5em; }  /* 1em enough for ffx, but that pushes lists into the margin on chrome */
+ul { list-style-type: square; }
+li { margin: 0.5em 0; }
+
+/************** HEADINGS **************/
+
+h1, h2, h3, h4, h5 { page-break-inside: avoid; page-break-after: avoid; }
+
+h1 { font-weight: /*900*/ 700; line-height: .95; font-size: 200%; }
+h2 { font-weight: 400; margin-block-start: 2em; border-bottom: 2px solid; }
+h3 { font-weight: 700; margin-block-start: 2em; }
+
+.single-page-book-toctree>section { break-before: page; }
+
+/* Unindent headings */
+.single-page-book { padding-left: var(--heading-indent); }
+.single-page-book :is(h1,h2,h3,h4,h5) { margin-left: calc(-1 * var(--heading-indent)); }
+
+/* Make h1 flush with top of page in print, add generous padding in one-page screen view */
+h1 { margin-block-start: 0; }
+@media screen { .single-page-book h1 { margin-block-start: 2.5em; } }
+
+/************** FIGURES **************/
+
+figure img {zoom: 35%;}
+figure { max-width: 75%; margin: 0 auto; break-inside: avoid; }
+.imgpin {border: 2px solid white;}
+
+/************** TABLES **************/
+
+table.docutils {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid #aaa;
+    border-width: 2px 0 !important;
+    break-inside: avoid;  /* paged.js tends to eat text when breaking a table... */
+}
+
+table.docutils th {
+    color: gray;
+    break-after: avoid;
+    break-inside: avoid;
+}
+
+table.docutils td, table.docutils th {
+    vertical-align: top;
+    border-bottom: 1px solid #aaa;
+    padding: .3em 0;
+}
+
+table.docutils td:not(:first-of-type), table.docutils th:not(:first-of-type) {
+    padding-left: 1em !important;  /* !important needed for paged.js */
+}
+
+tr td:first-child {
+    min-width: 8em;
+    font-family: var(--screenfont);
+}
+
+.table-cancelfont tr td:first-child {
+    font-family: unset;
+}
+
+/************** ADMONITIONS **************/
+
+div.admonition {
+    padding: 0em .5em;
+    break-inside: avoid;
+    margin: 1em 0;
+    border: solid magenta;
+    border-width: 0 0 0 4px;
+}
+
+.admonition-title {
+    /* display: block; */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    /* padding-bottom: 0.3em; */
+    break-after: avoid;
+    break-before: avoid;
+    break-inside: avoid;
+    font-family: var(--screenfont);
+    margin-block-end: 0;
+}
+
+.admonition :nth-child(2) { margin-block-start: 0; }  /* first P element after admonition-title */
+/* .admonition :last-child { margin-block-end: 0; } */
+
+.admonition.note    .admonition-title { color: var(--bqcolor-note); }
+.admonition.tip     .admonition-title { color: var(--bqcolor-shortcut); }
+.admonition.warning .admonition-title { color: var(--bqcolor-warning); }
+
+.admonition.note     { border-color: var(--bqcolor-note); }
+.admonition.tip      { border-color: var(--bqcolor-shortcut); }
+.admonition.warning  { border-color: var(--bqcolor-warning); }
+
+/************** PATCHES **************/
+
+:is(h1, h2, h3, h4, h5) a {text-decoration: none;}
+
+a, a:visited { color: inherit; }
+
+kbd:not(.compound) {
+    font-family: var(--screenfont);
+    padding: 0px 3px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.menuselection, .guilabel  {
+    font-family: var(--screenfont);
+    color: black;
+    background-color: transparent;
+    padding: 0;
+}
+
+img { filter: unset !important; }  /* filtered images are blurry in PDFs made by Firefox */
+.megaheader {margin-top: 25%; gap: 2em; hyphens: none; justify-content: left;}
+/* 'cqw' units don't work well for printing in Firefox */
+.megaheader img { width: 20%; }
+.megaheader .megaheader1 { font-size: 60px; }
+.megaheader .megaheader2 { font-size: 40px; }
+
+/************** TOC **************/
+
+nav#single-page-toc { page-break-before: always; }
+ol#contents li { margin: 0; }
+ol#contents>li { font-weight: bold; margin-bottom: 1em; }
+ol#contents ol { font-weight: normal; padding-inline-start: 0; list-style-type: none; }
+ol#contents ol a { text-decoration: none; }
+ol#contents a::after { content: "p. " target-counter(attr(href), page); float: right; }
+
+.pagination-control { color: #aaa; text-align: center; margin: 1em; }
+@media print { .pagination-control { display: none; } }

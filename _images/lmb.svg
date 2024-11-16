@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg stroke="gray" stroke-linejoin="round" stroke-linecap="round" version="1.1" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+<g transform="scale(-1,1)" transform-origin="8 8">
+<rect x="2.5" y="3.5" width="9" height="12" rx="4" ry="4" fill="none" />
+<path d="m3.0 8.5h8" />
+<path d="m7 3.5v5h4.5s0-5-4-5z" stroke="none" fill="gray"/>
+<path d="m12.5 2.5 2-2"/>
+<path d="m13.5 4.5h2"/>
+<path d="m10.5 1.5v-1"/>
+</g>
+</svg>
