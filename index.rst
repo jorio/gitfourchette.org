@@ -1,5 +1,7 @@
 .. copyimage:: /assets/screens/packshotlight.png
 .. copyimage:: /assets/screens/packshotdark.png
+.. copyimage:: /assets/flathub.svg
+.. copyimage:: /assets/flathublight.svg
 .. raw:: html
     :file: hero.html
 
@@ -21,8 +23,19 @@
 
 .. rubric:: How to install
 
-:doc:`Take GitFourchette for a spin <install>` with a pre-built AppImage, or run
+.. raw:: html
+
+    <a href="https://flathub.org/apps/org.gitfourchette.gitfourchette" class="align-left" style="margin-left: 0;">
+    <img alt="Get GitFourchette on Flathub" style="height: 48px" class="only-dark" src="_images/flathub.svg">
+    <img alt="Get GitFourchette on Flathub" style="height: 48px" class="only-light" src="_images/flathublight.svg">
+    </a>
+
+You can :doc:`install GitFourchette <install>` as a Flatpak, an AppImage, or run
 it from source.
+
+.. raw:: html
+
+    <div style="clear:both;"></div>
 
 .. rubric:: How to use
 

@@ -1,20 +1,36 @@
 Install |App|
 ====================
 
+.. image:: assets/flathub.svg
+   :scale: 100%
+   :alt: Get GitFourchette on Flathub
+   :align: right
+   :target: https://flathub.org/apps/org.gitfourchette.gitfourchette
+
 Ready-made builds
 -----------------
 
 This is the easiest way to try out |App|.
 
-- AppImage: <https://github.com/jorio/gitfourchette/releases>
+- **Recommended: Install the Flatpak**
 
-- Flatpak builds are in the works (Nov. 2024)
+  `Get it on Flathub <https://flathub.org/apps/org.gitfourchette.gitfourchette>`_, or simply run:
+
+  .. code-block:: bash
+
+          flatpak install flathub org.gitfourchette.gitfourchette
+
+          flatpak run org.gitfourchette.gitfourchette
+
+- Or, grab a standalone AppImage `from the releases <https://github.com/jorio/gitfourchette/releases>`_.
+
+  (The AppImage is self-contained; your desktop environment theme will not apply to it.)
 
 ..
-    - Flatpak: :gfold:`...........à remplir quand c'est lancé`
     - macOS builds are available although macOS isn't the main target: :gfold:`.............à remplir quand c'est lancé`
 
-.. note:: The AppImage is self-contained; your desktop environment theme will not apply to the AppImage version.
+..
+    .. note:: The AppImage is self-contained; your desktop environment theme will not apply to the AppImage version.
 
 Run from source using your system’s Qt libraries
 ------------------------------------------------
