@@ -11,7 +11,7 @@ Welcome!
 .. raw:: html
 
     <p>
-    <a class="btn" href="../_static/book.pdf">PDF Handbook</a>
+    <a class="btn" href="../_static/GitFourchetteUsersGuide.pdf">PDF Handbook</a>
     <a class="btn" href="../book.html">Single-page HTML</a>
     </p>
 

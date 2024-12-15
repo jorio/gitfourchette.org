@@ -27,7 +27,7 @@ bookpdf:
 		"file://${PWD}/_build/singlehtml/book.html?paginate=A4"
 
 fullsite: html singlehtml bookpdf
-	cp _build/book.pdf _build/html/_static/book.pdf
+	cp _build/book.pdf _build/html/_static/GitFourchetteUsersGuide.pdf
 	cp _build/singlehtml/book.html _build/html/book.html
 
 # Catch-all target: route all unknown targets to Sphinx using the new
