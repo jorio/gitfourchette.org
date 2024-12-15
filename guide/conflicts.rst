@@ -48,13 +48,13 @@ From the Conflict View, you can resolve the conflict in one of three ways:
     * - Choice
       - Description
 
-    * - :guilabel:`Use "their" version as is`
-      - Accept incoming changes. The file will be replaced with the incoming version.
-
-    * - :guilabel:`Keep "our" version  intact`
+    * - :guilabel:`Keep OURS`
       - Reject incoming changes. The file won't be modified from its current state in HEAD.
 
-    * - :guilabel:`Merge in...`
+    * - :guilabel:`Accept THEIRS`
+      - Accept incoming changes. The file will be replaced with the incoming version.
+
+    * - :guilabel:`Merge both versions`
       - See :ref:`merge-tool`.
 
 .. note::
@@ -93,19 +93,26 @@ line-by-line merge tool (yet?), but it can leverage an external merging program.
     Otherwise, you can enter your own command
     (feel free to `open an issue <https://github.com/jorio/gitfourchette/issues>`_ to suggest it).
 
-In the Conflict View, the last option for fixing a conflict is :guilabel:`Merge in (External Tool)`.
-Select it, then click the large :guilabel:`Resolve Conflict` button.
-|App| will launch the merge program and wait for you to complete the merge in it.
+    **Flatpak users:** To use a Flatpak merge tool, be sure to
+    pick one of the ``flatpak run`` commands available at the bottom of the
+    presets in |cogwheel| :menuselection:`Settings --> External Tools`.  In
+    addition, note that the Flatpak version of |App| itself automatically wraps
+    all external commands in a ``flatpak-spawn`` call.
 
-.. figure:: /assets/screens/mergetool.png
-
-    About to merge a file in an external program.
+In the Conflict View, the last option for fixing a conflict is a large
+:guilabel:`Merge both versions in (External Tool)` button. Click it, and |App|
+will launch the merge program and wait for you to complete the merge in it.
 
 When you're done merging, save the file in your merge tool and return to |App|
 (you may have to quit the tool). |App| will pick up that the merge is complete
-and will prompt you to confirm or discard the resolution.
+and will prompt you to confirm or discard your merge.
 
-If you **discard** the resolution, the conflict will remain and you'll have to
+.. figure:: /assets/screens/mergecomplete.png
+
+    After finishing a merge in an external tool, return to the Conflict View to
+    resolve the conflict with your merge.
+
+If you **discard** the merge, the conflict will remain and you'll have to
 resolve it again.  If you **confirm**, the conflict will vanish and, in most
 cases, turn into a modification (:gficon:`status_m`), ready to stage and commit.
 
