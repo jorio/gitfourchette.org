@@ -73,7 +73,7 @@ wait for the download to complete.
 .. note::
     :guilabel:`Log in with custom key file` is particularly useful if you have multiple repos
     requiring different credentials---for example, if you juggle between two accounts for personal
-    use and for work.
+    and work projects.
 
 .. note::
     By default, :guilabel:`Clone into` automatically suggests your *Downloads* folder,

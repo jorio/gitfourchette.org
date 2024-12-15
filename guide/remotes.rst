@@ -52,7 +52,7 @@ Right-click on :guilabel:`Remotes` in the sidebar and select :guilabel:`Add Remo
 .. note::
     :guilabel:`Log in with custom key file` is particularly useful
     if you have multiple repos requiring different credentials---for example,
-    if you juggle between two accounts for personal use and for work.
+    if you juggle between two accounts for personal and work projects.
 
 Sidebar context menu for remotes
 --------------------------------

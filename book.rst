@@ -15,7 +15,7 @@
     </div>
 
     <div class="book-cover-page-footer">
-    November 2024
+    December 2024
     <br>&copy; 2024 Iliyas Jorio
     <br>https://gitfourchette.org
     </div>
