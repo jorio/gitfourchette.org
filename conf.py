@@ -45,6 +45,7 @@ html_title = project
 html_show_sourcelink = False
 html_copy_source = False
 
+html_extra_path = ['_extra']  # deploy raw files to HTML output
 html_static_path = ['_static']
 html_js_files = ['gitfourchette.js']
 html_css_files = ['gitfourchette.css', ('gitfourchette-print.css', {'media': 'print'})]
