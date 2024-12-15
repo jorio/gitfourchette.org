@@ -37,7 +37,7 @@
 </div>
 
 <div class="book-cover-page-footer">
-November 2024
+December 2024
 <br>&copy; 2024 Iliyas Jorio
 <br>https://gitfourchette.org
 </div>
@@ -141,7 +141,7 @@ wait for the download to complete.</p>
 <p class="admonition-title">Note</p>
 <p><span class="guilabel">Log in with custom key file</span> is particularly useful if you have multiple repos
 requiring different credentials—for example, if you juggle between two accounts for personal
-use and for work.</p>
+and work projects.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1489,7 +1489,7 @@ and specify which key file to use to connect to this remote.</p></td>
 <p class="admonition-title">Note</p>
 <p><span class="guilabel">Log in with custom key file</span> is particularly useful
 if you have multiple repos requiring different credentials—for example,
-if you juggle between two accounts for personal use and for work.</p>
+if you juggle between two accounts for personal and work projects.</p>
 </div>
 </section>
 <section id="sidebar-context-menu-for-remotes">
@@ -1765,13 +1765,13 @@ Diff View.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="guilabel">Use “their” version as is</span></p></td>
-<td><p>Accept incoming changes. The file will be replaced with the incoming version.</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="guilabel">Keep “our” version  intact</span></p></td>
+<tr class="row-even"><td><p><span class="guilabel">Keep OURS</span></p></td>
 <td><p>Reject incoming changes. The file won’t be modified from its current state in HEAD.</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="guilabel">Merge in…</span></p></td>
+<tr class="row-odd"><td><p><span class="guilabel">Accept THEIRS</span></p></td>
+<td><p>Accept incoming changes. The file will be replaced with the incoming version.</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="guilabel">Merge both versions</span></p></td>
 <td><p>See <a class="reference internal" href="#merge-tool"><span class="std std-ref">Merging a file with an external tool</span></a>.</p></td>
 </tr>
 </tbody>
@@ -1807,20 +1807,26 @@ IDEs (PyCharm, IntelliJ), VS Code, GVim, etc.</p>
 Chances are your favorite tool is available among the predefined commands.
 Otherwise, you can enter your own command
 (feel free to <a class="reference external" href="https://github.com/jorio/gitfourchette/issues">open an issue</a> to suggest it).</p>
+<p><strong>Flatpak users:</strong> To use a Flatpak merge tool, be sure to
+pick one of the <code class="docutils literal notranslate"><span class="pre">flatpak</span> <span class="pre">run</span></code> commands available at the bottom of the
+presets in <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.  In
+addition, note that the Flatpak version of GitFourchette itself automatically wraps
+all external commands in a <code class="docutils literal notranslate"><span class="pre">flatpak-spawn</span></code> call.</p>
 </div>
-<p>In the Conflict View, the last option for fixing a conflict is <span class="guilabel">Merge in (External Tool)</span>.
-Select it, then click the large <span class="guilabel">Resolve Conflict</span> button.
-GitFourchette will launch the merge program and wait for you to complete the merge in it.</p>
-<figure class="align-default" id="id3">
-<img alt="_images/mergetool.png" src="_images/mergetool.png" />
-<figcaption>
-<p><span class="caption-text">About to merge a file in an external program.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
+<p>In the Conflict View, the last option for fixing a conflict is a large
+<span class="guilabel">Merge both versions in (External Tool)</span> button. Click it, and GitFourchette
+will launch the merge program and wait for you to complete the merge in it.</p>
 <p>When you’re done merging, save the file in your merge tool and return to GitFourchette
 (you may have to quit the tool). GitFourchette will pick up that the merge is complete
-and will prompt you to confirm or discard the resolution.</p>
-<p>If you <strong>discard</strong> the resolution, the conflict will remain and you’ll have to
+and will prompt you to confirm or discard your merge.</p>
+<figure class="align-default" id="id3">
+<img alt="_images/mergecomplete.png" src="_images/mergecomplete.png" />
+<figcaption>
+<p><span class="caption-text">After finishing a merge in an external tool, return to the Conflict View to
+resolve the conflict with your merge.</span><a class="headerlink" href="#id3" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>If you <strong>discard</strong> the merge, the conflict will remain and you’ll have to
 resolve it again.  If you <strong>confirm</strong>, the conflict will vanish and, in most
 cases, turn into a modification (<img alt="" class="no-scaled-link gficon" src="_images/status_m.svg" style="width: 16px; height: 16px;" />), ready to stage and commit.</p>
 </section>
