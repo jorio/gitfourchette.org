@@ -9,8 +9,14 @@ jobs:
   sphinx:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    outputs:
+      srchash: ${{ steps.srchash.outputs.SRCHASH }}
     steps:
       - uses: actions/checkout@v4
+
+      - id: srchash
+        run: |
+          echo SRCHASH=$(git log -1 --format=%h) >> "$GITHUB_OUTPUT"
 
       - name: Fonts
         run: |
@@ -30,4 +36,42 @@ jobs:
       - run: make fullsite
 
       - uses: actions/upload-artifact@v4
-        with: { path: _build/html }
+        with: { name: sitecontents.zip, path: _build/html }
+
+  deploy:
+    permissions:
+      contents: write
+      pull-requests: write
+    needs: sphinx
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - run: |
+          echo SRCHASH=$SRCHASH >> $GITHUB_ENV
+          echo PRBRANCH=www-sync-$SRCHASH >> $GITHUB_ENV
+        env:
+          SRCHASH: ${{ needs.sphinx.outputs.SRCHASH }}
+
+      - uses: actions/checkout@v4
+        with:
+          ref: www
+          token: ${{ secrets.GITHUB_TOKEN }}  # necessary for chaining jobs in a private repo - https://github.com/actions/checkout/issues/254#issuecomment-1966838828
+
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c $PRBRANCH
+          git rm -r *
+
+      - uses: actions/download-artifact@v4
+        with: { name: sitecontents.zip }
+
+      - run: |
+          git add .
+          git status
+          git commit -m "Sync website with $SRCHASH"
+          git push --set-upstream origin $PRBRANCH
+          gh pr create --base www --head $PRBRANCH --fill
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
