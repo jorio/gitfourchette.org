@@ -42,4 +42,3 @@ funding, and how much free time I can carve out for the project.
 - Rebase
 - LFS
 - Hooks
-- Syntax highlighting in diff view

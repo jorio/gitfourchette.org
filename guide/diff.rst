@@ -69,7 +69,7 @@ Each *hunk* consists of:
 
 .. note::
     Are you red/green colorblind? Switch to a yellow/blue color scheme in
-    |cogwheel| :menuselection:`Settings --> Code Diff --> Colorblind-friendly color scheme`.
+    |cogwheel| :menuselection:`Settings --> Code --> “-/+” colors`.
 
 .. _diff-hunk-tools:
 
