@@ -11,6 +11,7 @@
     Home <self>
     Install <install>
     User’s Guide <guide/index>
+    localization
     limitations
     Source Code <https://github.com/jorio/gitfourchette>
     Donate <https://ko-fi.com/jorio>
