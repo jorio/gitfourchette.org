@@ -3,7 +3,7 @@
 .. copyimage:: /assets/flathub.svg
 .. copyimage:: /assets/flathublight.svg
 .. raw:: html
-    :file: hero.html
+    :file: snippets/indexhero.html
 
 .. toctree::
     :hidden:

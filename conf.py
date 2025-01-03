@@ -42,7 +42,6 @@ html_logo = "assets/gf.svg"
 html_favicon = "assets/gf.svg"
 # html_last_updated_fmt = "%c"
 html_title = project
-html_show_sourcelink = False
 html_copy_source = False
 
 html_extra_path = ['_extra']  # deploy raw files to HTML output
@@ -51,6 +50,12 @@ html_js_files = ['gitfourchette.js']
 html_css_files = ['gitfourchette.css', ('gitfourchette-print.css', {'media': 'print'})]
 
 html_theme = 'furo'
+
+html_theme_options = {
+    "source_repository": "https://github.com/jorio/gitfourchette.org",
+    "source_branch": "sphinx",
+    "top_of_page_buttons": ["view"],
+}
 
 # -----------------------------------------------------------------------------
 # singlehtml
