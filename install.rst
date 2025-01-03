@@ -37,19 +37,19 @@ Run from source using your system’s Qt libraries
 
 This method gives you the best integration with your desktop environment.
 
-1. With your system’s package manager, install *pygit2* (v1.14.1 or later), *pyqt6* and *pygments*:
+1. With your system’s package manager, install *pygit2* (v1.14.1 or later), *pygments* and *pyqt6*:
 
 .. list-table::
     :header-rows: 0
 
     * - Ubuntu 24.10+
-      - ``apt install python3-pygit2 python3-pyqt6 python3-pygments``
+      - ``apt install python3-pygit2 python3-pygments python3-pyqt6 libqt6svg6``
 
     * - Fedora 41+
-      - ``dnf install python3-pygit2 python3-pyqt6 python3-pygments``
+      - ``dnf install python3-pygit2 python3-pygments python3-pyqt6``
 
     * - Arch Linux
-      - ``pacman -S python-pygit2 python-pyqt6 python-pygments``
+      - ``pacman -S python-pygit2 python-pygments python-pyqt6 qt6-svg``
 
 2.
     .. code-block:: bash
@@ -66,7 +66,6 @@ This method gives you the best integration with your desktop environment.
     We recommend pygit2 v1.16.0 or later. However, |App| will remain compatible with pygit2 v1.14.1, with a reduced feature set, at least until the current release of Ubuntu provides a newer version of pygit2.
 
     You can substitute PyQt6 with PySide6. |App| is compatible with both.
-
 
 Install from source with pip
 ----------------------------
