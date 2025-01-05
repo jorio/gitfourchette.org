@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="_static/gf.svg"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Install GitFourchette - GitFourchette</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=7f25d256" />
@@ -221,6 +221,7 @@
 <li class="toctree-l2"><a class="reference internal" href="guide/conflicts.html">Merge Conflicts</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jorio/gitfourchette">Source Code</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://ko-fi.com/jorio">Donate</a></li>
@@ -243,9 +244,12 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          
-
-<div class="theme-toggle-container theme-toggle-content">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/jorio/gitfourchette.org/blob/sphinx/install.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
@@ -285,19 +289,19 @@ flatpak<span class="w"> </span>run<span class="w"> </span>org.gitfourchette.gitf
 <h2>Run from source using your system’s Qt libraries<a class="headerlink" href="#run-from-source-using-your-systems-qt-libraries" title="Link to this heading">¶</a></h2>
 <p>This method gives you the best integration with your desktop environment.</p>
 <ol class="arabic simple">
-<li><p>With your system’s package manager, install <em>PyQt6</em> and <em>pygit2</em> (version 1.15.1 or later)</p></li>
+<li><p>With your system’s package manager, install <em>pygit2</em> (v1.14.1 or later), <em>pygments</em> and <em>pyqt6</em>:</p></li>
 </ol>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p>Ubuntu</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-pygit2</span> <span class="pre">python3-pyqt6</span></code></p></td>
+<tr class="row-odd"><td><p>Ubuntu 24.10+</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span> <span class="pre">python3-pygit2</span> <span class="pre">python3-pygments</span> <span class="pre">python3-pyqt6</span> <span class="pre">libqt6svg6</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>Fedora</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">dnf</span> <span class="pre">install</span> <span class="pre">python3-pygit2</span> <span class="pre">python3-pyqt6</span></code></p></td>
+<tr class="row-even"><td><p>Fedora 41+</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dnf</span> <span class="pre">install</span> <span class="pre">python3-pygit2</span> <span class="pre">python3-pygments</span> <span class="pre">python3-pyqt6</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>Arch</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">python-pygit2</span> <span class="pre">python-pyqt6</span></code></p></td>
+<tr class="row-odd"><td><p>Arch Linux</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pacman</span> <span class="pre">-S</span> <span class="pre">python-pygit2</span> <span class="pre">python-pygments</span> <span class="pre">python-pyqt6</span> <span class="pre">qt6-svg</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -307,14 +311,16 @@ flatpak<span class="w"> </span>run<span class="w"> </span>org.gitfourchette.gitf
 </pre></div>
 </div>
 </li>
-<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gitfourchette/run.sh<span class="sb">`</span>
+<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gitfourchette/run.sh
 </pre></div>
 </div>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>We recommend pygit2 v1.16.0 or later. However, GitFourchette will remain compatible with pygit2 v1.14.1, with a reduced feature set, at least until the current release of Ubuntu provides a newer version of pygit2.</p>
 <p>You can substitute PyQt6 with PySide6. GitFourchette is compatible with both.</p>
+<p>Pygments is an optional dependency.</p>
 </div>
 </section>
 <section id="install-from-source-with-pip">
@@ -322,7 +328,7 @@ flatpak<span class="w"> </span>run<span class="w"> </span>org.gitfourchette.gitf
 <p>The only prerequisite to install GitFourchette from source with <cite>pip</cite> is Python 3.10 or newer, which already comes standard with most Linux distributions.</p>
 <p>These two commands will install GitFourchette and its dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jorio/gitfourchette
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyqt6<span class="o">]</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyqt6,pygments<span class="o">]</span>
 </pre></div>
 </div>
 <p>Then, simply run <code class="docutils literal notranslate"><span class="pre">gitfourchette</span></code>.</p>
@@ -333,7 +339,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you prefer to use PySide6 instead of PyQt6, install GitFourchette with this command instead:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyside6<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyside6,pygments<span class="o">]</span>
 </pre></div>
 </div>
 </div>
@@ -341,6 +347,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p class="admonition-title">Note</p>
 <p>Installing PyQt6 or PySide6 via pip instead of your system’s package manager
 may cause GitFourchette to ignore your desktop environment theme.</p>
+<p>Pygments is an optional dependency.</p>
 </div>
 </section>
 </section>
@@ -374,7 +381,7 @@ may cause GitFourchette to ignore your desktop environment theme.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2024 Iliyas Jorio
+                Copyright &#169; 2025 Iliyas Jorio
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
