@@ -67,6 +67,8 @@ This method gives you the best integration with your desktop environment.
 
     You can substitute PyQt6 with PySide6. |App| is compatible with both.
 
+    Pygments is an optional dependency.
+
 Install from source with pip
 ----------------------------
 
@@ -77,7 +79,7 @@ These two commands will install |App| and its dependencies:
 .. code-block:: bash
 
     git clone https://github.com/jorio/gitfourchette
-    pip install -e gitfourchette[pyqt6]
+    pip install -e gitfourchette[pyqt6,pygments]
 
 Then, simply run ``gitfourchette``.
 
@@ -93,9 +95,11 @@ To uninstall:
 
     .. code-block:: bash
 
-            pip install -e gitfourchette[pyside6]
+            pip install -e gitfourchette[pyside6,pygments]
 
 .. note::
 
     Installing PyQt6 or PySide6 via pip instead of your system’s package manager
     may cause |App| to ignore your desktop environment theme.
+
+    Pygments is an optional dependency.
