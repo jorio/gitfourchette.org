@@ -106,7 +106,7 @@ repo here`.  |App| will ask you to confirm to initialize a repository in a
 non-empty folder.
 
 The entire contents of your source tree will now appear as **unstaged files** in
-:ref:`Uncommitted Changes <uc-101>`.  At this point, you should **stage** all
+the :ref:`Working Directory <workdir-101>`.  At this point, you should **stage** all
 relevant files and create the **initial commit** (see :doc:`commit`).
 
 .. xxxx note:: If you picked a folder that is already a valid Git repository (it contains a `.git` directory), |App| will simply open it instead.

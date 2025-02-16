@@ -27,29 +27,29 @@ metadata (parents, message, signature). Because of this unique hash, commits are
 **immutable**: the slightest modification to an existing commit would result in
 a different hash, and thereby a different commit.
 
-.. _uc-101:
+.. _workdir-101:
 
-Jumping to Uncommitted Changes
-------------------------------
+Jumping to the Working Directory
+--------------------------------
 
-In |App|, you can prepare commits from the **Uncommitted Changes** view. You can
-get there:
+In |App|, you can prepare commits from the **Working Directory**. You can get
+there:
 
-- **From the Sidebar:** Click :gficonlabel:`git-workdir Uncommitted Changes` (or just :guilabel:`Changes` if the sidebar is narrow).
-- **From the Commit History:** Click :gficonlabel:`git-workdir Uncommitted Changes` at the top of the history.
-- **From anywhere:** Press :kbd:`Ctrl U`.
+- **From the Sidebar:** Click :gficonlabel:`git-workdir Working Directory`.
+- **From the Commit History:** Click :gficonlabel:`git-workdir Working Directory` at the top of the history.
+- **From anywhere:** Press :kbd:`Ctrl G` (think "Go" to workdir).
 
-Uncommitted Changes displays any files in your working directory
-that have changed since the *HEAD* commit:
+The Working Directory displays any files that have changed since the *HEAD*
+commit:
 
-.. _figure-uncommitted-changes:
-.. figure:: /assets/screens/uncommittedchanges.png
+.. _figure-working-directory:
+.. figure:: /assets/screens/workdir.png
 
 .. raw:: html
 
     <script>
         document.addEventListener("DOMContentLoaded", () => addFigurePins(
-            "#figure-uncommitted-changes",
+            "#figure-working-directory",
             {x:18, y:33, title:'Unstaged Files'},
             {x:18, y:75, title:'Staged Files'},
             {x:66, y:56, title:'Diff View'},
@@ -62,9 +62,8 @@ that have changed since the *HEAD* commit:
 3. **Diff View:** Displays the differences in the selected file between your
    working version and the state of this file at the HEAD commit.
 
-.. note:: The number of changes is shown next to
-    :gficonlabel:`git-workdir Uncommitted Changes` in the Sidebar
-    if |App| has an up-to-date model of your working directory.
+.. note:: The number of uncommitted changes is shown next to
+    :gficonlabel:`git-workdir Working Directory` in the Sidebar.
 
 .. _stage-files:
 

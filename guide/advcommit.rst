@@ -8,7 +8,7 @@ Setting aside your commit message for later
 
 If you back out of the :ref:`Commit dialog <commit-dialog>` by clicking
 :guilabel:`Cancel`, |App| will save your message as a draft.  The draft message
-is shown in the *Uncommitted Changes* row at the top of the Commit History.
+is shown in the *Working Directory* row at the top of the Commit History.
 
 .. figure:: /assets/screens/messagedraft.png
 
@@ -16,6 +16,9 @@ is shown in the *Uncommitted Changes* row at the top of the Commit History.
 
 Next time you press the :gficonlabel:`git-commit Commit files` button,
 the Commit dialog will fill in the commit message with your draft.
+
+To clear the draft message, |rmb| right-click *Working Directory* in the Commit
+History, then choose *Clear Draft Message*.
 
 .. _amend:
 

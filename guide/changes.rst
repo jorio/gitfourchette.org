@@ -1,5 +1,5 @@
-Managing the Uncommitted Changes
-================================
+Managing Changes in the Working Directory
+=========================================
 
 This chapter will teach you some techniques to manage and edit your uncommitted
 changes so you can prepare commits with more precision.  We'll assume you're
@@ -104,17 +104,17 @@ patcher is a bit brittle for now and vanilla `git apply` is more robust).
 
 .. note:: You can customize how many files to keep in the trash in |cogwheel| :menuselection:`Settings --> Trash`.
 
-.. _uc-files-cm:
+.. _workdir-files-cm:
 
-File List context menu (in Uncommitted Changes)
------------------------------------------------
+File List context menu (in the Working Directory)
+-------------------------------------------------
 
 The Stage/Unstage/Discard buttons around the file lists should cover most of
 your basic staging needs.
 
 |rmb| Right-click on a file in one of the File Lists to open a context menu with advanced operations:
 
-.. list-table:: Actions in the File List context menu (from Uncommitted Changes)
+.. list-table:: Actions in the File List context menu (in the Working Directory)
     :header-rows: 1
     :widths: 25 75
 

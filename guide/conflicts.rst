@@ -26,10 +26,10 @@ restricted, such as making a commit or switching branches.  So, it's best to
 resolve the conflict as soon as you can.
 
 As long as your working directory contains conflicted files, a **yellow
-"Merging" banner** appears below the Sidebar, and the Uncommitted Changes view
-lists pending conflicts with a question-mark icon (:gficon:`status_u`).  Select
-one of the conflicting files, and a Conflict View appears in lieu of the usual
-Diff View.
+"Merging" banner** appears below the Sidebar, and the file lists in the Working
+Directory show pending conflicts with a question-mark icon (:gficon:`status_u`).
+Select one of the conflicting files, and a Conflict View appears in lieu of the
+usual Diff View.
 
 .. figure:: /assets/screens/bigmerge.png
 
@@ -139,7 +139,7 @@ will vanish and you can resume working in your repository as usual.
     .. figure:: /assets/screens/mergeparents.png
 
         Preview of the future merge commit's parents in the graph. Note the two
-        dashed lines linking Uncommitted Changes to the branches being merged.
+        dashed lines linking the Working Directory to the branches being merged.
 
 Aborting a merge
 ----------------

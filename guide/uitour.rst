@@ -52,7 +52,7 @@ Sidebar
 
 The sidebar exposes various facets of your repository:
 
-- :gficon:`git-workdir` :ref:`uncommitted changes in your working directory <uc-101>`;
+- :gficon:`git-workdir` :ref:`your working directory <workdir-101>`, where you can review the uncommitted changes and prepare a commit;
 - :gficon:`git-branch` :doc:`local branches <branches>` (including the "HEAD" :gficon:`git-head`);
 - :gficon:`git-remote` :doc:`remote servers and remote-tracking branches <remotes>`;
 - :gficon:`git-tag` tags;
@@ -77,7 +77,7 @@ In the File List, you can:
 - |lmb| **Left-click** on a file to show its changes in the Diff View.
 - |rmb| **Right-click** on a file to perform actions on it. Those depend on
   whether you're :ref:`exploring a past commit <history-files-cm>`
-  or :ref:`preparing a new commit <uc-files-cm>`.
+  or :ref:`preparing a new commit <workdir-files-cm>`.
 - Hover over a file to reveal a tooltip with more details about it.
 
 Each file is adorned by a little icon describing its status:
@@ -91,7 +91,7 @@ Each file is adorned by a little icon describing its status:
     * - :gficon:`status_d` Deleted
       - :gficon:`status_t` Type changed (e.g. regular file became a symlink)
     * - :gficon:`status_m` Modified
-      - :gficon:`status_u` Merge conflict (only in Uncommitted Changes)
+      - :gficon:`status_u` Merge conflict (only in the Working Directory)
 
 .. _tour-big-widgets:
 

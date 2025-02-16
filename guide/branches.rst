@@ -13,7 +13,7 @@ All of the :gficon:`git-branch` **local branches** in your repository are listed
 A little head :gficon:`git-head` is shown next to your current *HEAD* branch,
 i.e. the currently checked-out branch.
 
-.. tip:: Press :kbd:`Ctrl H` to jump to the *HEAD*. (Mac: :kbd:`Cmd D`)
+.. tip:: Press :kbd:`Ctrl H` to jump to the *HEAD*.
 
 .. _new-branch:
 

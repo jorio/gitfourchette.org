@@ -40,7 +40,7 @@ Overview of the Commit History
     - Tags, in yellow, e.g. :gfinline:`/assets/screens/refbox-tag.png`
 4. **Commit Summary:** The first line of the commit message. An ellipsis (|ellip|) indicates that the message is truncated; hover over it to reveal the full message in a tooltip.
 5. **Author Name/Date:** Who created the commit and when. See :ref:`author-vs-committer`.
-6. **Search Bar:** See :ref:`find-commit`.
+6. **Search Bar:** Bring it up with :kbd:`Ctrl F` when the Commit History has keyboard focus. See :ref:`find-commit`.
 
 .. note::
     You can customize the appearance of some of these items in
