@@ -24,6 +24,7 @@ bookpdf:
 		--generate-pdf-document-outline \
 		--no-pdf-header-footer \
 		--print-to-pdf=_build/book.pdf \
+		--no-sandbox \
 		"file://${PWD}/_build/singlehtml/book.html?paginate=A4"
 
 fullsite: html singlehtml bookpdf

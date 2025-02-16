@@ -3,7 +3,7 @@ name: Sphinx Docs
 on: [push]
 
 env:
-  PYVER: "3.12"
+  PYVER: "3.13"
 
 jobs:
   sphinx:
