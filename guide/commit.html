@@ -3,9 +3,9 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Managing the Uncommitted Changes" href="changes.html" /><link rel="prev" title="Exploring the Commit History" href="history.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Managing Changes in the Working Directory" href="changes.html" /><link rel="prev" title="Exploring the Commit History" href="history.html" />
 
-    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.0 and Furo 2024.08.06 -->
         <title>Making a Commit - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -287,23 +287,23 @@ metadata (parents, message, signature). Because of this unique hash, commits are
 <strong>immutable</strong>: the slightest modification to an existing commit would result in
 a different hash, and thereby a different commit.</p>
 </section>
-<section id="jumping-to-uncommitted-changes">
-<span id="uc-101"></span><h2>Jumping to Uncommitted Changes<a class="headerlink" href="#jumping-to-uncommitted-changes" title="Link to this heading">¶</a></h2>
-<p>In GitFourchette, you can prepare commits from the <strong>Uncommitted Changes</strong> view. You can
-get there:</p>
+<section id="jumping-to-the-working-directory">
+<span id="workdir-101"></span><h2>Jumping to the Working Directory<a class="headerlink" href="#jumping-to-the-working-directory" title="Link to this heading">¶</a></h2>
+<p>In GitFourchette, you can prepare commits from the <strong>Working Directory</strong>. You can get
+there:</p>
 <ul class="simple">
-<li><p><strong>From the Sidebar:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> (or just <span class="guilabel">Changes</span> if the sidebar is narrow).</p></li>
-<li><p><strong>From the Commit History:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> at the top of the history.</p></li>
-<li><p><strong>From anywhere:</strong> Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">U</kbd></kbd>.</p></li>
+<li><p><strong>From the Sidebar:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span>.</p></li>
+<li><p><strong>From the Commit History:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span> at the top of the history.</p></li>
+<li><p><strong>From anywhere:</strong> Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">G</kbd> (think “Go” to workdir).</p></li>
 </ul>
-<p>Uncommitted Changes displays any files in your working directory
-that have changed since the <em>HEAD</em> commit:</p>
-<figure class="align-default" id="figure-uncommitted-changes">
-<img alt="../_images/uncommittedchanges.png" src="../_images/uncommittedchanges.png" />
+<p>The Working Directory displays any files that have changed since the <em>HEAD</em>
+commit:</p>
+<figure class="align-default" id="figure-working-directory">
+<img alt="../_images/workdir.png" src="../_images/workdir.png" />
 </figure>
 <script>
     document.addEventListener("DOMContentLoaded", () => addFigurePins(
-        "#figure-uncommitted-changes",
+        "#figure-working-directory",
         {x:18, y:33, title:'Unstaged Files'},
         {x:18, y:75, title:'Staged Files'},
         {x:66, y:56, title:'Diff View'},
@@ -317,9 +317,8 @@ working version and the state of this file at the HEAD commit.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The number of changes is shown next to
-<span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> in the Sidebar
-if GitFourchette has an up-to-date model of your working directory.</p>
+<p>The number of uncommitted changes is shown next to
+<span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span> in the Sidebar.</p>
 </div>
 </section>
 <section id="staging-and-unstaging-files">
@@ -348,10 +347,10 @@ dialog</span></a> where you can describe your commit and finalize it.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd></kbd> to get keyboard focus on the file lists.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd> to get keyboard focus on the file lists.</div>
 <div class="line">Press <kbd class="kbd docutils literal notranslate">Enter</kbd> to move the selected files to the other box (unstaged // staged).</div>
 <div class="line">Press <kbd class="kbd docutils literal notranslate">Del</kbd> to discard changes to the selected unstaged files.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd> to finalize the commit.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">S</kbd> to finalize the commit.</div>
 <div class="line">Middle-click on a file to stage or unstage it (this behavior must be enabled in <img alt="Settings" class="no-scaled-link gficon" src="../_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Advanced ‣ Middle-click file name to stage</span>).</div>
 </div>
 </div>
@@ -406,7 +405,7 @@ remote so the world can see what you’ve been working on.</p>
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Managing the Uncommitted Changes</div>
+                <div class="title">Managing Changes in the Working Directory</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -453,7 +452,7 @@ remote so the world can see what you’ve been working on.</p>
             <ul>
 <li><a class="reference internal" href="#">Making a Commit</a><ul>
 <li><a class="reference internal" href="#crash-course-what-s-in-a-commit">Crash course: What’s in a commit?</a></li>
-<li><a class="reference internal" href="#jumping-to-uncommitted-changes">Jumping to Uncommitted Changes</a></li>
+<li><a class="reference internal" href="#jumping-to-the-working-directory">Jumping to the Working Directory</a></li>
 <li><a class="reference internal" href="#staging-and-unstaging-files">Staging and unstaging files</a></li>
 <li><a class="reference internal" href="#finalizing-the-commit-the-commit-dialog">Finalizing the commit (the Commit dialog)</a></li>
 <li><a class="reference internal" href="#your-commits-are-local-until-you-push-them">Your commits are local until you push them</a></li>

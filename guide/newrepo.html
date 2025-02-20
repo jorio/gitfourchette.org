@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="A Tour of the Main Window" href="uitour.html" /><link rel="prev" title="GitFourchette User’s Guide" href="index.html" />
 
-    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.0 and Furo 2024.08.06 -->
         <title>Cloning or Creating a Repository - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -268,7 +268,7 @@
 <h1>Cloning or Creating a Repository<a class="headerlink" href="#cloning-or-creating-a-repository" title="Link to this heading">¶</a></h1>
 <p>First things first—we need a repository to work on!  Of course, GitFourchette can open
 any repository you already have on your disk: go to <span class="menuselection">File ‣
-Open Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">O</kbd></kbd>.</p>
+Open Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">O</kbd>.</p>
 <p>But beyond opening an existing repo, you can also <strong>clone</strong> a repository from a
 remote, or <strong>initialize</strong> a new repository on your machine.</p>
 <p>If you’re dipping your toes in Git, I recommend <strong>cloning</strong> a repository so
@@ -277,7 +277,7 @@ Here’s a URL you can try to clone: <cite>https://github.com/libgit2/libgit2</c
 <section id="cloning-a-repository-from-a-remote-host">
 <h2>Cloning a repository from a remote host<a class="headerlink" href="#cloning-a-repository-from-a-remote-host" title="Link to this heading">¶</a></h2>
 <p>In Git parlance, <em>cloning</em> means to download a repository, typically from a remote host.</p>
-<p>Go to <span class="menuselection">File ‣ Clone Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. The “Clone” dialog appears:</p>
+<p>Go to <span class="menuselection">File ‣ Clone Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. The “Clone” dialog appears:</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/clone.png" src="../_images/clone.png" />
 <figcaption>
@@ -352,7 +352,7 @@ and choose <span class="guilabel">Set as default clone location</span>.</p>
 </section>
 <section id="creating-a-blank-repository-from-scratch">
 <h2>Creating a blank repository from scratch<a class="headerlink" href="#creating-a-blank-repository-from-scratch" title="Link to this heading">¶</a></h2>
-<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. A folder
+<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. A folder
 picker appears.</p>
 <p>In the folder picker, create an <strong>empty</strong> folder for your repo. It’s important
 that the folder be <strong>empty</strong> to start a blank repository from scratch! (GitFourchette
@@ -363,13 +363,13 @@ an <strong>initial commit</strong> (see <a class="reference internal" href="comm
 </section>
 <section id="initializing-a-repository-from-existing-sources-on-your-machine">
 <h2>Initializing a repository from existing sources on your machine<a class="headerlink" href="#initializing-a-repository-from-existing-sources-on-your-machine" title="Link to this heading">¶</a></h2>
-<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. A folder
+<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. A folder
 picker appears.</p>
 <p>Navigate to the root folder of your source code, then click <span class="guilabel">Create
 repo here</span>.  GitFourchette will ask you to confirm to initialize a repository in a
 non-empty folder.</p>
 <p>The entire contents of your source tree will now appear as <strong>unstaged files</strong> in
-<a class="reference internal" href="commit.html#uc-101"><span class="std std-ref">Uncommitted Changes</span></a>.  At this point, you should <strong>stage</strong> all
+the <a class="reference internal" href="commit.html#workdir-101"><span class="std std-ref">Working Directory</span></a>.  At this point, you should <strong>stage</strong> all
 relevant files and create the <strong>initial commit</strong> (see <a class="reference internal" href="commit.html"><span class="doc">Making a Commit</span></a>).</p>
 </section>
 </section>

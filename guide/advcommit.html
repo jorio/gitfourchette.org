@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Resolving Merge Conflicts" href="conflicts.html" /><link rel="prev" title="Managing Remote Servers and Remote-Tracking Branches" href="remotes.html" />
 
-    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.0 and Furo 2024.08.06 -->
         <title>Advanced Commit Techniques - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
@@ -270,7 +270,7 @@
 <span id="commit-message-draft"></span><h2>Setting aside your commit message for later<a class="headerlink" href="#setting-aside-your-commit-message-for-later" title="Link to this heading">¶</a></h2>
 <p>If you back out of the <a class="reference internal" href="commit.html#commit-dialog"><span class="std std-ref">Commit dialog</span></a> by clicking
 <span class="guilabel">Cancel</span>, GitFourchette will save your message as a draft.  The draft message
-is shown in the <em>Uncommitted Changes</em> row at the top of the Commit History.</p>
+is shown in the <em>Working Directory</em> row at the top of the Commit History.</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/messagedraft.png" src="../_images/messagedraft.png" />
 <figcaption>
@@ -279,6 +279,8 @@ is shown in the <em>Uncommitted Changes</em> row at the top of the Commit Histor
 </figure>
 <p>Next time you press the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-commit.svg" style="width: 16px; height: 16px;" /><span> Commit files</span></span> button,
 the Commit dialog will fill in the commit message with your draft.</p>
+<p>To clear the draft message, <img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> right-click <em>Working Directory</em> in the Commit
+History, then choose <em>Clear Draft Message</em>.</p>
 </section>
 <section id="amending-a-commit">
 <span id="amend"></span><h2>Amending a commit<a class="headerlink" href="#amending-a-commit" title="Link to this heading">¶</a></h2>
@@ -304,7 +306,7 @@ confident with Git.</p>
 (If you simply want to edit the HEAD commit’s message, you can actually
 leave the Staged box empty here.)</p></li>
 <li><p>Click the pulldown arrow attached to the right of the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="../_images/git-commit.svg" style="width: 16px; height: 16px;" /><span> Commit files</span></span> button.
-In the menu that appears, choose <span class="guilabel">Amend latest commit</span>. (Or just press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd>.)</p></li>
+In the menu that appears, choose <span class="guilabel">Amend latest commit</span>. (Or just press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">S</kbd>.)</p></li>
 </ol>
 <p>The “Amend Commit” window appears. It’s very similar to the
 <a class="reference internal" href="commit.html#commit-dialog"><span class="std std-ref">“Commit” dialog</span></a>
