@@ -37,7 +37,7 @@
 </div>
 
 <div class="book-cover-page-footer">
-January 2025 (GitFourchette version 1.1.0)
+February 2025 (GitFourchette version 1.2.0)
 <br>&copy; 2025 Iliyas Jorio
 <br>https://gitfourchette.org
 </div>
@@ -71,7 +71,7 @@ contribution will encourage the continuation of the project. Thank you!</p>
 <h1>Cloning or Creating a Repository<a class="headerlink" href="#cloning-or-creating-a-repository" title="Link to this heading">¶</a></h1>
 <p>First things first—we need a repository to work on!  Of course, GitFourchette can open
 any repository you already have on your disk: go to <span class="menuselection">File ‣
-Open Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">O</kbd></kbd>.</p>
+Open Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">O</kbd>.</p>
 <p>But beyond opening an existing repo, you can also <strong>clone</strong> a repository from a
 remote, or <strong>initialize</strong> a new repository on your machine.</p>
 <p>If you’re dipping your toes in Git, I recommend <strong>cloning</strong> a repository so
@@ -80,7 +80,7 @@ Here’s a URL you can try to clone: <cite>https://github.com/libgit2/libgit2</c
 <section id="cloning-a-repository-from-a-remote-host">
 <h2>Cloning a repository from a remote host<a class="headerlink" href="#cloning-a-repository-from-a-remote-host" title="Link to this heading">¶</a></h2>
 <p>In Git parlance, <em>cloning</em> means to download a repository, typically from a remote host.</p>
-<p>Go to <span class="menuselection">File ‣ Clone Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. The “Clone” dialog appears:</p>
+<p>Go to <span class="menuselection">File ‣ Clone Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. The “Clone” dialog appears:</p>
 <figure class="align-default" id="id1">
 <img alt="_images/clone.png" src="_images/clone.png" />
 <figcaption>
@@ -153,7 +153,7 @@ and choose <span class="guilabel">Set as default clone location</span>.</p>
 </section>
 <section id="creating-a-blank-repository-from-scratch">
 <h2>Creating a blank repository from scratch<a class="headerlink" href="#creating-a-blank-repository-from-scratch" title="Link to this heading">¶</a></h2>
-<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. A folder
+<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. A folder
 picker appears.</p>
 <p>In the folder picker, create an <strong>empty</strong> folder for your repo. It’s important
 that the folder be <strong>empty</strong> to start a blank repository from scratch! (GitFourchette
@@ -164,13 +164,13 @@ an <strong>initial commit</strong> (see <a class="reference internal" href="#doc
 </section>
 <section id="initializing-a-repository-from-existing-sources-on-your-machine">
 <h2>Initializing a repository from existing sources on your machine<a class="headerlink" href="#initializing-a-repository-from-existing-sources-on-your-machine" title="Link to this heading">¶</a></h2>
-<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd></kbd>. A folder
+<p>Go to <span class="menuselection">File ‣ New Repository</span> or press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">N</kbd>. A folder
 picker appears.</p>
 <p>Navigate to the root folder of your source code, then click <span class="guilabel">Create
 repo here</span>.  GitFourchette will ask you to confirm to initialize a repository in a
 non-empty folder.</p>
 <p>The entire contents of your source tree will now appear as <strong>unstaged files</strong> in
-<a class="reference internal" href="#uc-101"><span class="std std-ref">Uncommitted Changes</span></a>.  At this point, you should <strong>stage</strong> all
+the <a class="reference internal" href="#document-guide/commit#workdir-101"><span class="std std-ref">Working Directory</span></a>.  At this point, you should <strong>stage</strong> all
 relevant files and create the <strong>initial commit</strong> (see <a class="reference internal" href="#document-guide/commit"><span class="doc">Making a Commit</span></a>).</p>
 </section>
 </section>
@@ -216,11 +216,11 @@ next time you launch it.</p>
 </figure>
 <p>The sidebar exposes various facets of your repository:</p>
 <ul class="simple">
-<li><p><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#uc-101"><span class="std std-ref">uncommitted changes in your working directory</span></a>;</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#document-guide/commit#workdir-101"><span class="std std-ref">your working directory</span></a>, where you can review the uncommitted changes and prepare a commit;</p></li>
 <li><p><img alt="" class="no-scaled-link gficon" src="_images/git-branch.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#document-guide/branches"><span class="doc">local branches</span></a> (including the “HEAD” <img alt="" class="no-scaled-link gficon" src="_images/git-head.svg" style="width: 16px; height: 16px;" />);</p></li>
 <li><p><img alt="" class="no-scaled-link gficon" src="_images/git-remote.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#document-guide/remotes"><span class="doc">remote servers and remote-tracking branches</span></a>;</p></li>
 <li><p><img alt="" class="no-scaled-link gficon" src="_images/git-tag.svg" style="width: 16px; height: 16px;" /> tags;</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="_images/git-stash.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#stash-changes"><span class="std std-ref">stashes</span></a>;</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="_images/git-stash.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="#document-guide/changes#stash-changes"><span class="std std-ref">stashes</span></a>;</p></li>
 <li><p><img alt="" class="no-scaled-link gficon" src="_images/git-submodule.svg" style="width: 16px; height: 16px;" /> submodules.</p></li>
 </ul>
 <p>From the sidebar, you can:</p>
@@ -236,8 +236,8 @@ In the File List, you can:</p>
 <ul class="simple">
 <li><p><img alt="Left-click" class="no-scaled-link gficon" src="_images/lmb.svg" style="height: 16px;" /> <strong>Left-click</strong> on a file to show its changes in the Diff View.</p></li>
 <li><p><img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on a file to perform actions on it. Those depend on
-whether you’re <a class="reference internal" href="#history-files-cm"><span class="std std-ref">exploring a past commit</span></a>
-or <a class="reference internal" href="#uc-files-cm"><span class="std std-ref">preparing a new commit</span></a>.</p></li>
+whether you’re <a class="reference internal" href="#document-guide/history#history-files-cm"><span class="std std-ref">exploring a past commit</span></a>
+or <a class="reference internal" href="#document-guide/changes#workdir-files-cm"><span class="std std-ref">preparing a new commit</span></a>.</p></li>
 <li><p>Hover over a file to reveal a tooltip with more details about it.</p></li>
 </ul>
 <p>Each file is adorned by a little icon describing its status:</p>
@@ -250,7 +250,7 @@ or <a class="reference internal" href="#uc-files-cm"><span class="std std-ref">p
 <td><p><img alt="" class="no-scaled-link gficon" src="_images/status_t.svg" style="width: 16px; height: 16px;" /> Type changed (e.g. regular file became a symlink)</p></td>
 </tr>
 <tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/status_m.svg" style="width: 16px; height: 16px;" /> Modified</p></td>
-<td><p><img alt="" class="no-scaled-link gficon" src="_images/status_u.svg" style="width: 16px; height: 16px;" /> Merge conflict (only in Uncommitted Changes)</p></td>
+<td><p><img alt="" class="no-scaled-link gficon" src="_images/status_u.svg" style="width: 16px; height: 16px;" /> Merge conflict (only in the Working Directory)</p></td>
 </tr>
 </tbody>
 </table>
@@ -268,12 +268,12 @@ or <a class="reference internal" href="#uc-files-cm"><span class="std std-ref">p
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">1</kbd></kbd> to get keyboard focus on the Sidebar.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">2</kbd></kbd> to get keyboard focus on the Commit History.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd></kbd> to get keyboard focus on the File List.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">4</kbd></kbd> to get keyboard focus on the Diff View.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">[</kbd></kbd> to select the previous file in the list.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">]</kbd></kbd> to select the next file in the list.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">1</kbd> to get keyboard focus on the Sidebar.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">2</kbd> to get keyboard focus on the Commit History.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd> to get keyboard focus on the File List.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">4</kbd> to get keyboard focus on the Diff View.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">[</kbd> to select the previous file in the list.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">]</kbd> to select the next file in the list.</div>
 </div>
 </div>
 </section>
@@ -286,7 +286,7 @@ or <a class="reference internal" href="#uc-files-cm"><span class="std std-ref">p
 or <img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" />  <a class="reference internal" href="#history-cm"><span class="std std-ref">right-click to perform an action with the commit</span></a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">2</kbd></kbd> to get keyboard focus on the Commit History.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">2</kbd> to get keyboard focus on the Commit History.</p>
 </div>
 <section id="overview-of-the-commit-history">
 <span id="history-101"></span><h2>Overview of the Commit History<a class="headerlink" href="#overview-of-the-commit-history" title="Link to this heading">¶</a></h2>
@@ -317,7 +317,7 @@ or <img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" st
 </li>
 <li><p><strong>Commit Summary:</strong> The first line of the commit message. An ellipsis (…) indicates that the message is truncated; hover over it to reveal the full message in a tooltip.</p></li>
 <li><p><strong>Author Name/Date:</strong> Who created the commit and when. See <a class="reference internal" href="#author-vs-committer"><span class="std std-ref">Author vs. Committer</span></a>.</p></li>
-<li><p><strong>Search Bar:</strong> See <a class="reference internal" href="#find-commit"><span class="std std-ref">Finding a commit</span></a>.</p></li>
+<li><p><strong>Search Bar:</strong> Bring it up with <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">F</kbd> when the Commit History has keyboard focus. See <a class="reference internal" href="#find-commit"><span class="std std-ref">Finding a commit</span></a>.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -350,7 +350,7 @@ For example, you can tweak:</p>
 <section id="finding-a-commit">
 <span id="find-commit"></span><h2>Finding a commit<a class="headerlink" href="#finding-a-commit" title="Link to this heading">¶</a></h2>
 <p>The Commit History has a <img alt="" class="no-scaled-link gficon" src="_images/magnifying-glass.svg" style="width: 16px; height: 16px;" /> <strong>Search Bar</strong>.
-Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">F</kbd></kbd> to invoke it (the Commit History must have keyboard focus).
+Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">F</kbd> to invoke it (the Commit History must have keyboard focus).
 Start typing, and a yellow highlight will appear in matching commits.</p>
 <figure class="align-default" id="id3">
 <img alt="_images/searchword.png" src="_images/searchword.png" />
@@ -368,7 +368,7 @@ Start typing, and a yellow highlight will appear in matching commits.</p>
 <p class="admonition-title">Tip</p>
 <div class="line-block">
 <div class="line">The <kbd class="kbd docutils literal notranslate">/</kbd> key also works for bringing up the Search Bar.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">F3</kbd> or <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">F3</kbd></kbd> to find the next or previous occurrence of the search term.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">F3</kbd> or <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">F3</kbd> to find the next or previous occurrence of the search term.</div>
 <div class="line">Press <kbd class="kbd docutils literal notranslate">Esc</kbd> to close the Search Bar.</div>
 </div>
 </div>
@@ -418,7 +418,7 @@ To find an old commit in a long-lived repository, you may want to review
 Much like a Web browser, you can go “back” and “forward” among the items you’ve viewed recently.</p>
 <p>To return to an item you’ve previously visited, use the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/back.svg" style="width: 16px; height: 16px;" /><span> Back</span></span>
 and <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/forward.svg" style="width: 16px; height: 16px;" /><span> Forward</span></span> buttons in the Tool Bar, or press
-<kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">←</kbd></kbd> and <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">→</kbd></kbd>. You can also use your mouse’s back/forward buttons.</p>
+<kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">←</kbd> and <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">→</kbd>. You can also use your mouse’s back/forward buttons.</p>
 </section>
 <section id="advanced-chronological-vs-topological-sorting">
 <span id="chrono-topo"></span><h2>Advanced: Chronological vs. Topological sorting<a class="headerlink" href="#advanced-chronological-vs-topological-sorting" title="Link to this heading">¶</a></h2>
@@ -461,7 +461,7 @@ However, the graph can get messy when multiple branches receive commits in the s
 <tbody>
 <tr class="row-even"><td><p>New Branch Here</p></td>
 <td><p>Create a new branch that will point to this commit.
-See <a class="reference internal" href="#new-branch"><span class="std std-ref">Creating a new branch</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/branches#new-branch"><span class="std std-ref">Creating a new branch</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Tag This Commit</p></td>
 <td><p>Create a tag on this commit.</p></td>
@@ -474,7 +474,7 @@ See <a class="reference internal" href="#new-branch"><span class="std std-ref">C
 </tr>
 <tr class="row-even"><td><p>Cherry Pick</p></td>
 <td><p>Apply the changes from this commit to your working directory.
-See <a class="reference internal" href="#cherrypick"><span class="std std-ref">Cherry-picking a commit from another branch</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/advcommit#cherrypick"><span class="std std-ref">Cherry-picking a commit from another branch</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Revert</p></td>
 <td><p>Undo the changes in this commit. Reversal applied to your working directory.</p></td>
@@ -571,23 +571,23 @@ metadata (parents, message, signature). Because of this unique hash, commits are
 <strong>immutable</strong>: the slightest modification to an existing commit would result in
 a different hash, and thereby a different commit.</p>
 </section>
-<section id="jumping-to-uncommitted-changes">
-<span id="uc-101"></span><h2>Jumping to Uncommitted Changes<a class="headerlink" href="#jumping-to-uncommitted-changes" title="Link to this heading">¶</a></h2>
-<p>In GitFourchette, you can prepare commits from the <strong>Uncommitted Changes</strong> view. You can
-get there:</p>
+<section id="jumping-to-the-working-directory">
+<span id="workdir-101"></span><h2>Jumping to the Working Directory<a class="headerlink" href="#jumping-to-the-working-directory" title="Link to this heading">¶</a></h2>
+<p>In GitFourchette, you can prepare commits from the <strong>Working Directory</strong>. You can get
+there:</p>
 <ul class="simple">
-<li><p><strong>From the Sidebar:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> (or just <span class="guilabel">Changes</span> if the sidebar is narrow).</p></li>
-<li><p><strong>From the Commit History:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> at the top of the history.</p></li>
-<li><p><strong>From anywhere:</strong> Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">U</kbd></kbd>.</p></li>
+<li><p><strong>From the Sidebar:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span>.</p></li>
+<li><p><strong>From the Commit History:</strong> Click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span> at the top of the history.</p></li>
+<li><p><strong>From anywhere:</strong> Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">G</kbd> (think “Go” to workdir).</p></li>
 </ul>
-<p>Uncommitted Changes displays any files in your working directory
-that have changed since the <em>HEAD</em> commit:</p>
-<figure class="align-default" id="figure-uncommitted-changes">
-<img alt="_images/uncommittedchanges.png" src="_images/uncommittedchanges.png" />
+<p>The Working Directory displays any files that have changed since the <em>HEAD</em>
+commit:</p>
+<figure class="align-default" id="figure-working-directory">
+<img alt="_images/workdir.png" src="_images/workdir.png" />
 </figure>
 <script>
     document.addEventListener("DOMContentLoaded", () => addFigurePins(
-        "#figure-uncommitted-changes",
+        "#figure-working-directory",
         {x:18, y:33, title:'Unstaged Files'},
         {x:18, y:75, title:'Staged Files'},
         {x:66, y:56, title:'Diff View'},
@@ -601,9 +601,8 @@ working version and the state of this file at the HEAD commit.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The number of changes is shown next to
-<span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Uncommitted Changes</span></span> in the Sidebar
-if GitFourchette has an up-to-date model of your working directory.</p>
+<p>The number of uncommitted changes is shown next to
+<span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-workdir.svg" style="width: 16px; height: 16px;" /><span> Working Directory</span></span> in the Sidebar.</p>
 </div>
 </section>
 <section id="staging-and-unstaging-files">
@@ -625,17 +624,17 @@ you’ve staged have moved to the <span class="guilabel">Staged</span> box.</p>
 The file will move back to the <span class="guilabel">Unstaged</span> box.</p>
 <p>To get rid of an unwanted modification in the <span class="guilabel">Unstaged</span> box, select
 the unstaged file and click <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-discard.svg" style="width: 16px; height: 16px;" /><span> Discard</span></span>.
-(You can <a class="reference internal" href="#rescue-changes"><span class="std std-ref">rescue</span></a> changes that you’ve discarded by mistake.)</p>
+(You can <a class="reference internal" href="#document-guide/changes#rescue-changes"><span class="std std-ref">rescue</span></a> changes that you’ve discarded by mistake.)</p>
 <p>When you’re satisfied with your selection of <strong>staged</strong> files, click the large
 <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-commit.svg" style="width: 16px; height: 16px;" /><span> Commit files</span></span> button. This brings up the <a class="reference internal" href="#commit-dialog"><span class="std std-ref">Commit
 dialog</span></a> where you can describe your commit and finalize it.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd></kbd> to get keyboard focus on the file lists.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd> to get keyboard focus on the file lists.</div>
 <div class="line">Press <kbd class="kbd docutils literal notranslate">Enter</kbd> to move the selected files to the other box (unstaged // staged).</div>
 <div class="line">Press <kbd class="kbd docutils literal notranslate">Del</kbd> to discard changes to the selected unstaged files.</div>
-<div class="line">Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd> to finalize the commit.</div>
+<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">S</kbd> to finalize the commit.</div>
 <div class="line">Middle-click on a file to stage or unstage it (this behavior must be enabled in <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Advanced ‣ Middle-click file name to stage</span>).</div>
 </div>
 </div>
@@ -673,14 +672,14 @@ now—GitFourchette doesn’t send it to any remote servers automatically.</p>
 <p>Notice that right after creating a commit, your HEAD branch has moved to your
 new commit (<img alt="" class="no-scaled-link gficon" src="_images/refbox-lbhead.png" style="height: 16px;" />) but the remote server
 hasn’t budged (<img alt="" class="no-scaled-link gficon" src="_images/refbox-rb.png" style="height: 16px;" />).</p>
-<p>This is nice, because it gives you a chance to <a class="reference internal" href="#amend"><span class="std std-ref">amend</span></a> your commit
+<p>This is nice, because it gives you a chance to <a class="reference internal" href="#document-guide/advcommit#amend"><span class="std std-ref">amend</span></a> your commit
 before anyone knows you’ve made a mistake in it.</p>
-<p>Once you’re satisfied with your work, <a class="reference internal" href="#push-branch"><span class="std std-ref">push</span></a> your branch to a
+<p>Once you’re satisfied with your work, <a class="reference internal" href="#document-guide/pullpush#push-branch"><span class="std std-ref">push</span></a> your branch to a
 remote so the world can see what you’ve been working on.</p>
 </section>
 </section>
-<span id="document-guide/changes"></span><section id="managing-the-uncommitted-changes">
-<h1>Managing the Uncommitted Changes<a class="headerlink" href="#managing-the-uncommitted-changes" title="Link to this heading">¶</a></h1>
+<span id="document-guide/changes"></span><section id="managing-changes-in-the-working-directory">
+<h1>Managing Changes in the Working Directory<a class="headerlink" href="#managing-changes-in-the-working-directory" title="Link to this heading">¶</a></h1>
 <p>This chapter will teach you some techniques to manage and edit your uncommitted
 changes so you can prepare commits with more precision.  We’ll assume you’re
 already familiar with staging and unstaging files (see <a class="reference internal" href="#document-guide/commit"><span class="doc">Making a Commit</span></a>).</p>
@@ -692,8 +691,8 @@ still be working on other parts of that file.</p>
 a commit.  The <a class="reference internal" href="#document-guide/diff"><span class="doc">Diff View</span></a> lets you stage small pieces of code in a
 file:</p>
 <ul class="simple">
-<li><p>You can <a class="reference internal" href="#diff-hunk-tools"><span class="std std-ref">stage a single hunk</span></a> without staging the full file.</p></li>
-<li><p>You can even <a class="reference internal" href="#diff-line-tools"><span class="std std-ref">stage individual lines</span></a> if a hunk isn’t granular enough.</p></li>
+<li><p>You can <a class="reference internal" href="#document-guide/diff#diff-hunk-tools"><span class="std std-ref">stage a single hunk</span></a> without staging the full file.</p></li>
+<li><p>You can even <a class="reference internal" href="#document-guide/diff#diff-line-tools"><span class="std std-ref">stage individual lines</span></a> if a hunk isn’t granular enough.</p></li>
 </ul>
 <figure class="align-default" id="id1">
 <img alt="_images/diffselection.png" src="_images/diffselection.png" />
@@ -765,7 +764,7 @@ They cannot be shared with others (unlike “shelves” in Perforce).</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd> to create a new stash.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">S</kbd> to create a new stash.</p>
 </div>
 </section>
 <section id="rescuing-changes-that-you-discarded-by-mistake">
@@ -786,13 +785,13 @@ patcher is a bit brittle for now and vanilla <cite>git apply</cite> is more robu
 <p>You can customize how many files to keep in the trash in <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Trash</span>.</p>
 </div>
 </section>
-<section id="file-list-context-menu-in-uncommitted-changes">
-<span id="uc-files-cm"></span><h2>File List context menu (in Uncommitted Changes)<a class="headerlink" href="#file-list-context-menu-in-uncommitted-changes" title="Link to this heading">¶</a></h2>
+<section id="file-list-context-menu-in-the-working-directory">
+<span id="workdir-files-cm"></span><h2>File List context menu (in the Working Directory)<a class="headerlink" href="#file-list-context-menu-in-the-working-directory" title="Link to this heading">¶</a></h2>
 <p>The Stage/Unstage/Discard buttons around the file lists should cover most of
 your basic staging needs.</p>
 <p><img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> Right-click on a file in one of the File Lists to open a context menu with advanced operations:</p>
 <table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Actions in the File List context menu (from Uncommitted Changes)</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
+<caption><span class="caption-text">Actions in the File List context menu (in the Working Directory)</span><a class="headerlink" href="#id4" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 75.0%" />
@@ -864,7 +863,7 @@ than the entire file.</p>
 </figure>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">4</kbd></kbd> to get keyboard focus on the Diff View.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">4</kbd> to get keyboard focus on the Diff View.</p>
 </div>
 <section id="old-and-new-revisions">
 <h2>Old and new revisions<a class="headerlink" href="#old-and-new-revisions" title="Link to this heading">¶</a></h2>
@@ -1067,7 +1066,7 @@ the usual line selection actions (stage, discard, etc.).</p>
 i.e. the currently checked-out branch.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">H</kbd></kbd> to jump to the <em>HEAD</em>. (Mac: <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Cmd</kbd> <kbd class="kbd docutils literal notranslate">D</kbd></kbd>)</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">H</kbd> to jump to the <em>HEAD</em>.</p>
 </div>
 <section id="creating-a-new-branch">
 <span id="new-branch"></span><h2>Creating a new branch<a class="headerlink" href="#creating-a-new-branch" title="Link to this heading">¶</a></h2>
@@ -1112,18 +1111,18 @@ Otherwise, the repository will remain on the current branch.</p></td>
 <tr class="row-odd"><td><p>Track upstream branch</p></td>
 <td><p>If a remote branch points to the target commit for the new branch,
 you can make it the upstream for the new branch.
-(You can always <a class="reference internal" href="#set-upstream"><span class="std std-ref">change the upstream</span></a> later.)</p></td>
+(You can always <a class="reference internal" href="#document-guide/pullpush#set-upstream"><span class="std std-ref">change the upstream</span></a> later.)</p></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">B</kbd></kbd> to create a new branch on the current HEAD commit.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">B</kbd> to create a new branch on the current HEAD commit.</p>
 </div>
 </section>
 <section id="switching-to-another-branch">
 <span id="switch-branch"></span><h2>Switching to another branch<a class="headerlink" href="#switching-to-another-branch" title="Link to this heading">¶</a></h2>
-<p>You can switch to another branch from the <a class="reference internal" href="#tour-sidebar"><span class="std std-ref">Sidebar</span></a>,
+<p>You can switch to another branch from the <a class="reference internal" href="#document-guide/uitour#tour-sidebar"><span class="std std-ref">Sidebar</span></a>,
 or from the <a class="reference internal" href="#document-guide/history"><span class="doc">Commit History</span></a>.</p>
 <ul class="simple">
 <li><p>From the Sidebar, <img alt="Double-click" class="no-scaled-link gficon" src="_images/lmbdouble.svg" style="height: 16px;" /> double-click any <strong>local branch</strong>. You will be asked to confirm the switch.
@@ -1248,15 +1247,15 @@ a crossed-out eye icon (<img alt="" class="no-scaled-link gficon" src="_images/v
 See also: <a class="reference internal" href="#document-guide/conflicts"><span class="doc">Resolving Merge Conflicts</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>Fetch (upstream)</p></td>
-<td><p>Download new commits from the <a class="reference internal" href="#set-upstream"><span class="std std-ref">upstream branch</span></a>,
+<td><p>Download new commits from the <a class="reference internal" href="#document-guide/pullpush#set-upstream"><span class="std std-ref">upstream branch</span></a>,
 but don’t bring them into the local branch.
 (You can look at the new commits in the Commit History and decide to merge later on.)
-See <a class="reference internal" href="#fetch-branch"><span class="std std-ref">Fetching new commits on a branch</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/pullpush#fetch-branch"><span class="std std-ref">Fetching new commits on a branch</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Pull From (upstream)</p></td>
-<td><p>Download new commits from the <a class="reference internal" href="#set-upstream"><span class="std std-ref">upstream</span></a>,
+<td><p>Download new commits from the <a class="reference internal" href="#document-guide/pullpush#set-upstream"><span class="std std-ref">upstream</span></a>,
 then bring them into the local branch, via a merge commit if necessary.
-See <a class="reference internal" href="#pull-branch"><span class="std std-ref">Pulling new commits into your branch</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/pullpush#pull-branch"><span class="std std-ref">Pulling new commits into your branch</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>Fast-forward to (upstream)</p></td>
 <td><p>Move the tip of the branch to the tip of the upstream branch
@@ -1264,11 +1263,11 @@ See <a class="reference internal" href="#pull-branch"><span class="std std-ref">
 </tr>
 <tr class="row-odd"><td><p>Push to (upstream)</p></td>
 <td><p>Publish your new commits to the upstream branch (on the remote).
-See <a class="reference internal" href="#push-branch"><span class="std std-ref">Pushing a branch to a remote</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/pullpush#push-branch"><span class="std std-ref">Pushing a branch to a remote</span></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>Upstream branch</p></td>
 <td><p>Select which remote branch the local branch should track.
-See <a class="reference internal" href="#set-upstream"><span class="std std-ref">Setting an upstream branch</span></a>.</p></td>
+See <a class="reference internal" href="#document-guide/pullpush#set-upstream"><span class="std std-ref">Setting an upstream branch</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Rename</p></td>
 <td><p>Rename the branch locally (won’t affect the upstream branch).</p></td>
@@ -1359,7 +1358,7 @@ for more information.)</p></li>
 the pull, and you’ll have a chance to confirm or cancel.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">P</kbd></kbd> to pull the current branch.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">P</kbd> to pull the current branch.</p>
 </div>
 </section>
 <section id="pushing-a-branch-to-a-remote">
@@ -1429,7 +1428,7 @@ and/or cause data loss!</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">P</kbd></kbd> to push the current branch.</p>
+<p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">P</kbd> to push the current branch.</p>
 </div>
 </section>
 </section>
@@ -1599,9 +1598,9 @@ and pick an option under <span class="guilabel">Sort Remote Branches By</span>.<
 <h1>Advanced Commit Techniques<a class="headerlink" href="#advanced-commit-techniques" title="Link to this heading">¶</a></h1>
 <section id="setting-aside-your-commit-message-for-later">
 <span id="commit-message-draft"></span><h2>Setting aside your commit message for later<a class="headerlink" href="#setting-aside-your-commit-message-for-later" title="Link to this heading">¶</a></h2>
-<p>If you back out of the <a class="reference internal" href="#commit-dialog"><span class="std std-ref">Commit dialog</span></a> by clicking
+<p>If you back out of the <a class="reference internal" href="#document-guide/commit#commit-dialog"><span class="std std-ref">Commit dialog</span></a> by clicking
 <span class="guilabel">Cancel</span>, GitFourchette will save your message as a draft.  The draft message
-is shown in the <em>Uncommitted Changes</em> row at the top of the Commit History.</p>
+is shown in the <em>Working Directory</em> row at the top of the Commit History.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/messagedraft.png" src="_images/messagedraft.png" />
 <figcaption>
@@ -1610,6 +1609,8 @@ is shown in the <em>Uncommitted Changes</em> row at the top of the Commit Histor
 </figure>
 <p>Next time you press the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-commit.svg" style="width: 16px; height: 16px;" /><span> Commit files</span></span> button,
 the Commit dialog will fill in the commit message with your draft.</p>
+<p>To clear the draft message, <img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> right-click <em>Working Directory</em> in the Commit
+History, then choose <em>Clear Draft Message</em>.</p>
 </section>
 <section id="amending-a-commit">
 <span id="amend"></span><h2>Amending a commit<a class="headerlink" href="#amending-a-commit" title="Link to this heading">¶</a></h2>
@@ -1635,10 +1636,10 @@ confident with Git.</p>
 (If you simply want to edit the HEAD commit’s message, you can actually
 leave the Staged box empty here.)</p></li>
 <li><p>Click the pulldown arrow attached to the right of the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/git-commit.svg" style="width: 16px; height: 16px;" /><span> Commit files</span></span> button.
-In the menu that appears, choose <span class="guilabel">Amend latest commit</span>. (Or just press <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">S</kbd></kbd>.)</p></li>
+In the menu that appears, choose <span class="guilabel">Amend latest commit</span>. (Or just press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">Shift</kbd> <kbd class="kbd docutils literal notranslate">S</kbd>.)</p></li>
 </ol>
 <p>The “Amend Commit” window appears. It’s very similar to the
-<a class="reference internal" href="#commit-dialog"><span class="std std-ref">“Commit” dialog</span></a>
+<a class="reference internal" href="#document-guide/commit#commit-dialog"><span class="std std-ref">“Commit” dialog</span></a>
 we’ve walked through earlier. One key difference is that “Amend Commit”
 fills in the message of the HEAD commit for you.
 You can leave it be, or you can edit it.</p>
@@ -1691,7 +1692,7 @@ originate from the cherry-picked commit or not!</p>
 </section>
 <section id="saving-a-custom-signature-in-a-commit">
 <span id="custom-signature"></span><h2>Saving a custom signature in a commit<a class="headerlink" href="#saving-a-custom-signature-in-a-commit" title="Link to this heading">¶</a></h2>
-<p>In the <a class="reference internal" href="#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Customize
+<p>In the <a class="reference internal" href="#document-guide/commit#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Customize
 Signature</span> checkbox.  Tick it to edit the author/committer’s identity and
 timestamp that will be associated with the commit.</p>
 <figure class="align-default" id="id2">
@@ -1739,10 +1740,10 @@ commit will have two parents instead of one.</p>
 restricted, such as making a commit or switching branches.  So, it’s best to
 resolve the conflict as soon as you can.</p>
 <p>As long as your working directory contains conflicted files, a <strong>yellow
-“Merging” banner</strong> appears below the Sidebar, and the Uncommitted Changes view
-lists pending conflicts with a question-mark icon (<img alt="" class="no-scaled-link gficon" src="_images/status_u.svg" style="width: 16px; height: 16px;" />).  Select
-one of the conflicting files, and a Conflict View appears in lieu of the usual
-Diff View.</p>
+“Merging” banner</strong> appears below the Sidebar, and the file lists in the Working
+Directory show pending conflicts with a question-mark icon (<img alt="" class="no-scaled-link gficon" src="_images/status_u.svg" style="width: 16px; height: 16px;" />).
+Select one of the conflicting files, and a Conflict View appears in lieu of the
+usual Diff View.</p>
 <figure class="align-default" id="id1">
 <img alt="_images/bigmerge.png" src="_images/bigmerge.png" />
 <figcaption>
@@ -1852,7 +1853,7 @@ will have, once created.</p>
 <img alt="_images/mergeparents.png" src="_images/mergeparents.png" />
 <figcaption>
 <p><span class="caption-text">Preview of the future merge commit’s parents in the graph. Note the two
-dashed lines linking Uncommitted Changes to the branches being merged.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+dashed lines linking the Working Directory to the branches being merged.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </div>
@@ -1920,7 +1921,7 @@ funding, and how much free time I can carve out for the project.</p>
 </div>
     <div class="footer" role="contentinfo">
     &#169; Copyright 2025 Iliyas Jorio.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.0.
     </div>
   </body>
 </html>
