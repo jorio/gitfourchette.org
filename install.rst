@@ -29,9 +29,6 @@ This is the easiest way to try out |App|.
 ..
     - macOS builds are available although macOS isn't the main target: :gfold:`.............à remplir quand c'est lancé`
 
-..
-    .. note:: The AppImage is self-contained; your desktop environment theme will not apply to the AppImage version.
-
 Run from source using your system’s Qt libraries
 ------------------------------------------------
 
@@ -43,7 +40,7 @@ This method gives you the best integration with your desktop environment.
     :header-rows: 0
 
     * - Ubuntu 24.10+
-      - ``apt install python3-pygit2 python3-pygments python3-pyqt6 libqt6svg6``
+      - ``apt install python3-pygit2 python3-pygments python3-pyqt6.qtsvg``
 
     * - Fedora 41+
       - ``dnf install python3-pygit2 python3-pygments python3-pyqt6``
