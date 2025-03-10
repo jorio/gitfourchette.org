@@ -31,12 +31,18 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "${{ env.PYVER }}", cache: "pip" }
 
-      - run: pip install -r requirements.txt
+      - name: Dependencies
+        run: |
+          pip install -r requirements.txt
+          sudo apt install poppler-utils  # for recyclewebpdf
 
       - run: make fullsite
 
+      - name: Recycle web book PDF if contents unchanged
+        run: ./recyclewebpdf.sh _build/html/_static/GitFourchetteUsersGuide.pdf https://gitfourchette.org/_static/GitFourchetteUsersGuide.pdf
+
       - uses: actions/upload-artifact@v4
-        with: { name: sitecontents.zip, path: _build/html }
+        with: { name: sitecontents, path: _build/html }
 
   deploy:
     permissions:
@@ -65,7 +71,7 @@ jobs:
           git rm -r *
 
       - uses: actions/download-artifact@v4
-        with: { name: sitecontents.zip }
+        with: { name: sitecontents }
 
       - run: |
           git add .
