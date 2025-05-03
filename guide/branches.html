@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=7f25d256" />
+    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=d1347fc2" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/gitfourchette-print.css?v=30764798" />
     
     
@@ -219,6 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="remotes.html">Remotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advcommit.html">Advanced Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conflicts.html">Merge Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Custom Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../localization.html">Localization</a></li>
@@ -426,27 +427,39 @@ on <span class="guilabel">Local Branches</span> and pick an option under <span c
 </section>
 <section id="hiding-branches-in-the-commit-history">
 <span id="hide-branches"></span><h2>Hiding branches in the Commit History<a class="headerlink" href="#hiding-branches-in-the-commit-history" title="Link to this heading">¶</a></h2>
-<p>You can hide any branch from the Commit History. Move your mouse pointer over
-one of the branches in the Sidebar and an eye icon (<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />) will
-appear. Click it, and the branch will be hidden from the graph, as indicated by
-a crossed-out eye icon (<img alt="" class="no-scaled-link gficon" src="../_images/view-hidden.svg" style="width: 16px; height: 16px;" />) in the sidebar.</p>
+<p>You can hide any branch from the Commit History.</p>
+<p>Move your mouse pointer over one of the branches in the Sidebar and an eye icon
+(<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />) will appear. Click it, and the branch will be hidden
+from the graph, as indicated by a crossed-out eye icon (<img alt="" class="no-scaled-link gficon" src="../_images/view-hidden.svg" style="width: 16px; height: 16px;" />).
+To unhide the branch, click the eye icon again.</p>
 <figure class="align-default" id="id5">
-<img alt="../_images/branchhover.png" src="../_images/branchhover.png" />
+<img alt="../_images/sidebar-hideone.png" src="../_images/sidebar-hideone.png" />
 <figcaption>
 <p><span class="caption-text">Hovering over a branch in the Sidebar.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even if you hide a branch, it may still be shown in the Commit History if another visible branch points to the same commit.</p>
+<p>Even if you hide a branch, it may still be shown in the Commit History
+if another visible branch points to the same commit.</p>
 </div>
+<p><span class="gfversion">New in v1.3.0:</span> You can also show a single branch and hide
+all others. Move your mouse cursor over the eye icon in the sidebar, then
+<strong>middle-click</strong> it. An inverted eye icon (<img alt="" class="no-scaled-link gficon" src="../_images/view-exclusive.svg" style="width: 16px; height: 16px;" />) will
+appear, indicating that the graph only displays this one branch.</p>
+<figure class="align-default" id="id6">
+<img alt="../_images/sidebar-hideallbutthis.png" src="../_images/sidebar-hideallbutthis.png" />
+<figcaption>
+<p><span class="caption-text">Hiding all but one branch.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="sidebar-context-menu-for-local-branches">
 <h2>Sidebar context menu for local branches<a class="headerlink" href="#sidebar-context-menu-for-local-branches" title="Link to this heading">¶</a></h2>
 <p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on a local branch in the Sidebar to bring up a context menu with the following actions:</p>
-<div class="table-wrapper colwidths-given docutils container" id="id6">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Actions in the Local Branch context menu (from the Sidebar)</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Actions in the Local Branch context menu (from the Sidebar)</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 75.0%" />
@@ -496,6 +509,12 @@ See <a class="reference internal" href="pullpush.html#set-upstream"><span class=
 <tr class="row-odd"><td><p>New Branch Here</p></td>
 <td><p>Create a new branch on the same target commit.
 See <a class="reference internal" href="#new-branch"><span class="std std-ref">Creating a new branch</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="../_images/view-hidden.svg" style="width: 16px; height: 16px;" /> Hide in Graph</p></td>
+<td><p>Toggle the visibility of this branch in the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="../_images/view-exclusive.svg" style="width: 16px; height: 16px;" /> Hide All But This</p></td>
+<td><p>Toggle the exclusive visibility of this branch in the graph.</p></td>
 </tr>
 </tbody>
 </table>

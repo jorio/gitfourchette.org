@@ -9,7 +9,7 @@
     <title>GitFourchette User’s Guide</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=29da98fa" />
-    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=7f25d256" />
+    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=d1347fc2" />
     <link rel="stylesheet" type="text/css" href="_static/gitfourchette-print.css?v=30764798" />
     <script src="_static/documentation_options.js?v=f0abba37"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="book-cover-page-footer">
-February 2025 (GitFourchette version 1.2.0)
+May 2025 (GitFourchette version 1.3.0)
 <br>&copy; 2025 Iliyas Jorio
 <br>https://gitfourchette.org
 </div>
@@ -309,7 +309,7 @@ or <img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" st
 <li><dl class="simple">
 <dt><strong>Ref Boxes:</strong> Colored boxes shown for each <strong>reference</strong> to this commit by:</dt><dd><ul class="simple">
 <li><p>The tip of a local branch, in purple, e.g. <img alt="" class="no-scaled-link gficon" src="_images/refbox-lb.png" style="height: 16px;" /></p></li>
-<li><p>The tip of a remote branch, in blue-green, e.g. <img alt="" class="no-scaled-link gficon" src="_images/refbox-rb.png" style="height: 16px;" /></p></li>
+<li><p>The tip of a remote branch, in teal, e.g. <img alt="" class="no-scaled-link gficon" src="_images/refbox-rb.png" style="height: 16px;" /></p></li>
 <li><p>Tags, in yellow, e.g. <img alt="" class="no-scaled-link gficon" src="_images/refbox-tag.png" style="height: 16px;" /></p></li>
 </ul>
 </dd>
@@ -821,28 +821,32 @@ See <a class="reference internal" href="#stash-changes"><span class="std std-ref
 <td><p>If this file’s mode has changed (most commonly, the executable bit “+x”),
 you can use this command to restore the previous mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Open Diff In…</p></td>
+<tr class="row-odd"><td><p>Ignore Untracked File</p></td>
+<td><p><span class="gfversion">New in v1.3.0:</span> Add this file to <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code> or <code class="code docutils literal notranslate"><span class="pre">.git/info/exclude</span></code>.
+You will be able to customize the path pattern to your liking.</p></td>
+</tr>
+<tr class="row-even"><td><p>Open Diff In…</p></td>
 <td><p>Open this diff in an external program.
 Set up the external diff tool in
 <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p>Export Diff As Patch</p></td>
+<tr class="row-odd"><td><p>Export Diff As Patch</p></td>
 <td><p>Save this change as a “unified diff” patch file.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Edit In…</p></td>
+<tr class="row-even"><td><p>Edit In…</p></td>
 <td><p>Edit the working copy of this file in an external program.
 Set up the external editor in
 <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p>Edit HEAD Version In…</p></td>
+<tr class="row-odd"><td><p>Edit HEAD Version In…</p></td>
 <td><p>View the “unmodified” revision of this file (as of the HEAD commit)
 in an external program. Set up the external editor in
 <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Open Folder</p></td>
+<tr class="row-even"><td><p>Open Folder</p></td>
 <td><p>Reveal this file in your system’s file manager.</p></td>
 </tr>
-<tr class="row-even"><td><p>Copy Path</p></td>
+<tr class="row-odd"><td><p>Copy Path</p></td>
 <td><p>Copy the absolute path to this file to the clipboard.</p></td>
 </tr>
 </tbody>
@@ -1209,26 +1213,38 @@ on <span class="guilabel">Local Branches</span> and pick an option under <span c
 </section>
 <section id="hiding-branches-in-the-commit-history">
 <span id="hide-branches"></span><h2>Hiding branches in the Commit History<a class="headerlink" href="#hiding-branches-in-the-commit-history" title="Link to this heading">¶</a></h2>
-<p>You can hide any branch from the Commit History. Move your mouse pointer over
-one of the branches in the Sidebar and an eye icon (<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />) will
-appear. Click it, and the branch will be hidden from the graph, as indicated by
-a crossed-out eye icon (<img alt="" class="no-scaled-link gficon" src="_images/view-hidden.svg" style="width: 16px; height: 16px;" />) in the sidebar.</p>
+<p>You can hide any branch from the Commit History.</p>
+<p>Move your mouse pointer over one of the branches in the Sidebar and an eye icon
+(<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />) will appear. Click it, and the branch will be hidden
+from the graph, as indicated by a crossed-out eye icon (<img alt="" class="no-scaled-link gficon" src="_images/view-hidden.svg" style="width: 16px; height: 16px;" />).
+To unhide the branch, click the eye icon again.</p>
 <figure class="align-default" id="id5">
-<img alt="_images/branchhover.png" src="_images/branchhover.png" />
+<img alt="_images/sidebar-hideone.png" src="_images/sidebar-hideone.png" />
 <figcaption>
 <p><span class="caption-text">Hovering over a branch in the Sidebar.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even if you hide a branch, it may still be shown in the Commit History if another visible branch points to the same commit.</p>
+<p>Even if you hide a branch, it may still be shown in the Commit History
+if another visible branch points to the same commit.</p>
 </div>
+<p><span class="gfversion">New in v1.3.0:</span> You can also show a single branch and hide
+all others. Move your mouse cursor over the eye icon in the sidebar, then
+<strong>middle-click</strong> it. An inverted eye icon (<img alt="" class="no-scaled-link gficon" src="_images/view-exclusive.svg" style="width: 16px; height: 16px;" />) will
+appear, indicating that the graph only displays this one branch.</p>
+<figure class="align-default" id="id6">
+<img alt="_images/sidebar-hideallbutthis.png" src="_images/sidebar-hideallbutthis.png" />
+<figcaption>
+<p><span class="caption-text">Hiding all but one branch.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="sidebar-context-menu-for-local-branches">
 <h2>Sidebar context menu for local branches<a class="headerlink" href="#sidebar-context-menu-for-local-branches" title="Link to this heading">¶</a></h2>
 <p><img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on a local branch in the Sidebar to bring up a context menu with the following actions:</p>
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Actions in the Local Branch context menu (from the Sidebar)</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Actions in the Local Branch context menu (from the Sidebar)</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 75.0%" />
@@ -1278,6 +1294,12 @@ See <a class="reference internal" href="#document-guide/pullpush#set-upstream"><
 <tr class="row-odd"><td><p>New Branch Here</p></td>
 <td><p>Create a new branch on the same target commit.
 See <a class="reference internal" href="#new-branch"><span class="std std-ref">Creating a new branch</span></a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-hidden.svg" style="width: 16px; height: 16px;" /> Hide in Graph</p></td>
+<td><p>Toggle the visibility of this branch in the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-exclusive.svg" style="width: 16px; height: 16px;" /> Hide All But This</p></td>
+<td><p>Toggle the exclusive visibility of this branch in the graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1415,10 +1437,10 @@ bypass this restriction and overwrite the remote branch with the contents of you
 </tbody>
 </table>
 <p>After a successful push, notice that the remote branch now points to the same
-commit as your local branch. The Commit History displays the tip of a remote
-branch with a blue-green box, which you should now see next to the purple box
-for your local branch (e.g.
-<img alt="" class="no-scaled-link gficon" src="_images/refbox-lb.png" style="height: 16px;" /> <img alt="" class="no-scaled-link gficon" src="_images/refbox-rb.png" style="height: 16px;" />).</p>
+commit as your local branch.
+The Commit History displays the tip of a remote
+branch with a teal box, which you should now see next to the purple box
+for your local branch. (e.g. <img alt="" class="no-scaled-link gficon" src="_images/refbox-conjoined.png" style="height: 16px;" />).</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Don’t tick “Force Push” unless you really know what you are doing!</strong>
@@ -1526,6 +1548,12 @@ Won’t have any effect on the server itself.</p></td>
 <tr class="row-even"><td><p>Copy Remote URL</p></td>
 <td><p>Copies the remote’s URL to the clipboard.</p></td>
 </tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-hidden.svg" style="width: 16px; height: 16px;" /> Hide in Graph</p></td>
+<td><p>Toggle the visibility of this remote’s branches in the graph.</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-exclusive.svg" style="width: 16px; height: 16px;" /> Hide All But This</p></td>
+<td><p>Toggle the exclusive visibility of this remote’s branches in the graph.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="admonition tip">
@@ -1572,6 +1600,12 @@ See also: <a class="reference internal" href="#document-guide/conflicts"><span c
 </tr>
 <tr class="row-odd"><td><p>Visit Web Page</p></td>
 <td><p>Open your web browser to the page for this branch on the host’s web site (e.g. github.com).</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-hidden.svg" style="width: 16px; height: 16px;" /> Hide in Graph</p></td>
+<td><p>Toggle the visibility of this branch in the graph.</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/view-exclusive.svg" style="width: 16px; height: 16px;" /> Hide All But This</p></td>
+<td><p>Toggle the exclusive visibility of this branch in the graph.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1871,6 +1905,140 @@ staged files will be reset</strong>.</p>
 merge—<strong>all staged changes will be lost, even if they aren’t
 conflicting!</strong></p>
 </div>
+</section>
+</section>
+<span id="document-guide/commands"></span><section id="custom-commands">
+<h1>Custom Commands<a class="headerlink" href="#custom-commands" title="Link to this heading">¶</a></h1>
+<p><span class="gfversion">New in v1.3.0.</span></p>
+<p>You can augment GitFourchette’s capabilities with <strong>custom commands</strong> tailored to your
+workflow. These let you launch commands in a terminal directly from GitFourchette.</p>
+<p>You can even send items that you manipulate in the UI as <strong>arguments</strong> to the
+commands. These include the selected commit, file, branch, etc.</p>
+<p>To define custom commands, go to <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Custom
+Commands</span> and simply enter some commands (one per line). Here is a useful sample
+to get you started:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Feel free to copy/paste this sample into Custom Commands.</span>
+git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span><span class="nv">$COMMIT</span><span class="w">   </span><span class="c1"># &amp;Interactive Rebase</span>
+git<span class="w"> </span>rebase<span class="w"> </span>--continue<span class="w">   </span><span class="c1"># &amp;Continue Rebase</span>
+?<span class="w"> </span>git<span class="w"> </span>rebase<span class="w"> </span>--abort<span class="w">    </span><span class="c1"># &amp;Abort Rebase</span>
+git<span class="w"> </span>diff<span class="w"> </span><span class="nv">$COMMIT</span><span class="w"> </span>HEAD<span class="w">   </span><span class="c1"># Diff Commit With &amp;HEAD</span>
+</pre></div>
+</div>
+<p>After you click OK in the Settings, notice the <cite>Commands</cite> menu that appears in
+the main menu bar. You’re now ready to invoke your commands from this menu.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/commandsmenu.png" src="_images/commandsmenu.png" />
+<figcaption>
+<p><span class="caption-text">The Commands menu that appears once you’ve defined at least one Custom Command.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you’ve chosen to hide the menu bar, you can also access your
+commands via a pulldown menu attached to the <span class="guilabel"><img alt="" class="no-scaled-link gficon" src="_images/terminal.svg" style="width: 16px; height: 16px;" /><span> Terminal</span></span>
+button in the toolbar.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To select which terminal program to use, go to <span class="menuselection">Settings ‣ External Tools ‣ Terminal</span>.</p>
+</div>
+<section id="argument-placeholders">
+<h2>Argument placeholders<a class="headerlink" href="#argument-placeholders" title="Link to this heading">¶</a></h2>
+<p>You may use the following placeholders in your commands:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Token</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>$COMMIT</p></td>
+<td><p>SHA-1 hash of the selected commit in the history</p></td>
+</tr>
+<tr class="row-odd"><td><p>$FILE</p></td>
+<td><p>Path to the selected file (relative)</p></td>
+</tr>
+<tr class="row-even"><td><p>$FILEABS</p></td>
+<td><p>Path to the selected file (absolute)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$FILEDIR</p></td>
+<td><p>Path to rthe selected file’s parent directory (relative)</p></td>
+</tr>
+<tr class="row-even"><td><p>$FILEDIRABS</p></td>
+<td><p>Path to the selected file’s parent directory (absolute)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$HEAD</p></td>
+<td><p>SHA-1 hash of the HEAD commit</p></td>
+</tr>
+<tr class="row-even"><td><p>$HEADBRANCH</p></td>
+<td><p>Ref name of the HEAD branch</p></td>
+</tr>
+<tr class="row-odd"><td><p>$HEADUPSTREAM</p></td>
+<td><p>Ref name of the HEAD branch’s upstream</p></td>
+</tr>
+<tr class="row-even"><td><p>$REF</p></td>
+<td><p>Name of the selected ref in the sidebar (local branches, remote branches, tags)</p></td>
+</tr>
+<tr class="row-odd"><td><p>$REMOTE</p></td>
+<td><p>Name of the selected remote in the sidebar</p></td>
+</tr>
+<tr class="row-even"><td><p>$WORKDIR</p></td>
+<td><p>Path to the repository’s working directory (absolute)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="titles-and-separators">
+<h2>Titles and separators<a class="headerlink" href="#titles-and-separators" title="Link to this heading">¶</a></h2>
+<p>The <code class="code docutils literal notranslate"><span class="pre">#</span></code> character starts a <strong>comment</strong> until the end of the line.</p>
+<p>If you add a comment after a command (on the same line), then the comment will
+serve as the <strong>title</strong> of the command in the menu.</p>
+<p>To create a <strong>separator</strong> in the menu, insert a comment line of dashes
+(<code class="code docutils literal notranslate"><span class="pre">#---</span></code>) in between two commands.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;hello world 1&#39;</span>
+
+<span class="c1"># The command above had no custom title.</span>
+<span class="c1"># Let&#39;s define a custom title for the next one.</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;hello world 2&#39;</span><span class="w">  </span><span class="c1"># Say Hello (this is a custom title)</span>
+
+<span class="c1"># Let&#39;s add a separator in the menu.</span>
+<span class="c1"># -----------------</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;hello world 3&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="keyboard-shortcuts">
+<h2>Keyboard shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Link to this heading">¶</a></h2>
+<p>When you set a custom title for a command, you can define an <strong>accelerator key</strong>
+for this command by inserting <code class="code docutils literal notranslate"><span class="pre">&amp;</span></code> before some letter in the command title.</p>
+<p>For example, titling a command <code class="code docutils literal notranslate"><span class="pre">&amp;Rebase</span></code> would assign accelerator key <kbd class="kbd docutils literal notranslate">R</kbd> to the command.</p>
+<p>You can trigger accelerator keys in one of two ways:</p>
+<ul>
+<li><p>Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">K</kbd>, then your command’s accelerator key (e.g. <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">K</kbd> then <kbd class="kbd docutils literal notranslate">R</kbd>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Let go of <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">K</kbd> before pressing the accelerator key.</p>
+</div>
+</li>
+<li><p>Or, pull down the <span class="menuselection">Commands</span> menu with <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">C</kbd>, then press your accelerator key (e.g. <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">C</kbd> then <kbd class="kbd docutils literal notranslate">R</kbd>).</p></li>
+</ul>
+</section>
+<section id="confirmation-prompt">
+<h2>Confirmation prompt<a class="headerlink" href="#confirmation-prompt" title="Link to this heading">¶</a></h2>
+<p>By default, when you trigger any custom command, GitFourchette will give you a chance to
+review the prepared command before it’s sent to the terminal (with the proper
+substitutions).</p>
+<p>You can turn off this behavior by unticking the checkbox at <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" />
+<span class="menuselection">Settings ‣ Custom Commands ‣ Ask for confirmation before
+running any command</span>.</p>
+<p>If you’ve turned off the confirmation dialog for all commands, you can still
+force it to appear before specific commands. To do so, prepend the commands of
+your choice with the <code class="code docutils literal notranslate"><span class="pre">?</span></code> character. We strongly recommend doing this for
+commands that may have destructive effects!</p>
+<p>For example, <code class="code docutils literal notranslate"><span class="pre">?</span> <span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">--abort</span></code> will <em>always</em> ask you to confirm,
+<em>even</em> if you’ve unticked <cite>Ask for confirmation</cite>.</p>
 </section>
 </section>
 <span id="document-limitations"></span><section id="limitations">
