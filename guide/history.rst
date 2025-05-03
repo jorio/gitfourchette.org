@@ -36,7 +36,7 @@ Overview of the Commit History
 2. **Graph:** A visualization of the branches at this point in history. The dot represents the commit itself.
 3. **Ref Boxes:** Colored boxes shown for each **reference** to this commit by:
     - The tip of a local branch, in purple, e.g. :gfinline:`/assets/screens/refbox-lb.png`
-    - The tip of a remote branch, in blue-green, e.g. :gfinline:`/assets/screens/refbox-rb.png`
+    - The tip of a remote branch, in teal, e.g. :gfinline:`/assets/screens/refbox-rb.png`
     - Tags, in yellow, e.g. :gfinline:`/assets/screens/refbox-tag.png`
 4. **Commit Summary:** The first line of the commit message. An ellipsis (|ellip|) indicates that the message is truncated; hover over it to reveal the full message in a tooltip.
 5. **Author Name/Date:** Who created the commit and when. See :ref:`author-vs-committer`.

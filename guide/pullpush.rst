@@ -137,10 +137,10 @@ before proceeding:
       - This box displays network information during the push.
 
 After a successful push, notice that the remote branch now points to the same
-commit as your local branch. The Commit History displays the tip of a remote
-branch with a blue-green box, which you should now see next to the purple box
-for your local branch (e.g.
-:gfinline:`/assets/screens/refbox-lb.png` |nbsp| :gfinline:`/assets/screens/refbox-rb.png`).
+commit as your local branch.
+The Commit History displays the tip of a remote
+branch with a teal box, which you should now see next to the purple box
+for your local branch. (e.g. :gfinline:`/assets/screens/refbox-conjoined.png`).
 
 .. warning::
     **Don't tick "Force Push" unless you really know what you are doing!**
