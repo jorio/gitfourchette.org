@@ -60,9 +60,9 @@ This method gives you the best integration with your desktop environment.
 
 .. note::
 
-    We recommend pygit2 v1.16.0 or later. However, |App| will remain compatible with pygit2 v1.14.1, with a reduced feature set, at least until the current release of Ubuntu provides a newer version of pygit2.
+    We recommend pygit2 v1.18.0 or later. However, |App| will remain compatible with pygit2 v1.14.1, with a reduced feature set, at least until the current release of Ubuntu provides a newer version of pygit2.
 
-    You can substitute PyQt6 with PySide6. |App| is compatible with both.
+    You can substitute PyQt6 with PySide6 (version 6.9.0 or later). |App| is compatible with both.
 
     Pygments is an optional dependency.
 

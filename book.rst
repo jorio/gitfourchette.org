@@ -15,7 +15,7 @@
     </div>
 
     <div class="book-cover-page-footer">
-    February 2025 (GitFourchette version 1.2.0)
+    May 2025 (GitFourchette version 1.3.0)
     <br>&copy; 2025 Iliyas Jorio
     <br>https://gitfourchette.org
     </div>
