@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
-    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=7f25d256" />
+    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=d1347fc2" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/gitfourchette-print.css?v=30764798" />
     
     
@@ -219,6 +219,7 @@
 <li class="toctree-l2"><a class="reference internal" href="remotes.html">Remotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advcommit.html">Advanced Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conflicts.html">Merge Conflicts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Custom Commands</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../localization.html">Localization</a></li>
@@ -410,28 +411,32 @@ See <a class="reference internal" href="#stash-changes"><span class="std std-ref
 <td><p>If this file’s mode has changed (most commonly, the executable bit “+x”),
 you can use this command to restore the previous mode.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Open Diff In…</p></td>
+<tr class="row-odd"><td><p>Ignore Untracked File</p></td>
+<td><p><span class="gfversion">New in v1.3.0:</span> Add this file to <code class="code docutils literal notranslate"><span class="pre">.gitignore</span></code> or <code class="code docutils literal notranslate"><span class="pre">.git/info/exclude</span></code>.
+You will be able to customize the path pattern to your liking.</p></td>
+</tr>
+<tr class="row-even"><td><p>Open Diff In…</p></td>
 <td><p>Open this diff in an external program.
 Set up the external diff tool in
 <img alt="Settings" class="no-scaled-link gficon" src="../_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p>Export Diff As Patch</p></td>
+<tr class="row-odd"><td><p>Export Diff As Patch</p></td>
 <td><p>Save this change as a “unified diff” patch file.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Edit In…</p></td>
+<tr class="row-even"><td><p>Edit In…</p></td>
 <td><p>Edit the working copy of this file in an external program.
 Set up the external editor in
 <img alt="Settings" class="no-scaled-link gficon" src="../_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-even"><td><p>Edit HEAD Version In…</p></td>
+<tr class="row-odd"><td><p>Edit HEAD Version In…</p></td>
 <td><p>View the “unmodified” revision of this file (as of the HEAD commit)
 in an external program. Set up the external editor in
 <img alt="Settings" class="no-scaled-link gficon" src="../_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ External Tools</span>.</p></td>
 </tr>
-<tr class="row-odd"><td><p>Open Folder</p></td>
+<tr class="row-even"><td><p>Open Folder</p></td>
 <td><p>Reveal this file in your system’s file manager.</p></td>
 </tr>
-<tr class="row-even"><td><p>Copy Path</p></td>
+<tr class="row-odd"><td><p>Copy Path</p></td>
 <td><p>Copy the absolute path to this file to the clipboard.</p></td>
 </tr>
 </tbody>

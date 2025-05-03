@@ -21,6 +21,14 @@ kbd { font-family: system-ui; }
 .gfold {color: #ff4136;}
 .gfhunk {color: #0074d9;}
 
+.gfversion {
+    color: green;
+    font-style: italic;
+    border: 1px solid;
+    padding: 0 8px;
+    border-radius: 8px;
+}
+
 /**********************************************************************
 * FIGURES
 **********************************************************************/
