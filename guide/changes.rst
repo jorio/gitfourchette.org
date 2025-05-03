@@ -140,6 +140,10 @@ your basic staging needs.
       - If this file's mode has changed (most commonly, the executable bit "+x"),
         you can use this command to restore the previous mode.
 
+    * - Ignore Untracked File
+      - :gfversion:`New in v1.3.0:` Add this file to :code:`.gitignore` or :code:`.git/info/exclude`.
+        You will be able to customize the path pattern to your liking.
+
     * - Open Diff In...
       - Open this diff in an external program.
         Set up the external diff tool in
