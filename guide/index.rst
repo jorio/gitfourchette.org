@@ -33,3 +33,4 @@ Contents
     Remotes <remotes>
     Advanced Commits <advcommit>
     Merge Conflicts <conflicts>
+    Custom Commands <commands>

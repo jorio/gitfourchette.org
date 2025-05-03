@@ -48,4 +48,5 @@
     guide/remotes
     guide/advcommit
     guide/conflicts
+    guide/commands
     limitations
