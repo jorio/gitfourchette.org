@@ -162,17 +162,29 @@ Note that this will only change the order of the branches in the Sidebar, not in
 Hiding branches in the Commit History
 -------------------------------------
 
-You can hide any branch from the Commit History. Move your mouse pointer over
-one of the branches in the Sidebar and an eye icon (:gficon:`view-visible`) will
-appear. Click it, and the branch will be hidden from the graph, as indicated by
-a crossed-out eye icon (:gficon:`view-hidden`) in the sidebar.
+You can hide any branch from the Commit History.
 
-.. figure:: /assets/screens/branchhover.png
+Move your mouse pointer over one of the branches in the Sidebar and an eye icon
+(:gficon:`view-visible`) will appear. Click it, and the branch will be hidden
+from the graph, as indicated by a crossed-out eye icon (:gficon:`view-hidden`).
+To unhide the branch, click the eye icon again.
+
+.. figure:: /assets/screens/sidebar-hideone.png
 
     Hovering over a branch in the Sidebar.
 
 .. note::
-    Even if you hide a branch, it may still be shown in the Commit History if another visible branch points to the same commit.
+    Even if you hide a branch, it may still be shown in the Commit History
+    if another visible branch points to the same commit.
+
+:gfversion:`New in v1.3.0:` You can also show a single branch and hide
+all others. Move your mouse cursor over the eye icon in the sidebar, then
+**middle-click** it. An inverted eye icon (:gficon:`view-exclusive`) will
+appear, indicating that the graph only displays this one branch.
+
+.. figure:: /assets/screens/sidebar-hideallbutthis.png
+
+    Hiding all but one branch.
 
 Sidebar context menu for local branches
 ---------------------------------------
@@ -225,6 +237,12 @@ Sidebar context menu for local branches
     * - New Branch Here
       - Create a new branch on the same target commit.
         See :ref:`new-branch`.
+
+    * - :gficon:`view-hidden` Hide in Graph
+      - Toggle the visibility of this branch in the graph.
+
+    * - :gficon:`view-exclusive` Hide All But This
+      - Toggle the exclusive visibility of this branch in the graph.
 
 .. tip::
     | |lmb2| Double-click on a local branch in the Sidebar to **switch** to it.

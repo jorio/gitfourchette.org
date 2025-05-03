@@ -86,6 +86,12 @@ Sidebar context menu for remotes
     * - Copy Remote URL
       - Copies the remote's URL to the clipboard.
 
+    * - :gficon:`view-hidden` Hide in Graph
+      - Toggle the visibility of this remote's branches in the graph.
+
+    * - :gficon:`view-exclusive` Hide All But This
+      - Toggle the exclusive visibility of this remote's branches in the graph.
+
 .. tip::
     | |lmb2| Double-click on a remote to **edit** it.
     | When a remote has keyboard focus in the sidebar, hit :kbd:`Enter` to **edit** it, or :kbd:`Del` to **remove** it.
@@ -123,6 +129,12 @@ Sidebar context menu for remote-tracking branches
 
     * - Visit Web Page
       - Open your web browser to the page for this branch on the host's web site (e.g. github.com).
+
+    * - :gficon:`view-hidden` Hide in Graph
+      - Toggle the visibility of this branch in the graph.
+
+    * - :gficon:`view-exclusive` Hide All But This
+      - Toggle the exclusive visibility of this branch in the graph.
 
 .. tip::
     | |lmb2| Double-click on a remote-tracking branch to **start a local branch** from it.
