@@ -14,10 +14,13 @@ Head over to `GitFourchette on Weblate <https://hosted.weblate.org/projects/gitf
 
 .. rubric:: How to preview your Weblate translation in |App|
 
-Translations are periodically merged from Weblate into |App|'s repo. If you don't wait for a merge to preview your work in |App| itself, you can download an `.mo` file from Weblate for your language (`fr <https://hosted.weblate.org/download/gitfourchette/gitfourchette/fr/?format=mo>`_,
-`it <https://hosted.weblate.org/download/gitfourchette/gitfourchette/it/?format=mo>`_).
+Once a translation is sufficiently fleshed out, it is periodically merged from Weblate into |App|'s repo.
 
-Rename it to the two-letter code for your language (e.g. `fr.mo`) and drop it into ``gitfourchette/assets/lang``. If you've done this correctly, |App| should automatically pick up your new language in |cogwheel| :menuselection:`Settings --> General --> Language`.
+If you don't wait for a merge to preview your work in the UI, you can download an `.mo` file from Weblate for your language
+(e.g. `Spanish .mo file <https://hosted.weblate.org/download/gitfourchette/gitfourchette/es/?format=mo>`_).
+
+Rename the file to the two-letter code for your language (e.g. `es.mo`) and drop it into ``gitfourchette/assets/lang``.
+If you've done this correctly, |App| should automatically pick up your new language in |cogwheel| :menuselection:`Settings --> General --> Language`.
 
 How to work with .po/.mo files (offline)
 ----------------------------------------
