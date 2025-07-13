@@ -15,9 +15,15 @@
     </div>
 
     <div class="book-cover-page-footer">
-    May 2025 (GitFourchette version 1.3.0)
-    <br>&copy; 2025 Iliyas Jorio
-    <br>https://gitfourchette.org
+
+|revdate| (|App| version |version|)
+
+© |revyear| Iliyas Jorio
+
+https://gitfourchette.org
+
+.. raw:: html
+
     </div>
 
     <nav id="single-page-toc">
@@ -46,6 +52,7 @@
     guide/branches
     guide/pullpush
     guide/remotes
+    guide/blame
     guide/advcommit
     guide/conflicts
     guide/commands

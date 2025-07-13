@@ -10,7 +10,13 @@ NONBOOK_FILES = ['index.rst', 'guide/index.rst', 'install.rst']
 project = 'GitFourchette'
 copyright = '%Y Iliyas Jorio'
 author = 'Iliyas Jorio'
-version = "1.0.0"
+version = "1.4.0"
+revdate = "July 2025"
+
+html_context = {
+    "revdate": revdate,
+    "revyear": revdate.split()[-1],
+}
 
 # -----------------------------------------------------------------------------
 # General configuration
@@ -31,6 +37,9 @@ extensions = [
 rst_prolog = """
 .. include:: /snippets/prolog.rst
 """
+
+for k, v in html_context.items():
+    rst_prolog += f".. |{k}| replace:: {v}\n"
 
 #ogp_site_url = 'https://gitfourchette.org'
 #ogp_image = '_static/ogp_image.png'
