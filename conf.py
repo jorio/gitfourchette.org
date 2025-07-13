@@ -23,7 +23,7 @@ html_context = {
 
 nitpicky = True
 
-templates_path = []
+templates_path = ["_templates"]
 
 exclude_patterns = ['_build', 'snippets', 'Thumbs.db', '.DS_Store']
 exclude_patterns += BOOK_FILES
@@ -64,6 +64,20 @@ html_theme_options = {
     "source_repository": "https://github.com/jorio/gitfourchette.org",
     "source_branch": "sphinx",
     "top_of_page_buttons": ["view"],
+}
+
+# Modified from https://pradyunsg.me/furo/customisation/sidebar/#default-design
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/gitfourchette-current-version.html",
+        "sidebar/search.html",
+        "sidebar/scroll-start.html",
+        "sidebar/navigation.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+        "sidebar/variant-selector.html",
+    ]
 }
 
 # -----------------------------------------------------------------------------

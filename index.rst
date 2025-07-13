@@ -13,8 +13,8 @@
     User’s Guide <guide/index>
     localization
     limitations
-    Source Code <https://github.com/jorio/gitfourchette>
-    Donate <https://ko-fi.com/jorio>
+    Source Code (on GitHub) <https://github.com/jorio/gitfourchette>
+    Donate 💙 <https://ko-fi.com/jorio>
 
 .. rubric:: Welcome to your new Git home
 
