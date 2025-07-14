@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Exploring the Commit History" href="history.html" /><link rel="prev" title="Cloning or Creating a Repository" href="newrepo.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Custom Commands" href="commands.html" /><link rel="prev" title="Resolving Merge Conflicts" href="conflicts.html" />
 
     <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>A Tour of the Main Window - GitFourchette</title>
+        <title>Blame &amp; File History - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
@@ -215,7 +215,7 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">User’s Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of User’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="index.html">Welcome!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="newrepo.html">Cloning &amp; Initializing</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Main Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitour.html">Main Window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="history.html">Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commit.html">Making a Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changes.html">Managing Changes</a></li>
@@ -225,7 +225,7 @@
 <li class="toctree-l2"><a class="reference internal" href="remotes.html">Remotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advcommit.html">Advanced Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conflicts.html">Merge Conflicts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="blame.html">Blame &amp; File History</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Blame &amp; File History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Custom Commands</a></li>
 </ul>
 </li>
@@ -253,7 +253,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/jorio/gitfourchette.org/blob/sphinx/guide/uitour.rst?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/jorio/gitfourchette.org/blob/sphinx/guide/blame.rst?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -272,110 +272,107 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="a-tour-of-the-main-window">
-<h1>A Tour of the Main Window<a class="headerlink" href="#a-tour-of-the-main-window" title="Link to this heading">¶</a></h1>
-<p>Once you’ve created or opened a repository in GitFourchette, the main window presents
-you with these elements:</p>
-<figure class="align-default" id="figure-mainwindow">
-<img alt="../_images/mainwindow.png" src="../_images/mainwindow.png" />
+          <section id="blame-file-history">
+<h1>Blame &amp; File History<a class="headerlink" href="#blame-file-history" title="Link to this heading">¶</a></h1>
+<p><span class="gfversion">New in v1.4.0.</span></p>
+<p>The <strong>Blame Window</strong> lets you retrace the history of a specific file. It gives you access to:</p>
+<ul class="simple">
+<li><p>A filtered commit history with only the relevant commits that made changes to this file;</p></li>
+<li><p>A line-by-line breakdown of the last commit that is responsible for each part of the file.</p></li>
+</ul>
+<p>To open the Blame Window, <img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> right-click on any file in the File List, then select <span class="guilabel">Blame File</span>. This is available both in the Working Directory and while exploring commits.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After selecting a file, you can press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">L</kbd> to open the Blame
+Window.</p>
+<p>You can also drag a file from your system’s file manager and drop it on
+GitFourchette’s main window. If the file belongs to the current repository, GitFourchette
+will open a Blame Window for you.</p>
+</div>
+<section id="overview-of-blame-window-controls">
+<h2>Overview of Blame Window controls<a class="headerlink" href="#overview-of-blame-window-controls" title="Link to this heading">¶</a></h2>
+<div style='height: 10px;'></div><figure class="align-default" id="figure-blamewindow">
+<img alt="../_images/blamewindow.png" src="../_images/blamewindow.png" />
 </figure>
 <script>
     document.addEventListener("DOMContentLoaded", () => addFigurePins(
-        "#figure-mainwindow",
-        {x:50, y:12, title:"Tab Bar"},
-        {x:50, y:33, title:"Commit History"},
-        {x: 6, y:50, title:"Sidebar"},
-        {x:23, y:78, title:"File List"},
-        {x:72, y:78, title:"Diff View"},
-        {x:50, y:98, title:"Status Bar"}
+        "#figure-blamewindow",
+        {x:50, y:02, title:'File History Graph'},
+        {x:05, y:11, title:'Back/Forward Buttons'},
+        {x:14, y:11, title:'Newer/Older Buttons'},
+        {x:97, y:11, title:'Reveal Full Commit'},
+        {x:10, y:40, title:'Gutter (Heatmap)'},
+        {x:52, y:65, title:'Commit Information Tooltip'},
     ));
 </script><ol class="arabic simple">
-<li><p><a class="reference internal" href="#tour-tab-bar"><span class="std std-ref">Tab Bar</span></a>: Lets you switch between the open repositories in your session.</p></li>
-<li><p><a class="reference internal" href="#tour-big-widgets"><span class="std std-ref">Commit History</span></a>: A list of commits in the repository.</p></li>
-<li><p><a class="reference internal" href="#tour-sidebar"><span class="std std-ref">Sidebar</span></a>: Lets you jump to various facets of your repository.</p></li>
-<li><p><a class="reference internal" href="#tour-file-list"><span class="std std-ref">File List</span></a>: Files modified by a commit; or list of files with uncommitted changes.</p></li>
-<li><p><a class="reference internal" href="#tour-big-widgets"><span class="std std-ref">Diff View</span></a>: Shows what’s changed in the selected file.</p></li>
-<li><p>Status bar: Tells you if GitFourchette is busy with a long operation, otherwise displays helpful contextual hints.</p></li>
+<li><p><strong>File History Menu:</strong> Displays the relevant commits that contributed to this file. Pull down this menu to examine an older or newer revision of the file (more details below).</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="../_images/back.svg" style="width: 16px; height: 16px;" /> <img alt="" class="no-scaled-link gficon" src="../_images/forward.svg" style="width: 16px; height: 16px;" /> <strong>Back/Forward Buttons:</strong> Use these to return to a revision that you’ve looked at previously. You can also use your mouse’s back/forward buttons.</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="../_images/go-newer.svg" style="width: 16px; height: 16px;" /> <img alt="" class="no-scaled-link gficon" src="../_images/go-older.svg" style="width: 16px; height: 16px;" /> <strong>Newer/Older Buttons:</strong> Use these to navigate to a newer or older revision in the file’s history.</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="../_images/go-window.svg" style="width: 16px; height: 16px;" /> <strong>Reveal Full Commit:</strong> Click this to reveal the current commit in the main window.</p></li>
+<li><p><strong>Blame Gutter:</strong> Line-by-line revision history (more details below).</p></li>
+<li><p><strong>Commit Information Tooltip:</strong> Hover over the Gutter to bring up a tooltip with detailed information about a revision.</p></li>
 </ol>
-<section id="tab-bar">
-<span id="tour-tab-bar"></span><h2>Tab Bar<a class="headerlink" href="#tab-bar" title="Link to this heading">¶</a></h2>
-<p>Use the tab bar to switch between multiple repositories.</p>
-<p>GitFourchette remembers open tabs when you quit. It will automatically restore your tabs
-next time you launch it.</p>
-<p><img alt="Double-click" class="no-scaled-link gficon" src="../_images/lmbdouble.svg" style="height: 16px;" /> Double-click a tab to open the repo’s root directory in your file manager.</p>
-</section>
-<section id="sidebar">
-<span id="tour-sidebar"></span><h2>Sidebar<a class="headerlink" href="#sidebar" title="Link to this heading">¶</a></h2>
-<figure class="align-right" id="id1">
-<img alt="../_images/sidebar.png" src="../_images/sidebar.png" />
-<figcaption>
-<p><span class="caption-text">The Sidebar.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>The sidebar exposes various facets of your repository:</p>
-<ul class="simple">
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-workdir.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="commit.html#workdir-101"><span class="std std-ref">your working directory</span></a>, where you can review the uncommitted changes and prepare a commit;</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-branch.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="branches.html"><span class="doc">local branches</span></a> (including the “HEAD” <img alt="" class="no-scaled-link gficon" src="../_images/git-head.svg" style="width: 16px; height: 16px;" />);</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-remote.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="remotes.html"><span class="doc">remote servers and remote-tracking branches</span></a>;</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-tag.svg" style="width: 16px; height: 16px;" /> tags;</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-stash.svg" style="width: 16px; height: 16px;" /> <a class="reference internal" href="changes.html#stash-changes"><span class="std std-ref">stashes</span></a>;</p></li>
-<li><p><img alt="" class="no-scaled-link gficon" src="../_images/git-submodule.svg" style="width: 16px; height: 16px;" /> submodules.</p></li>
-</ul>
-<p>From the sidebar, you can:</p>
-<ul class="simple">
-<li><p><img alt="Left-click" class="no-scaled-link gficon" src="../_images/lmb.svg" style="height: 16px;" /> <strong>Left-click</strong> on any item to jump to it.</p></li>
-<li><p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on any item to reveal contextual actions.</p></li>
-</ul>
-</section>
-<section id="file-list">
-<span id="tour-file-list"></span><h2>File List<a class="headerlink" href="#file-list" title="Link to this heading">¶</a></h2>
-<p>The File List shows a list of modified files in the working directory or in a past commit.
-In the File List, you can:</p>
-<ul class="simple">
-<li><p><img alt="Left-click" class="no-scaled-link gficon" src="../_images/lmb.svg" style="height: 16px;" /> <strong>Left-click</strong> on a file to show its changes in the Diff View.</p></li>
-<li><p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on a file to perform actions on it. Those depend on
-whether you’re <a class="reference internal" href="history.html#history-files-cm"><span class="std std-ref">exploring a past commit</span></a>
-or <a class="reference internal" href="changes.html#workdir-files-cm"><span class="std std-ref">preparing a new commit</span></a>.</p></li>
-<li><p>Hover over a file to reveal a tooltip with more details about it.</p></li>
-</ul>
-<p>Each file is adorned by a little icon describing its status:</p>
-<div class="table-wrapper table-cancelfont docutils container">
-<table class="table-cancelfont docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_a.svg" style="width: 16px; height: 16px;" /> Added</p></td>
-<td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_r.svg" style="width: 16px; height: 16px;" /> Renamed/moved (and possibly modified)</p></td>
-</tr>
-<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_d.svg" style="width: 16px; height: 16px;" /> Deleted</p></td>
-<td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_t.svg" style="width: 16px; height: 16px;" /> Type changed (e.g. regular file became a symlink)</p></td>
-</tr>
-<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_m.svg" style="width: 16px; height: 16px;" /> Modified</p></td>
-<td><p><img alt="" class="no-scaled-link gficon" src="../_images/status_u.svg" style="width: 16px; height: 16px;" /> Merge conflict (only in the Working Directory)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="commit-history-diff-view">
-<span id="tour-big-widgets"></span><h2>Commit History &amp; Diff View<a class="headerlink" href="#commit-history-diff-view" title="Link to this heading">¶</a></h2>
-<p>Those elements warrant dedicated chapters:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="history.html"><span class="doc">Exploring the Commit History</span></a></p></li>
-<li><p><a class="reference internal" href="diff.html"><span class="doc">Reading and Editing Diffs</span></a></p></li>
-</ul>
-</section>
-<section id="handy-shortcuts">
-<h2>Handy shortcuts<a class="headerlink" href="#handy-shortcuts" title="Link to this heading">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<div class="line-block">
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">1</kbd> to get keyboard focus on the Sidebar.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">2</kbd> to get keyboard focus on the Commit History.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">3</kbd> to get keyboard focus on the File List.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Alt</kbd> <kbd class="kbd docutils literal notranslate">4</kbd> to get keyboard focus on the Diff View.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">[</kbd> to select the previous file in the list.</div>
-<div class="line">Press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">]</kbd> to select the next file in the list.</div>
+<p><img alt="Left-click" class="no-scaled-link gficon" src="../_images/lmb.svg" style="height: 16px;" /> Hold <kbd class="kbd docutils literal notranslate">Shift</kbd> while clicking the newer/older buttons to jump to the top/bottom revisions in the history.</p>
 </div>
+</section>
+<section id="the-file-history-menu">
+<h2>The file history menu<a class="headerlink" href="#the-file-history-menu" title="Link to this heading">¶</a></h2>
+<p>Pull down the File History menu to reveal a list of commits that directly
+contributed to the file (including any uncommitted changes). To explore the
+contents of the file at another point of its history, select any commit in the
+list.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/blamehistory.png" src="../_images/blamehistory.png" />
+<figcaption>
+<p><span class="caption-text">The File History menu in the Blame Window.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This list only shows commits that share ancestry with the commit from which
+you initiated the blame. Changes to this file in unmerged (i.e. unrelated)
+branches aren’t shown.</p>
+<p>The graph shown in the file history menu is a <strong>simplified</strong> representation
+of commit ancestry chains. That is, a link between two commits in the file
+history graph does not always represent a <em>direct</em> parent-child link,
+because any commits that don’t contribute to the file are omitted.</p>
 </div>
+</section>
+<section id="the-blame-gutter">
+<h2>The blame gutter<a class="headerlink" href="#the-blame-gutter" title="Link to this heading">¶</a></h2>
+<figure class="align-right" id="id2">
+<img alt="../_images/blamegutter.png" src="../_images/blamegutter.png" />
+<figcaption>
+<p><span class="caption-text">The Blame Gutter.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Attached to the left side of the code, the Blame Gutter shows which commit is
+responsible for each line in the file. In other words, it tells you
+“who is to blame” for each piece of text in the file.</p>
+<p>The background colors in the Blame Gutter give you an overview of the age of
+each line in the file. Think of these colors as a “heatmap” for recentness: the
+deeper the shade of orange, the more recent the line.</p>
+<p>Any lines that were directly modified by the exact commit that you’ve selected
+in the File History menu are shown in <strong>bold</strong> in the gutter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the gutter’s color scheme, the “age” of a line is relative to the
+revision you’re viewing. A deep orange means that the line is recent
+<em>relative to</em> the revision that is currently selected in the file history
+menu.</p>
+</div>
+<p>Hover over any part of the Blame Gutter to reveal a tooltip with more details about the commit that is to blame for the attached text.</p>
+<p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> Right-click on any section of the Blame Gutter for additional actions:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Blame File at Commit</span> – Explore the contents of the file as of the
+given commit.</p></li>
+<li><p><span class="guilabel">Show Commit in Repo</span> – Select the given commit in the Main Window
+so you can explore this commit in the broader context of the repository.</p></li>
+<li><p><span class="guilabel">Get Commit Info</span> – Shows essentially the same information as the
+Blame Gutter tooltips, in copy/pastable form.</p></li>
+</ul>
 </section>
 </section>
 
@@ -384,23 +381,23 @@ or <a class="reference internal" href="changes.html#workdir-files-cm"><span clas
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="history.html">
+          <a class="next-page" href="commands.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Exploring the Commit History</div>
+                <div class="title">Custom Commands</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="newrepo.html">
+          <a class="prev-page" href="conflicts.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Cloning or Creating a Repository</div>
+                <div class="title">Resolving Merge Conflicts</div>
                 
               </div>
             </a>
@@ -434,12 +431,10 @@ or <a class="reference internal" href="changes.html#workdir-files-cm"><span clas
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">A Tour of the Main Window</a><ul>
-<li><a class="reference internal" href="#tab-bar">Tab Bar</a></li>
-<li><a class="reference internal" href="#sidebar">Sidebar</a></li>
-<li><a class="reference internal" href="#file-list">File List</a></li>
-<li><a class="reference internal" href="#commit-history-diff-view">Commit History &amp; Diff View</a></li>
-<li><a class="reference internal" href="#handy-shortcuts">Handy shortcuts</a></li>
+<li><a class="reference internal" href="#">Blame &amp; File History</a><ul>
+<li><a class="reference internal" href="#overview-of-blame-window-controls">Overview of Blame Window controls</a></li>
+<li><a class="reference internal" href="#the-file-history-menu">The file history menu</a></li>
+<li><a class="reference internal" href="#the-blame-gutter">The blame gutter</a></li>
 </ul>
 </li>
 </ul>

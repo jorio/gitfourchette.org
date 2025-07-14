@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Limitations" href="limitations.html" /><link rel="prev" title="Custom Commands" href="guide/commands.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <link rel="shortcut icon" href="_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
-        <title>Localization - GitFourchette</title>
+        <title>GitFourchette version history - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -201,7 +201,7 @@
     Current version: <b>1.4.0</b>
     <div>
         Released July 2025 
-        &middot; <a href="CHANGELOG.html">Changelog</a>
+        &middot; <a href="#">Changelog</a>
     </div>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -209,7 +209,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul class="current">
+  <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="guide/index.html">User’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of User’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -229,7 +229,7 @@
 <li class="toctree-l2"><a class="reference internal" href="guide/commands.html">Custom Commands</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Localization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localization.html">Localization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="limitations.html">Limitations</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/jorio/gitfourchette">Source Code (on GitHub)</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://ko-fi.com/jorio">Donate 💙</a></li>
@@ -253,7 +253,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/jorio/gitfourchette.org/blob/sphinx/localization.rst?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/jorio/gitfourchette.org/blob/sphinx/CHANGELOG.md?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -272,62 +272,189 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="localization">
-<h1>Localization<a class="headerlink" href="#localization" title="Link to this heading">¶</a></h1>
-<p>You are welcome to improve an existing translation, or to localize GitFourchette to a new language!</p>
-<p>We recommend Weblate to translate the strings.</p>
-<section id="how-to-translate-via-weblate-recommended">
-<h2>How to translate via Weblate (recommended)<a class="headerlink" href="#how-to-translate-via-weblate-recommended" title="Link to this heading">¶</a></h2>
-<p>To localize GitFourchette, you can use Weblate, a convenient localization platform. It’s quick and easy, no need to set up any development tools!</p>
-<p>Head over to <a class="reference external" href="https://hosted.weblate.org/projects/gitfourchette/gitfourchette">GitFourchette on Weblate</a>, pick your language (or create a new one) and translate at your own pace.</p>
-<p class="rubric">How to preview your Weblate translation in GitFourchette</p>
-<p>Once a translation is sufficiently fleshed out, it is periodically merged from Weblate into GitFourchette’s repo.</p>
-<p>If you don’t wait for a merge to preview your work in the UI, you can download an <cite>.mo</cite> file from Weblate for your language
-(e.g. <a class="reference external" href="https://hosted.weblate.org/download/gitfourchette/gitfourchette/es/?format=mo">Spanish .mo file</a>).</p>
-<p>Rename the file to the two-letter code for your language (e.g. <cite>es.mo</cite>) and drop it into <code class="docutils literal notranslate"><span class="pre">gitfourchette/assets/lang</span></code>.
-If you’ve done this correctly, GitFourchette should automatically pick up your new language in <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ General ‣ Language</span>.</p>
-</section>
-<section id="how-to-work-with-po-mo-files-offline">
-<h2>How to work with .po/.mo files (offline)<a class="headerlink" href="#how-to-work-with-po-mo-files-offline" title="Link to this heading">¶</a></h2>
-<p>If you prefer to work offline, this section describes the translation files in <code class="docutils literal notranslate"><span class="pre">gitfourchette/assets/lang</span></code>.</p>
-<p class="rubric">Getting to know the 3 kinds of translation files in <cite>gitfourchette/assets/lang</cite>:</p>
+          <section id="gitfourchette-version-history">
+<h1>GitFourchette version history<a class="headerlink" href="#gitfourchette-version-history" title="Link to this heading">¶</a></h1>
+<section id="id1">
+<h2>1.4.0 (2025-07-14)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>New features:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gitfourchette.pot</span></code> is a template containing reference U.S. English text.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.po</span></code> files, which you can edit in <a class="reference external" href="https://poedit.net">POEdit</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">.mo</span></code> files are compiled binary files that GitFourchette reads from.</p></li>
+<li><p>Blame/File History. Within GitFourchette, right-click any file and select “Blame File”; or, drag any file in your repo from your file manager and drop it onto the main window to view its history.</p></li>
 </ul>
-<p class="rubric">If there’s no <cite>.po</cite> file for your language yet:</p>
-<p>Create a blank <cite>.po</cite> file from the <cite>gitfourchette.pot</cite> template: Start POEdit and go to <span class="menuselection">File ‣ New From POT</span>, then select <code class="docutils literal notranslate"><span class="pre">gitfourchette/assets/lang/gitfourchette.pot</span></code>. POEdit will ask you to pick a target language, and you can begin translating.</p>
-<p>Save the <cite>.po</cite> file in <code class="docutils literal notranslate"><span class="pre">gitfourchette/assets/lang</span></code> and be sure to keep the two-character language name suggested by POEdit.</p>
-<p class="rubric">To sync your <cite>.po</cite> file with new strings from the source code:</p>
-<p>Open your <cite>.po</cite> file in POEdit, then select <span class="menuselection">Translation ‣ Update from POT File</span>.</p>
-<p class="rubric">To preview your work in GitFourchette:</p>
-<p>Generate an <cite>.mo</cite> file beside your <cite>.po</cite> file in <code class="docutils literal notranslate"><span class="pre">gitfourchette/assets/lang</span></code>. To do this in POEdit, run <span class="menuselection">File ‣ Compile to MO</span>. In GitFourchette, your new language should automatically show up in <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ General ‣ Language</span>.</p>
-<p class="rubric">Checklist before submitting your translation:</p>
-<ol class="arabic simple">
-<li><p>In POEdit, run <span class="menuselection">Translation ‣ Validate Translations</span> to make sure you didn’t forget any placeholder tokens.</p></li>
-<li><p>If you like, declutter the <cite>.po</cite> file with <span class="menuselection">Translation ‣ Purge Deleted Translations</span>.</p></li>
-<li><p>Commit <strong>just</strong> your <cite>.po</cite> file and open a pull request on GitHub.</p></li>
-<li><p>Don’t commit the <cite>.mo</cite> file—I’ll regenerate it when I cut a new release of GitFourchette.</p></li>
-</ol>
-<p class="rubric">Batch language processing (for maintenance only)</p>
-<p><strong>To sync the `.pot` and `.po` files</strong> with any new strings from the source code <strong>and automatically generate the `.mo` files</strong>, you can run <code class="docutils literal notranslate"><span class="pre">./update_resources.py</span> <span class="pre">--lang</span></code>. Under the hood, this calls <cite>xgettext</cite> and <cite>msgmerge</cite>.</p>
-<p><strong>To declutter the `.po` files,</strong> you can clean up obsolete entries with <code class="docutils literal notranslate"><span class="pre">./update-resources.py</span> <span class="pre">--clean-po</span></code></p>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>An informative “drop zone” now appears when you drag an item from an external program over the main window. This tells you what will happen upon dropping the item (open repo folder, open repo containing a file, blame file in current repo, apply patch file, clone URL).</p></li>
+<li><p>CheckoutCommitDialog: Also offer Merge, Reset HEAD</p></li>
+<li><p>New branch/tag name validation: Friendly warning if attempting to create a folder with the same name as an existing ref</p></li>
+<li><p>CodeView: Toggling Word Wrap now preserves your scroll position in the document</p></li>
+<li><p>FileList: Reevaluate search term when jumping to another commit</p></li>
+<li><p>DiffGutter: Enable high-DPI custom cursor on Wayland</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix “Detect Renames” may unexpectedly switch to the workdir in rare cases</p></li>
+<li><p>Flatpak distribution: Updated to Pygments 2.19.2 to fix problems with Lua syntax highlighting</p></li>
+</ul>
 </section>
-<section id="localization-guidelines">
-<h2>Localization guidelines<a class="headerlink" href="#localization-guidelines" title="Link to this heading">¶</a></h2>
-<section id="git-jargon">
-<h3>Git jargon<a class="headerlink" href="#git-jargon" title="Link to this heading">¶</a></h3>
-<p>For Git-specific terminology, try to stick to <a class="reference external" href="https://github.com/git/git/tree/master/po">the translations used by Git itself</a>. Note that this isn’t a hard rule because I’ve found that Git translations aren’t always consistent.</p>
-<p>You can also take a look at the [“Pro Git” book](<a class="reference external" href="https://git-scm.com/book">https://git-scm.com/book</a>) in your language for extra context.</p>
-<p>If a jargon term is of utmost importance in Git and it lacks precision in your language, consider keeping it in English, or add the English in parentheses.</p>
-<p>For example, I translated “Push branch” to “Publier la branche (push)” in French. I consider “push” to be such an important concept in Git parlance that I want the user to know exactly which operation I’m referring to—but I’m still providing a French word so that somebody with poor English skills will still grasp what “pushing” means.</p>
+<section id="id2">
+<h2>1.3.0 (2025-05-03)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<p><strong>Upgrade note:</strong> The terminal command template now requires the <code class="docutils literal notranslate"><span class="pre">$COMMAND</span></code> argument placeholder. Please review your terminal command in <em>Settings → External Tools → Terminal</em>.</p>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Custom terminal commands (Settings → Custom Commands) (#37).</p></li>
+<li><p>Sidebar: Hide All But This (#49). You can now show a single branch and hide all others.</p></li>
+<li><p>Add file to .gitignore or .git/info/exclude from untracked file context menu (#42)</p></li>
+</ul>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>GraphView: Conjoined refboxes when a local branch is in sync with its upstream (#12)</p></li>
+<li><p>Add target branch shorthand to default merge commit message (#39)</p></li>
+<li><p>NewBranchDialog: Pre-tick upstream checkbox if branching off remote branch</p></li>
+<li><p>Report mandatory placeholder token errors when launching external tool commands</p></li>
+<li><p>Speed up remote listing and upstream lookup</p></li>
+<li><p>Fix Sidebar/DiffArea would sometimes jump around by a few pixels while temporary banners were shown</p></li>
+<li><p>Override Yaru icon theme’s “scary” red warning icon (#27)</p></li>
+<li><p>More helpful message if Python bindings for QtSvg are missing</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Sidebar: Strip initial slash in nested RefFolder display names (#45)</p></li>
+<li><p>Fix Ctrl+G keyboard shortcut on GNOME</p></li>
+<li><p>Work around window snapping issue on GNOME (#50)</p></li>
+</ul>
+<p>Two other bug fixes originally introduced in v1.2.0 had been dormant until now due to depending on a pygit2 version bump – they are now in full effect:</p>
+<ul class="simple">
+<li><p>Fix push progress wasn’t reported properly during transfer (requires pygit2 1.18.0) (#22)</p></li>
+<li><p>Fix push couldn’t be canceled once the transfer starts (requires pygit2 1.18.0) (#22)</p></li>
+</ul>
 </section>
-<section id="length-variants">
-<h3>Length variants<a class="headerlink" href="#length-variants" title="Link to this heading">¶</a></h3>
-<p>Occasionally, English strings contain a pipe character <code class="docutils literal notranslate"><span class="pre">|</span></code>, e.g.: <code class="docutils literal notranslate"><span class="pre">Working</span> <span class="pre">directory</span> <span class="pre">clean|Workdir</span> <span class="pre">clean</span></code>. For these strings, GitFourchette instructs Qt to use a shorter variant of the string if the full text doesn’t fit in its widget.</p>
-<p>If the English string contains a pipe character, feel free to define as many variants as you like in your translation—you can add more variants than in English, or you can even just provide a single variant if your language is short enough.</p>
+<section id="id3">
+<h2>1.2.1 (2025-03-05)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>User-suggested quality of life improvements:</p>
+<ul class="simple">
+<li><p>GraphView: Copy commit message from context menu (#33)</p></li>
+<li><p>Rephrase some messages (diff too large, delete untracked file) (#27, #28)</p></li>
+<li><p>Add Ptyxis terminal preset (#18)</p></li>
+</ul>
+<p>Other quality of life improvements:</p>
+<ul class="simple">
+<li><p>Friendlier messages related to ‘autocrlf’ and ‘safecrlf’ options (#30)</p></li>
+<li><p>Flatpak distribution: Detach terminal process from application</p></li>
+<li><p>Improve contrast between enabled/disabled SVG icons throughout the UI</p></li>
+<li><p>Pasting a multiline commit message into CommitDialog’s summary input box will correctly split the message across the summary and description boxes</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix error when an external program converts line endings in the workdir with ‘autocrlf’ (#30)</p></li>
+<li><p>Flatpak distribution: Fix terminal spawned in incorrect working directory (#18)</p></li>
+<li><p>Flatpak distribution: Fix Flatpak tool existence check</p></li>
+<li><p>Gracefully handle destruction of parent widget of external tool processes</p></li>
+</ul>
 </section>
+<section id="id4">
+<h2>1.2.0 (2025-02-19)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Open terminal in workdir (#18)</p></li>
+</ul>
+<p>User-suggested quality of life improvements:</p>
+<ul class="simple">
+<li><p>Reword “Uncommitted changes” to “Working directory” to clear up any confusion when there are no changes (#13)</p></li>
+<li><p>Always display the number of uncommitted changes in the sidebar and in the graph; update this whenever the app returns to the foreground (#13)</p></li>
+<li><p>Reword “Discard Changes” context menu entry for untracked files to “Delete File” (#17)</p></li>
+<li><p>Global ref sorting setting (#20)</p></li>
+<li><p>Allow creating a merge commit without fast-forwarding (#21)</p></li>
+<li><p>Dark mode readability tweaks (#24)</p></li>
+<li><p>Command line: Open arbitrary nested paths in a repo (#25)</p></li>
+</ul>
+<p>Other quality of life improvements:</p>
+<ul class="simple">
+<li><p>Improve consistency of ellipses in menus to signify that an action can be canceled</p></li>
+<li><p>Warn user if an external Flatpak isn’t installed when attempting to run it (merge tool, terminals, etc.)</p></li>
+<li><p>Remind user about any unstaged files when about to create an empty commit</p></li>
+<li><p>Allow middle-clicking to quickly stage/unstage selected lines in DiffView (enable in Settings → Advanced → Middle-click)</p></li>
+<li><p>Allow clearing draft commit messages by right-clicking the top row in GraphView</p></li>
+<li><p>After pushing a branch that doesn’t track an upstream, PushDialog will suggest the remote branch you used previously (instead of defaulting to the first one in the repo)</p></li>
+<li><p>Pulling will automatically fast-forward if possible without an extra confirmation step, unless your git config contains “pull.ff=false” (behavior aligned to vanilla git). If fast-forwarding isn’t possible, you will still be prompted to merge.</p></li>
+<li><p>Push/fetch status text uses the ‘tnum’ OpenType feature to avoid transfer rate numbers jumping around if your system font has digits with uneven widths</p></li>
+<li><p>AppImage distribution now compatible with fuse3</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix crash when closing several repos in quick succession, e.g. by holding down Ctrl+W</p></li>
+<li><p>Fix clicking the help button used to close the fast-forward dialog</p></li>
+<li><p>Fix DiffView out of sync with rest of RepoWidget after hiding a the currently-selected branch tip</p></li>
+<li><p>Fix italics in sidebar didn’t update after changing the current branch’s upstream (a remote-tracking branch in italics means it’s the upstream for the current branch)</p></li>
+<li><p>Fix visual artifacts around character-level diffs in DiffView</p></li>
+<li><p>Fix push progress wasn’t reported properly during transfer (requires pygit2 1.18.0) (#22)</p></li>
+<li><p>Fix push couldn’t be canceled once the transfer starts (requires pygit2 1.18.0) (#22)</p></li>
+</ul>
+<p>Breaking changes:</p>
+<ul class="simple">
+<li><p>The keyboard shortcut for “Go to Working Directory” is now Ctrl+G (formerly Ctrl+U, for “Uncommitted Changes”). On most keyboard layouts, Ctrl+G pairs nicely with Ctrl+H for “Go to HEAD”.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>1.1.1 (2025-01-19)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Option to remember passphrases in encrypted keyfiles (#15)</p></li>
+</ul>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>Omit remote name from refboxes when there’s just 1 remote (#11)</p></li>
+<li><p>Display blob hashes in FileList tooltips</p></li>
+<li><p>GraphView tries to use the ‘tnum’ OpenType feature to align ISO-8601 dates if your system font has digits with uneven widths</p></li>
+<li><p>In commit/filename SearchBars, don’t re-trigger a search if appending to a word that is known to have no occurrences</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix custom key file feature in CloneDialog and AddRemote</p></li>
+<li><p>Fix remote branch context menu in a repo with an unborn head</p></li>
+<li><p>GraphSplicer: Fix discrete branch may vanish from graph if moved past another branch by topological sorting</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>1.1.0 (2025-01-05)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Syntax highlighting with Pygments (optional dependency)</p></li>
+</ul>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>Customizable ref indicator width (Settings → Commit History) (#10)</p></li>
+<li><p>Condensed fonts can be disabled (Settings → Advanced) (#10)</p></li>
+<li><p>Improved settings dialog UI</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>1.0.2 (2024-12-16)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<p>Usability improvements:</p>
+<ul class="simple">
+<li><p>Support launching a Flatpak as an external diff/merge tool (#4)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix web URLs in remote-tracking branch context menus (e.g. visit a branch on github.com)</p></li>
+</ul>
+</section>
+<section id="id8">
+<h2>1.0.1 (2024-12-03)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>Friendlier ConflictView UI</p></li>
+<li><p>Improve 3-way merging with external merge tools when there’s no ancestor in the conflict</p></li>
+<li><p>Distinguish submodules and subtrees in SpecialDiff verbiage</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix discarding untracked non-submodule subtrees (#1)</p></li>
+</ul>
+</section>
+<section id="id9">
+<h2>1.0.0 (2024-11-16)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>First public release</p></li>
+</ul>
 </section>
 </section>
 
@@ -336,26 +463,8 @@ If you’ve done this correctly, GitFourchette should automatically pick up your
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="limitations.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Limitations</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="guide/commands.html">
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-              <div class="page-info">
-                <div class="context">
-                  <span>Previous</span>
-                </div>
-                
-                <div class="title">Custom Commands</div>
-                
-              </div>
-            </a>
+          
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -386,14 +495,16 @@ If you’ve done this correctly, GitFourchette should automatically pick up your
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Localization</a><ul>
-<li><a class="reference internal" href="#how-to-translate-via-weblate-recommended">How to translate via Weblate (recommended)</a></li>
-<li><a class="reference internal" href="#how-to-work-with-po-mo-files-offline">How to work with .po/.mo files (offline)</a></li>
-<li><a class="reference internal" href="#localization-guidelines">Localization guidelines</a><ul>
-<li><a class="reference internal" href="#git-jargon">Git jargon</a></li>
-<li><a class="reference internal" href="#length-variants">Length variants</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">GitFourchette version history</a><ul>
+<li><a class="reference internal" href="#id1">1.4.0 (2025-07-14)</a></li>
+<li><a class="reference internal" href="#id2">1.3.0 (2025-05-03)</a></li>
+<li><a class="reference internal" href="#id3">1.2.1 (2025-03-05)</a></li>
+<li><a class="reference internal" href="#id4">1.2.0 (2025-02-19)</a></li>
+<li><a class="reference internal" href="#id5">1.1.1 (2025-01-19)</a></li>
+<li><a class="reference internal" href="#id6">1.1.0 (2025-01-05)</a></li>
+<li><a class="reference internal" href="#id7">1.0.2 (2024-12-16)</a></li>
+<li><a class="reference internal" href="#id8">1.0.1 (2024-12-03)</a></li>
+<li><a class="reference internal" href="#id9">1.0.0 (2024-11-16)</a></li>
 </ul>
 </li>
 </ul>

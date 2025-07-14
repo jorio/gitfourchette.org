@@ -9,8 +9,8 @@
     <title>GitFourchette User’s Guide</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=29da98fa" />
-    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=d1347fc2" />
-    <link rel="stylesheet" type="text/css" href="_static/gitfourchette-print.css?v=30764798" />
+    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=bef91c1d" />
+    <link rel="stylesheet" type="text/css" href="_static/gitfourchette-print.css?v=983f0785" />
     <script src="_static/documentation_options.js?v=f0abba37"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -36,10 +36,9 @@
 </div>
 </div>
 
-<div class="book-cover-page-footer">
-May 2025 (GitFourchette version 1.3.0)
-<br>&copy; 2025 Iliyas Jorio
-<br>https://gitfourchette.org
+<div class="book-cover-page-footer"><p>July 2025 (GitFourchette version 1.4.0)</p>
+<p>© 2025 Iliyas Jorio</p>
+<p><a class="reference external" href="https://gitfourchette.org">https://gitfourchette.org</a></p>
 </div>
 
 <nav id="single-page-toc">
@@ -1907,6 +1906,109 @@ conflicting!</strong></p>
 </div>
 </section>
 </section>
+<span id="document-guide/blame"></span><section id="blame-file-history">
+<h1>Blame &amp; File History<a class="headerlink" href="#blame-file-history" title="Link to this heading">¶</a></h1>
+<p><span class="gfversion">New in v1.4.0.</span></p>
+<p>The <strong>Blame Window</strong> lets you retrace the history of a specific file. It gives you access to:</p>
+<ul class="simple">
+<li><p>A filtered commit history with only the relevant commits that made changes to this file;</p></li>
+<li><p>A line-by-line breakdown of the last commit that is responsible for each part of the file.</p></li>
+</ul>
+<p>To open the Blame Window, <img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> right-click on any file in the File List, then select <span class="guilabel">Blame File</span>. This is available both in the Working Directory and while exploring commits.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>After selecting a file, you can press <kbd class="kbd docutils literal notranslate">Ctrl</kbd> <kbd class="kbd docutils literal notranslate">L</kbd> to open the Blame
+Window.</p>
+<p>You can also drag a file from your system’s file manager and drop it on
+GitFourchette’s main window. If the file belongs to the current repository, GitFourchette
+will open a Blame Window for you.</p>
+</div>
+<section id="overview-of-blame-window-controls">
+<h2>Overview of Blame Window controls<a class="headerlink" href="#overview-of-blame-window-controls" title="Link to this heading">¶</a></h2>
+<div style='height: 10px;'></div><figure class="align-default" id="figure-blamewindow">
+<img alt="_images/blamewindow.png" src="_images/blamewindow.png" />
+</figure>
+<script>
+    document.addEventListener("DOMContentLoaded", () => addFigurePins(
+        "#figure-blamewindow",
+        {x:50, y:02, title:'File History Graph'},
+        {x:05, y:11, title:'Back/Forward Buttons'},
+        {x:14, y:11, title:'Newer/Older Buttons'},
+        {x:97, y:11, title:'Reveal Full Commit'},
+        {x:10, y:40, title:'Gutter (Heatmap)'},
+        {x:52, y:65, title:'Commit Information Tooltip'},
+    ));
+</script><ol class="arabic simple">
+<li><p><strong>File History Menu:</strong> Displays the relevant commits that contributed to this file. Pull down this menu to examine an older or newer revision of the file (more details below).</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="_images/back.svg" style="width: 16px; height: 16px;" /> <img alt="" class="no-scaled-link gficon" src="_images/forward.svg" style="width: 16px; height: 16px;" /> <strong>Back/Forward Buttons:</strong> Use these to return to a revision that you’ve looked at previously. You can also use your mouse’s back/forward buttons.</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="_images/go-newer.svg" style="width: 16px; height: 16px;" /> <img alt="" class="no-scaled-link gficon" src="_images/go-older.svg" style="width: 16px; height: 16px;" /> <strong>Newer/Older Buttons:</strong> Use these to navigate to a newer or older revision in the file’s history.</p></li>
+<li><p><img alt="" class="no-scaled-link gficon" src="_images/go-window.svg" style="width: 16px; height: 16px;" /> <strong>Reveal Full Commit:</strong> Click this to reveal the current commit in the main window.</p></li>
+<li><p><strong>Blame Gutter:</strong> Line-by-line revision history (more details below).</p></li>
+<li><p><strong>Commit Information Tooltip:</strong> Hover over the Gutter to bring up a tooltip with detailed information about a revision.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><img alt="Left-click" class="no-scaled-link gficon" src="_images/lmb.svg" style="height: 16px;" /> Hold <kbd class="kbd docutils literal notranslate">Shift</kbd> while clicking the newer/older buttons to jump to the top/bottom revisions in the history.</p>
+</div>
+</section>
+<section id="the-file-history-menu">
+<h2>The file history menu<a class="headerlink" href="#the-file-history-menu" title="Link to this heading">¶</a></h2>
+<p>Pull down the File History menu to reveal a list of commits that directly
+contributed to the file (including any uncommitted changes). To explore the
+contents of the file at another point of its history, select any commit in the
+list.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/blamehistory.png" src="_images/blamehistory.png" />
+<figcaption>
+<p><span class="caption-text">The File History menu in the Blame Window.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This list only shows commits that share ancestry with the commit from which
+you initiated the blame. Changes to this file in unmerged (i.e. unrelated)
+branches aren’t shown.</p>
+<p>The graph shown in the file history menu is a <strong>simplified</strong> representation
+of commit ancestry chains. That is, a link between two commits in the file
+history graph does not always represent a <em>direct</em> parent-child link,
+because any commits that don’t contribute to the file are omitted.</p>
+</div>
+</section>
+<section id="the-blame-gutter">
+<h2>The blame gutter<a class="headerlink" href="#the-blame-gutter" title="Link to this heading">¶</a></h2>
+<figure class="align-right" id="id2">
+<img alt="_images/blamegutter.png" src="_images/blamegutter.png" />
+<figcaption>
+<p><span class="caption-text">The Blame Gutter.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Attached to the left side of the code, the Blame Gutter shows which commit is
+responsible for each line in the file. In other words, it tells you
+“who is to blame” for each piece of text in the file.</p>
+<p>The background colors in the Blame Gutter give you an overview of the age of
+each line in the file. Think of these colors as a “heatmap” for recentness: the
+deeper the shade of orange, the more recent the line.</p>
+<p>Any lines that were directly modified by the exact commit that you’ve selected
+in the File History menu are shown in <strong>bold</strong> in the gutter.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the gutter’s color scheme, the “age” of a line is relative to the
+revision you’re viewing. A deep orange means that the line is recent
+<em>relative to</em> the revision that is currently selected in the file history
+menu.</p>
+</div>
+<p>Hover over any part of the Blame Gutter to reveal a tooltip with more details about the commit that is to blame for the attached text.</p>
+<p><img alt="Right-click" class="no-scaled-link gficon" src="_images/rmb.svg" style="height: 16px;" /> Right-click on any section of the Blame Gutter for additional actions:</p>
+<ul class="simple">
+<li><p><span class="guilabel">Blame File at Commit</span> – Explore the contents of the file as of the
+given commit.</p></li>
+<li><p><span class="guilabel">Show Commit in Repo</span> – Select the given commit in the Main Window
+so you can explore this commit in the broader context of the repository.</p></li>
+<li><p><span class="guilabel">Get Commit Info</span> – Shows essentially the same information as the
+Blame Gutter tooltips, in copy/pastable form.</p></li>
+</ul>
+</section>
+</section>
 <span id="document-guide/commands"></span><section id="custom-commands">
 <h1>Custom Commands<a class="headerlink" href="#custom-commands" title="Link to this heading">¶</a></h1>
 <p><span class="gfversion">New in v1.3.0.</span></p>
@@ -2065,17 +2167,11 @@ unexpected discrepancies come up.</p>
 </section>
 <section id="missing-features">
 <h2>Missing features<a class="headerlink" href="#missing-features" title="Link to this heading">¶</a></h2>
-<p><strong>On my roadmap</strong> —
-GitFourchette is still under development; some Git features are not supported yet. I
-plan to support these in the near future, or I may be actively working on them:</p>
-<ul class="simple">
-<li><p>File blame</p></li>
-<li><p>File history</p></li>
-</ul>
 <p><strong>Not implemented yet</strong> —
 Support for these features may be implemented eventually, depending on demand,
 funding, and how much free time I can carve out for the project.</p>
 <ul class="simple">
+<li><p>Support for OpenSSH config files</p></li>
 <li><p>Rebase</p></li>
 <li><p>LFS</p></li>
 <li><p>Hooks</p></li>

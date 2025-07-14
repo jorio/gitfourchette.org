@@ -112,6 +112,13 @@ body {
 .sidebar-logo-container { flex: auto; max-width: 32px; }
 .sidebar-logo { width: 100%; }
 
+.sidebar-current-version {
+    font-size: var(--sidebar-item-font-size);
+    color: var(--color-sidebar-caption-text);
+    padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal);
+}
+.sidebar-current-version div { font-size: smaller; }
+
 kbd.compound { display: inline-flex; gap: 2px; }
 kbd:not(.compound) { font-size: 80%; margin: 0; min-width: 1em; text-align: center; line-height: 1.4; }
 

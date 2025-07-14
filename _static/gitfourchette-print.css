@@ -39,6 +39,10 @@ code {font-family: var(--screenfont);}
     margin-left: calc(2em + 20%);
 }
 
+.book-cover-page-footer p {
+    margin: 0;
+}
+
 @media print {
     .book-cover-page-footer {
         margin-top: 75%;
