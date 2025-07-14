@@ -32,6 +32,7 @@ exclude_patterns += BOOK_FILES
 sys.path.append(os.path.abspath("."))
 extensions = [
     'directives',
+    'myst_parser',  # for markdown support (CHANGELOG)
 ]
 
 rst_prolog = """
