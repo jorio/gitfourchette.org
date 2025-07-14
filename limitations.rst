@@ -28,17 +28,11 @@ unexpected discrepancies come up.
 Missing features
 ----------------
 
-**On my roadmap** ---
-|App| is still under development; some Git features are not supported yet. I
-plan to support these in the near future, or I may be actively working on them:
-
-- File blame
-- File history
-
 **Not implemented yet** ---
 Support for these features may be implemented eventually, depending on demand,
 funding, and how much free time I can carve out for the project.
 
+- Support for OpenSSH config files
 - Rebase
 - LFS
 - Hooks

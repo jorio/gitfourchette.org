@@ -52,8 +52,8 @@ https://gitfourchette.org
     guide/branches
     guide/pullpush
     guide/remotes
-    guide/blame
     guide/advcommit
     guide/conflicts
+    guide/blame
     guide/commands
     limitations

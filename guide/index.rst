@@ -33,4 +33,5 @@ Contents
     Remotes <remotes>
     Advanced Commits <advcommit>
     Merge Conflicts <conflicts>
+    Blame & File History <blame>
     Custom Commands <commands>
