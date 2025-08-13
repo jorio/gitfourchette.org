@@ -8,22 +8,23 @@ Supported operating systems
 also work fine on macOS.
 
 I don't have time to support Windows. |App| does start from source on Windows,
-but some important features will not work---in particular, network operations on
-SSH remotes.
+but some important features will not work.
 
-|App| doesn't depend on ``git``
--------------------------------
+libgit2 mode, Vanilla git mode
+------------------------------
 
-|App| doesn't need Git to be installed on your system---it doesn't actually
-talk to the ``git`` program itself.
-It's based on `libgit2 <https://libgit2.org>`_ (via `pygit2 <https://pygit2.org>`_),
-which is a standalone implementation of Git's core methods.
-This makes |App| completely independent from your ``git`` install.
+By default, |App| manipulates Git repositories with `libgit2 <https://libgit2.org>`_ (via `pygit2 <https://www.pygit2.org>`_). This is a standalone implementation of Git's core methods which is separate from the ``git`` program itself.
 
-Since |App| and ``git`` are completely separate programs,
-you may notice some minor differences between |App|'s behavior
-and vanilla Git's. Feel free to report an issue if any
-unexpected discrepancies come up.
+:gfversion:`New in v1.5.0:` You can now choose to carry out most tasks via your system's ``git`` instead of libgit2. You may benefit from this if your workflow isn't supported in libgit2 mode: in particular, if you depend on a custom OpenSSH configuration or your repo has custom hooks.
+
+To switch between "libgit2" and "vanilla git" modes, go to |cogwheel| :menuselection:`Settings --> Advanced`, then change the **Preferred Git backend** option:
+
+.. figure:: /assets/screens/gitbackend.png
+
+Git version 2.41 or later is recommended for best results in vanilla git mode.
+
+The vanilla git mode is still experimental. It may become the default in a future release depending on user feedback. You're welcome to try it out and report any issues with it.
+
 
 Missing features
 ----------------
@@ -32,7 +33,5 @@ Missing features
 Support for these features may be implemented eventually, depending on demand,
 funding, and how much free time I can carve out for the project.
 
-- Support for OpenSSH config files
 - Rebase
 - LFS
-- Hooks
