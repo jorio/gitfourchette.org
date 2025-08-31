@@ -211,7 +211,7 @@ Commit History context menu
       - Copy this commit's full SHA-1 hash to the clipboard.
 
     * - Get Info
-      - Display the commit's full message, signature, and other details.
+      - Display the commit's full message, authors, and other details.
 
 .. tip:: |lmb2| Double-click on a commit to **check out** that commit.
 

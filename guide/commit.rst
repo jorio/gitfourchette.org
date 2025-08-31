@@ -23,7 +23,7 @@ When you've just finished making the commit, it becomes the **HEAD
 commit**---meaning that it's at the tip of the current branch.
 
 Each commit is identified by a unique SHA-1 **hash** of its contents and
-metadata (parents, message, signature). Because of this unique hash, commits are
+metadata (parents, message, author). Because of this unique hash, commits are
 **immutable**: the slightest modification to an existing commit would result in
 a different hash, and thereby a different commit.
 

@@ -61,14 +61,13 @@ You can leave it be, or you can edit it.
 
 By default, the original commit's author information will be left intact, but
 the amended commit will automatically record *you* as the committer.  You can
-customize this via :guilabel:`Customize Signature` and preview the resulting
-signature with the eye button (:gficon:`view-visible`, see
-:ref:`custom-signature`).
+customize this via :guilabel:`Edit Author` and preview the result with the eye
+button (:gficon:`view-visible`, see :ref:`edit-author`).
 
 .. note::
     To be exact, amending doesn't really *modify* the existing commit. Remember,
     commits are *immutable*: each commit is identified by a unique hash of its
-    contents and metadata (message, signature, etc.). So, amending actually
+    contents and metadata (message, author, etc.). So, amending actually
     produces a new commit, then rewrites history to "replace" the HEAD commit.
 
 .. xxxx tip:: Press :kbd:`Ctrl Shift S` to amend the HEAD commit.
@@ -110,24 +109,24 @@ state by clicking :guilabel:`Abort Cherry-Pick` in the *Cherry-Picking* banner.
     Aborting a cherry-pick will discard all **staged** changes---whether they
     originate from the cherry-picked commit or not!
 
-.. _custom-signature:
+.. _edit-author:
 
-Saving a custom signature in a commit
--------------------------------------
+Editing a commit's author or committer
+--------------------------------------
 
-In the :ref:`Commit dialog <commit-dialog>`, notice the :guilabel:`Customize
-Signature` checkbox.  Tick it to edit the author/committer's identity and
+In the :ref:`Commit dialog <commit-dialog>`, notice the :guilabel:`Edit
+Author` checkbox.  Tick it to edit the author/committer's identity and
 timestamp that will be associated with the commit.
 
-.. figure:: /assets/screens/signature.png
+.. figure:: /assets/screens/editauthor.png
 
-    In the Commit dialog, ticking "Customize Signature" reveals the signature editor.
+    In the Commit dialog, ticking "Edit Author" reveals the author editor.
 
-Click the eye button (:gficon:`view-visible`) to preview the signature that will
-be embedded into the commit.
+Click the eye button (:gficon:`view-visible`) to preview the authorship
+information that will be embedded into the commit.
 
 .. note::
-    :guilabel:`Customize Signature` is meant for one-off adjustments.
+    :guilabel:`Edit Author` is meant for one-off adjustments.
     If you need to set up your default identity, you can do so elsewhere:
 
     - **System-wide identity:** Go to :menuselection:`File --> Git Identity`
