@@ -32,6 +32,7 @@ Contents
     Fetch, Pull, Push <pullpush>
     Remotes <remotes>
     Advanced Commits <advcommit>
+    Signing Commits <signing>
     Merge Conflicts <conflicts>
     Blame & File History <blame>
     Custom Commands <commands>

@@ -210,6 +210,10 @@ Commit History context menu
     * - Copy Commit Hash
       - Copy this commit's full SHA-1 hash to the clipboard.
 
+    * - Verify Signature
+      - Validate the commit's GPG signature. Only available for signed commits.
+        See :ref:`verify`.
+
     * - Get Info
       - Display the commit's full message, authors, and other details.
 

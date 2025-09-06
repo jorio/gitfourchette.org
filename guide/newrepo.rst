@@ -10,7 +10,7 @@ remote, or **initialize** a new repository on your machine.
 
 If you're dipping your toes in Git, I recommend **cloning** a repository so
 that you see what |App| is like in a "real" repo that already has some history.
-Here's a URL you can try to clone: `https://github.com/libgit2/libgit2`
+Here's a URL you can try to clone: `https://github.com/libgit2/pygit2`
 
 Cloning a repository from a remote host
 ---------------------------------------

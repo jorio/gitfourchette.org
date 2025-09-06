@@ -53,6 +53,7 @@ https://gitfourchette.org
     guide/pullpush
     guide/remotes
     guide/advcommit
+    guide/signing
     guide/conflicts
     guide/blame
     guide/commands
