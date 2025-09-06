@@ -56,11 +56,14 @@ Let's review the fields and options in this dialog:
         be able to look up old commits.  Shallow cloning only fetches the most
         recent commits on each branch (you can specify how many).
 
-    * - Log in with custom key file
-      - By default, |App| automatically looks for a matching key in your
-        :guilabel:`~/.ssh` directory if the remote requires authentication.
+    * - Log in to SSH remotes with custom key file
+      - By default, OpenSSH automatically looks for a matching key in your
+        :guilabel:`~/.ssh` directory if an SSH remote requires authentication.
         Tick this to bypass automatic key detection and specify a key file to
-        connect to this remote.
+        connect to remotes in this repo.
+
+        After cloning, you can change or remove the custom key file in
+        :menuselection:`Repo --> Repository Settings`.
 
     * - Status
       - This box will display download progress information.
@@ -71,9 +74,12 @@ wait for the download to complete.
 .. xxxx tip:: Press :kbd:`Ctrl Shift N` to clone a repository.
 
 .. note::
-    :guilabel:`Log in with custom key file` is particularly useful if you have multiple repos
-    requiring different credentials---for example, if you juggle between two accounts for personal
-    and work projects.
+    :guilabel:`Log in to SSH remotes with custom key file` is particularly useful
+    if you have multiple repos requiring different credentials---for example,
+    if you juggle between two accounts for personal and work projects.
+
+    After cloning the repo, you can change or remove the custom key file via
+    :menuselection:`Repo --> Repository Settings`.
 
 .. note::
     By default, :guilabel:`Clone into` automatically suggests your *Downloads* folder,

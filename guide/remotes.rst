@@ -43,17 +43,6 @@ Right-click on :guilabel:`Remotes` in the sidebar and select :guilabel:`Add Remo
         `restrictions <https://git-scm.com/docs/git-check-ref-format>`_.
         |App| will let you know if the name you've entered isn't compliant.
 
-    * - Log in with custom key file
-      - By default, |App| automatically looks for a matching key in your
-        :guilabel:`~/.ssh` directory if the remote requires authentication.
-        :guilabel:`Log in with custom key file` lets you bypass automatic key detection
-        and specify which key file to use to connect to this remote.
-
-.. note::
-    :guilabel:`Log in with custom key file` is particularly useful
-    if you have multiple repos requiring different credentials---for example,
-    if you juggle between two accounts for personal and work projects.
-
 Sidebar context menu for remotes
 --------------------------------
 
@@ -67,7 +56,7 @@ Sidebar context menu for remotes
       - Description
 
     * - Edit Remote
-      - Edit the remote's name, URL, and optional custom key file.
+      - Edit the remote's name and URL.
         This is essentially the same dialog as :ref:`Add Remote <new-remote>`.
 
     * - Fetch All Remote Branches
