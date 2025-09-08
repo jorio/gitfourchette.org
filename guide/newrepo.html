@@ -4,12 +4,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="A Tour of the Main Window" href="uitour.html" /><link rel="prev" title="GitFourchette User’s Guide" href="index.html" />
+        <link rel="prefetch" href="../_static/gf.svg" as="image" />
 
-    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
         <title>Cloning or Creating a Repository - GitFourchette</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=bef91c1d" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/gitfourchette-print.css?v=983f0785" />
     
@@ -18,20 +19,20 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -190,7 +191,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
-  
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../_static/gf.svg" alt="Logo"/>
   </div>
@@ -198,9 +198,9 @@
   <span class="sidebar-brand-text">GitFourchette</span>
   
 </a><div class="sidebar-current-version">
-    Current version: <b>1.4.0</b>
+    Current version: <b>1.5.0</b>
     <div>
-        Released July 2025 
+        Released September 2025 
         &middot; <a href="../CHANGELOG.html">Changelog</a>
     </div>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
@@ -224,6 +224,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pullpush.html">Fetch, Pull, Push</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remotes.html">Remotes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="advcommit.html">Advanced Commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signing.html">Signing Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conflicts.html">Merge Conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="blame.html">Blame &amp; File History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Custom Commands</a></li>
@@ -281,7 +282,7 @@ Open Repository</span> or press <kbd class="kbd docutils literal notranslate">Ct
 remote, or <strong>initialize</strong> a new repository on your machine.</p>
 <p>If you’re dipping your toes in Git, I recommend <strong>cloning</strong> a repository so
 that you see what GitFourchette is like in a “real” repo that already has some history.
-Here’s a URL you can try to clone: <cite>https://github.com/libgit2/libgit2</cite></p>
+Here’s a URL you can try to clone: <cite>https://github.com/libgit2/pygit2</cite></p>
 <section id="cloning-a-repository-from-a-remote-host">
 <h2>Cloning a repository from a remote host<a class="headerlink" href="#cloning-a-repository-from-a-remote-host" title="Link to this heading">¶</a></h2>
 <p>In Git parlance, <em>cloning</em> means to download a repository, typically from a remote host.</p>
@@ -330,11 +331,14 @@ This may speed up the download and save some disk space, but you won’t
 be able to look up old commits.  Shallow cloning only fetches the most
 recent commits on each branch (you can specify how many).</p></td>
 </tr>
-<tr class="row-even"><td><p>Log in with custom key file</p></td>
-<td><p>By default, GitFourchette automatically looks for a matching key in your
-<span class="guilabel">~/.ssh</span> directory if the remote requires authentication.
+<tr class="row-even"><td><p>Log in to SSH remotes with custom key file</p></td>
+<td><p>By default, OpenSSH automatically looks for a matching key in your
+<span class="guilabel">~/.ssh</span> directory if an SSH remote requires authentication.
 Tick this to bypass automatic key detection and specify a key file to
-connect to this remote.</p></td>
+connect to remotes in this repo.</p>
+<p>After cloning, you can change or remove the custom key file in
+<span class="menuselection">Repo ‣ Repository Settings</span>.</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>Status</p></td>
 <td><p>This box will display download progress information.</p></td>
@@ -346,9 +350,11 @@ connect to this remote.</p></td>
 wait for the download to complete.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="guilabel">Log in with custom key file</span> is particularly useful if you have multiple repos
-requiring different credentials—for example, if you juggle between two accounts for personal
-and work projects.</p>
+<p><span class="guilabel">Log in to SSH remotes with custom key file</span> is particularly useful
+if you have multiple repos requiring different credentials—for example,
+if you juggle between two accounts for personal and work projects.</p>
+<p>After cloning the repo, you can change or remove the custom key file via
+<span class="menuselection">Repo ‣ Repository Settings</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -455,7 +461,7 @@ relevant files and create the <strong>initial commit</strong> (see <a class="ref
 </div><script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../_static/gitfourchette.js?v=b8e1d973"></script>
     </body>
 </html>

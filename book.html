@@ -36,7 +36,7 @@
 </div>
 </div>
 
-<div class="book-cover-page-footer"><p>July 2025 (GitFourchette version 1.4.0)</p>
+<div class="book-cover-page-footer"><p>September 2025 (GitFourchette version 1.5.0)</p>
 <p>© 2025 Iliyas Jorio</p>
 <p><a class="reference external" href="https://gitfourchette.org">https://gitfourchette.org</a></p>
 </div>
@@ -75,7 +75,7 @@ Open Repository</span> or press <kbd class="kbd docutils literal notranslate">Ct
 remote, or <strong>initialize</strong> a new repository on your machine.</p>
 <p>If you’re dipping your toes in Git, I recommend <strong>cloning</strong> a repository so
 that you see what GitFourchette is like in a “real” repo that already has some history.
-Here’s a URL you can try to clone: <cite>https://github.com/libgit2/libgit2</cite></p>
+Here’s a URL you can try to clone: <cite>https://github.com/libgit2/pygit2</cite></p>
 <section id="cloning-a-repository-from-a-remote-host">
 <h2>Cloning a repository from a remote host<a class="headerlink" href="#cloning-a-repository-from-a-remote-host" title="Link to this heading">¶</a></h2>
 <p>In Git parlance, <em>cloning</em> means to download a repository, typically from a remote host.</p>
@@ -123,11 +123,14 @@ This may speed up the download and save some disk space, but you won’t
 be able to look up old commits.  Shallow cloning only fetches the most
 recent commits on each branch (you can specify how many).</p></td>
 </tr>
-<tr class="row-even"><td><p>Log in with custom key file</p></td>
-<td><p>By default, GitFourchette automatically looks for a matching key in your
-<span class="guilabel">~/.ssh</span> directory if the remote requires authentication.
+<tr class="row-even"><td><p>Log in to SSH remotes with custom key file</p></td>
+<td><p>By default, OpenSSH automatically looks for a matching key in your
+<span class="guilabel">~/.ssh</span> directory if an SSH remote requires authentication.
 Tick this to bypass automatic key detection and specify a key file to
-connect to this remote.</p></td>
+connect to remotes in this repo.</p>
+<p>After cloning, you can change or remove the custom key file in
+<span class="menuselection">Repo ‣ Repository Settings</span>.</p>
+</td>
 </tr>
 <tr class="row-odd"><td><p>Status</p></td>
 <td><p>This box will display download progress information.</p></td>
@@ -138,9 +141,11 @@ connect to this remote.</p></td>
 wait for the download to complete.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="guilabel">Log in with custom key file</span> is particularly useful if you have multiple repos
-requiring different credentials—for example, if you juggle between two accounts for personal
-and work projects.</p>
+<p><span class="guilabel">Log in to SSH remotes with custom key file</span> is particularly useful
+if you have multiple repos requiring different credentials—for example,
+if you juggle between two accounts for personal and work projects.</p>
+<p>After cloning the repo, you can change or remove the custom key file via
+<span class="menuselection">Repo ‣ Repository Settings</span>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -484,8 +489,12 @@ See <a class="reference internal" href="#document-guide/advcommit#cherrypick"><s
 <tr class="row-odd"><td><p>Copy Commit Hash</p></td>
 <td><p>Copy this commit’s full SHA-1 hash to the clipboard.</p></td>
 </tr>
-<tr class="row-even"><td><p>Get Info</p></td>
-<td><p>Display the commit’s full message, signature, and other details.</p></td>
+<tr class="row-even"><td><p>Verify Signature</p></td>
+<td><p>Validate the commit’s GPG signature. Only available for signed commits.
+See <a class="reference internal" href="#document-guide/signing#verify"><span class="std std-ref">Verifying signed commits in the Commit History</span></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Get Info</p></td>
+<td><p>Display the commit’s full message, authors, and other details.</p></td>
 </tr>
 </tbody>
 </table>
@@ -566,7 +575,7 @@ to move on to another task.</p>
 <p>When you’ve just finished making the commit, it becomes the <strong>HEAD
 commit</strong>—meaning that it’s at the tip of the current branch.</p>
 <p>Each commit is identified by a unique SHA-1 <strong>hash</strong> of its contents and
-metadata (parents, message, signature). Because of this unique hash, commits are
+metadata (parents, message, author). Because of this unique hash, commits are
 <strong>immutable</strong>: the slightest modification to an existing commit would result in
 a different hash, and thereby a different commit.</p>
 </section>
@@ -1497,20 +1506,8 @@ to convert the URL to another protocol.</p></td>
 <a class="reference external" href="https://git-scm.com/docs/git-check-ref-format">restrictions</a>.
 GitFourchette will let you know if the name you’ve entered isn’t compliant.</p></td>
 </tr>
-<tr class="row-even"><td><p>Log in with custom key file</p></td>
-<td><p>By default, GitFourchette automatically looks for a matching key in your
-<span class="guilabel">~/.ssh</span> directory if the remote requires authentication.
-<span class="guilabel">Log in with custom key file</span> lets you bypass automatic key detection
-and specify which key file to use to connect to this remote.</p></td>
-</tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="guilabel">Log in with custom key file</span> is particularly useful
-if you have multiple repos requiring different credentials—for example,
-if you juggle between two accounts for personal and work projects.</p>
-</div>
 </section>
 <section id="sidebar-context-menu-for-remotes">
 <h2>Sidebar context menu for remotes<a class="headerlink" href="#sidebar-context-menu-for-remotes" title="Link to this heading">¶</a></h2>
@@ -1528,7 +1525,7 @@ if you juggle between two accounts for personal and work projects.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Edit Remote</p></td>
-<td><p>Edit the remote’s name, URL, and optional custom key file.
+<td><p>Edit the remote’s name and URL.
 This is essentially the same dialog as <a class="reference internal" href="#new-remote"><span class="std std-ref">Add Remote</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>Fetch All Remote Branches</p></td>
@@ -1678,14 +1675,13 @@ fills in the message of the HEAD commit for you.
 You can leave it be, or you can edit it.</p>
 <p>By default, the original commit’s author information will be left intact, but
 the amended commit will automatically record <em>you</em> as the committer.  You can
-customize this via <span class="guilabel">Customize Signature</span> and preview the resulting
-signature with the eye button (<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />, see
-<a class="reference internal" href="#custom-signature"><span class="std std-ref">Saving a custom signature in a commit</span></a>).</p>
+customize this via <span class="guilabel">Edit Author</span> and preview the result with the eye
+button (<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />, see <a class="reference internal" href="#edit-author"><span class="std std-ref">Editing a commit’s author or committer</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To be exact, amending doesn’t really <em>modify</em> the existing commit. Remember,
 commits are <em>immutable</em>: each commit is identified by a unique hash of its
-contents and metadata (message, signature, etc.). So, amending actually
+contents and metadata (message, author, etc.). So, amending actually
 produces a new commit, then rewrites history to “replace” the HEAD commit.</p>
 </div>
 </section>
@@ -1723,22 +1719,22 @@ state by clicking <span class="guilabel">Abort Cherry-Pick</span> in the <em>Che
 originate from the cherry-picked commit or not!</p>
 </div>
 </section>
-<section id="saving-a-custom-signature-in-a-commit">
-<span id="custom-signature"></span><h2>Saving a custom signature in a commit<a class="headerlink" href="#saving-a-custom-signature-in-a-commit" title="Link to this heading">¶</a></h2>
-<p>In the <a class="reference internal" href="#document-guide/commit#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Customize
-Signature</span> checkbox.  Tick it to edit the author/committer’s identity and
+<section id="editing-a-commit-s-author-or-committer">
+<span id="edit-author"></span><h2>Editing a commit’s author or committer<a class="headerlink" href="#editing-a-commit-s-author-or-committer" title="Link to this heading">¶</a></h2>
+<p>In the <a class="reference internal" href="#document-guide/commit#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Edit
+Author</span> checkbox.  Tick it to edit the author/committer’s identity and
 timestamp that will be associated with the commit.</p>
 <figure class="align-default" id="id2">
-<img alt="_images/signature.png" src="_images/signature.png" />
+<img alt="_images/editauthor.png" src="_images/editauthor.png" />
 <figcaption>
-<p><span class="caption-text">In the Commit dialog, ticking “Customize Signature” reveals the signature editor.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+<p><span class="caption-text">In the Commit dialog, ticking “Edit Author” reveals the author editor.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Click the eye button (<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />) to preview the signature that will
-be embedded into the commit.</p>
+<p>Click the eye button (<img alt="" class="no-scaled-link gficon" src="_images/view-visible.svg" style="width: 16px; height: 16px;" />) to preview the authorship
+information that will be embedded into the commit.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="guilabel">Customize Signature</span> is meant for one-off adjustments.
+<p><span class="guilabel">Edit Author</span> is meant for one-off adjustments.
 If you need to set up your default identity, you can do so elsewhere:</p>
 <ul class="simple">
 <li><p><strong>System-wide identity:</strong> Go to <span class="menuselection">File ‣ Git Identity</span>
@@ -1748,6 +1744,69 @@ on your system going forward. (Mac: <span class="menuselection">App menu ‣ Git
 and tick <span class="guilabel">Create commits under a custom identity in this repo</span>.
 This identity will only apply to the current repo.</p></li>
 </ul>
+</div>
+</section>
+</section>
+<span id="document-guide/signing"></span><section id="signing-commits">
+<h1>Signing Commits<a class="headerlink" href="#signing-commits" title="Link to this heading">¶</a></h1>
+<section id="creating-a-signed-commit">
+<h2>Creating a signed commit<a class="headerlink" href="#creating-a-signed-commit" title="Link to this heading">¶</a></h2>
+<p><span class="gfversion">New in v1.5.0:</span>
+The <img alt="" class="no-scaled-link gficon" src="_images/gpg-key.svg" style="width: 16px; height: 16px;" /> key icon at the bottom of the Commit Dialog indicates whether your commit will be GPG-signed.</p>
+<p><img alt="" class="no-scaled-link gficon" src="_images/gpg-key-green.svg" style="width: 16px; height: 16px;" /> <strong>A green key</strong> means your commit <strong>will</strong> be signed.</p>
+<p><img alt="" class="no-scaled-link gficon" src="_images/gpg-key-fail.svg" style="width: 16px; height: 16px;" /> <strong>A gray key</strong> means your commit will <strong>not</strong> be signed.</p>
+<p>You can click the key icon to enable or disable signing for the commit you’re about to make.</p>
+<figure class="align-default" id="id1">
+<img alt="_images/keybutton.png" src="_images/keybutton.png" />
+<figcaption>
+<p><span class="caption-text">The signing key button in the Commit Dialog.</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>After making a signed commit, you should see a green seal icon <img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-good-trusted.svg" style="width: 16px; height: 16px;" /> next to your name in the Commit History.</p>
+<p class="rubric">What to do if signing isn’t available</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To be able to sign commits, you must first set up <code class="code docutils literal notranslate"><span class="pre">user.signingKey</span></code> in your Git configuration.
+See <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">Pro Git – Signing Your Work</a> to get started.</p>
+</div>
+<ul class="simple">
+<li><p>Check that you’ve set <code class="code docutils literal notranslate"><span class="pre">user.signingKey</span></code> in your Git configuration. This is required to specify what key to sign your commits with.</p></li>
+<li><p>If you’ve set up your signing key and you want <em>all</em> commits to be signed, check that you’ve enabled <code class="code docutils literal notranslate"><span class="pre">commit.gpgSign</span></code> in your Git configuration.</p></li>
+</ul>
+</section>
+<section id="verifying-signed-commits-in-the-commit-history">
+<span id="verify"></span><h2>Verifying signed commits in the Commit History<a class="headerlink" href="#verifying-signed-commits-in-the-commit-history" title="Link to this heading">¶</a></h2>
+<p><span class="gfversion">New in v1.5.0:</span>
+To enable automatic verification of signed commits in the Commit History, go to <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Commit History</span> and tick <span class="guilabel">Verify signed commits on the fly</span>.</p>
+<p>As commits scroll into view, GitFourchette will then call <code class="code docutils literal notranslate"><span class="pre">git</span> <span class="pre">verify-commit</span></code> automatically to verify their signatures.
+The verification status is materialized by a seal icon next to the author’s name:</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-pending.svg" style="width: 16px; height: 16px;" /> Verification pending</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-cantcheck.svg" style="width: 16px; height: 16px;" /> Verification failed (e.g. missing key)</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-good-untrusted.svg" style="width: 16px; height: 16px;" /> Good signature; Key not fully trusted</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-good-trusted.svg" style="width: 16px; height: 16px;" /> Good signature; Key trusted</p></td>
+</tr>
+<tr class="row-odd"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-expired.svg" style="width: 16px; height: 16px;" /> Key or signature expired</p></td>
+</tr>
+<tr class="row-even"><td><p><img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-bad.svg" style="width: 16px; height: 16px;" /> Key revoked or signature invalid</p></td>
+</tr>
+<tr class="row-odd"><td><p>(No seal icon: Commit isn’t signed.)</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Troubleshooting failed verifications (“question mark” seal icons)</p>
+<p>Your GPG keychain must contain the signer’s public key to be able to verify their commits.</p>
+<p>Frequently, verification will fail (<img alt="" class="no-scaled-link gficon" src="_images/gpg-verify-cantcheck.svg" style="width: 16px; height: 16px;" />) because GPG can’t find the signer’s public key in your keychain. You can import their public key from a trusted source, then force GitFourchette to verify the commit again (right-click on the commit and select <span class="guilabel">Verify Signature</span>).</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can try <code class="code docutils literal notranslate"><span class="pre">gpg</span> <span class="pre">--search-keys</span></code> to import a key from your keyserver. For example, the following command lets you import a key owned by GitHub that is commonly used to sign commits made with their web interface:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg<span class="w"> </span>--search-keys<span class="w"> </span>B5690EEEBB952194
+</pre></div>
+</div>
 </div>
 </section>
 </section>
@@ -2147,35 +2206,31 @@ commands that may have destructive effects!</p>
 <h1>Limitations<a class="headerlink" href="#limitations" title="Link to this heading">¶</a></h1>
 <section id="supported-operating-systems">
 <h2>Supported operating systems<a class="headerlink" href="#supported-operating-systems" title="Link to this heading">¶</a></h2>
-<p>GitFourchette is built primarily for Linux and it fits in great with KDE Plasma. It will
-also work fine on macOS.</p>
+<p>GitFourchette is built primarily for Linux and it fits in great with KDE Plasma.
+It also runs fine on macOS, but Linux remains the primary target and
+there’s no official Mac support (yet).</p>
 <p>I don’t have time to support Windows. GitFourchette does start from source on Windows,
-but some important features will not work—in particular, network operations on
-SSH remotes.</p>
+but some important features will not work.</p>
 </section>
-<section id="app-doesn-t-depend-on-git">
-<h2>GitFourchette doesn’t depend on <code class="docutils literal notranslate"><span class="pre">git</span></code><a class="headerlink" href="#app-doesn-t-depend-on-git" title="Link to this heading">¶</a></h2>
-<p>GitFourchette doesn’t need Git to be installed on your system—it doesn’t actually
-talk to the <code class="docutils literal notranslate"><span class="pre">git</span></code> program itself.
-It’s based on <a class="reference external" href="https://libgit2.org">libgit2</a> (via <a class="reference external" href="https://pygit2.org">pygit2</a>),
-which is a standalone implementation of Git’s core methods.
-This makes GitFourchette completely independent from your <code class="docutils literal notranslate"><span class="pre">git</span></code> install.</p>
-<p>Since GitFourchette and <code class="docutils literal notranslate"><span class="pre">git</span></code> are completely separate programs,
-you may notice some minor differences between GitFourchette’s behavior
-and vanilla Git’s. Feel free to report an issue if any
-unexpected discrepancies come up.</p>
-</section>
-<section id="missing-features">
-<h2>Missing features<a class="headerlink" href="#missing-features" title="Link to this heading">¶</a></h2>
-<p><strong>Not implemented yet</strong> —
-Support for these features may be implemented eventually, depending on demand,
-funding, and how much free time I can carve out for the project.</p>
+<section id="tentative-feature-roadmap">
+<h2>Tentative feature roadmap<a class="headerlink" href="#tentative-feature-roadmap" title="Link to this heading">¶</a></h2>
+<p>Support for these features may be implemented eventually, depending on demand,
+funding, and how much free time I can carve out for the project:</p>
 <ul class="simple">
-<li><p>Support for OpenSSH config files</p></li>
 <li><p>Rebase</p></li>
-<li><p>LFS</p></li>
-<li><p>Hooks</p></li>
+<li><p>Improved LFS support</p></li>
 </ul>
+</section>
+<section id="improved-compatibility-with-vanilla-git-since-v1-5-0">
+<h2>Improved compatibility with vanilla Git since v1.5.0<a class="headerlink" href="#improved-compatibility-with-vanilla-git-since-v1-5-0" title="Link to this heading">¶</a></h2>
+<p><span class="gfversion">New in v1.5.0.</span> Starting with v1.5.0, GitFourchette now uses Git itself to
+edit repositories and communicate with remotes. This improves compatibility
+with workflows that depend on OpenSSH, hooks, etc.</p>
+<p>For performance, GitFourchette still uses libgit2 to build its model of the repository,
+but all operations that write to the repo or use the network now use Git directly.</p>
+<p>The Flatpak version uses an embedded Git distribution by default. You can switch
+to another Git instance via <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Git
+Integration</span>.</p>
 </section>
 </section>
 </div>

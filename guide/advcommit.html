@@ -3,13 +3,14 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Resolving Merge Conflicts" href="conflicts.html" /><link rel="prev" title="Managing Remote Servers and Remote-Tracking Branches" href="remotes.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Signing Commits" href="signing.html" /><link rel="prev" title="Managing Remote Servers and Remote-Tracking Branches" href="remotes.html" />
+        <link rel="prefetch" href="../_static/gf.svg" as="image" />
 
-    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <link rel="shortcut icon" href="../_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
         <title>Advanced Commit Techniques - GitFourchette</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
     <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=bef91c1d" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/gitfourchette-print.css?v=983f0785" />
     
@@ -18,20 +19,20 @@
 
 <style>
   body {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
+    --color-code-background: #f2f2f2;
+  --color-code-foreground: #1e1e1e;
   
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
   
       }
     }
@@ -190,7 +191,6 @@
     <div class="sidebar-container">
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
-  
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../_static/gf.svg" alt="Logo"/>
   </div>
@@ -198,9 +198,9 @@
   <span class="sidebar-brand-text">GitFourchette</span>
   
 </a><div class="sidebar-current-version">
-    Current version: <b>1.4.0</b>
+    Current version: <b>1.5.0</b>
     <div>
-        Released July 2025 
+        Released September 2025 
         &middot; <a href="../CHANGELOG.html">Changelog</a>
     </div>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
@@ -224,6 +224,7 @@
 <li class="toctree-l2"><a class="reference internal" href="pullpush.html">Fetch, Pull, Push</a></li>
 <li class="toctree-l2"><a class="reference internal" href="remotes.html">Remotes</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Advanced Commits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signing.html">Signing Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="conflicts.html">Merge Conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="blame.html">Blame &amp; File History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="commands.html">Custom Commands</a></li>
@@ -323,14 +324,13 @@ fills in the message of the HEAD commit for you.
 You can leave it be, or you can edit it.</p>
 <p>By default, the original commit’s author information will be left intact, but
 the amended commit will automatically record <em>you</em> as the committer.  You can
-customize this via <span class="guilabel">Customize Signature</span> and preview the resulting
-signature with the eye button (<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />, see
-<a class="reference internal" href="#custom-signature"><span class="std std-ref">Saving a custom signature in a commit</span></a>).</p>
+customize this via <span class="guilabel">Edit Author</span> and preview the result with the eye
+button (<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />, see <a class="reference internal" href="#edit-author"><span class="std std-ref">Editing a commit’s author or committer</span></a>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To be exact, amending doesn’t really <em>modify</em> the existing commit. Remember,
 commits are <em>immutable</em>: each commit is identified by a unique hash of its
-contents and metadata (message, signature, etc.). So, amending actually
+contents and metadata (message, author, etc.). So, amending actually
 produces a new commit, then rewrites history to “replace” the HEAD commit.</p>
 </div>
 </section>
@@ -368,22 +368,22 @@ state by clicking <span class="guilabel">Abort Cherry-Pick</span> in the <em>Che
 originate from the cherry-picked commit or not!</p>
 </div>
 </section>
-<section id="saving-a-custom-signature-in-a-commit">
-<span id="custom-signature"></span><h2>Saving a custom signature in a commit<a class="headerlink" href="#saving-a-custom-signature-in-a-commit" title="Link to this heading">¶</a></h2>
-<p>In the <a class="reference internal" href="commit.html#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Customize
-Signature</span> checkbox.  Tick it to edit the author/committer’s identity and
+<section id="editing-a-commit-s-author-or-committer">
+<span id="edit-author"></span><h2>Editing a commit’s author or committer<a class="headerlink" href="#editing-a-commit-s-author-or-committer" title="Link to this heading">¶</a></h2>
+<p>In the <a class="reference internal" href="commit.html#commit-dialog"><span class="std std-ref">Commit dialog</span></a>, notice the <span class="guilabel">Edit
+Author</span> checkbox.  Tick it to edit the author/committer’s identity and
 timestamp that will be associated with the commit.</p>
 <figure class="align-default" id="id2">
-<img alt="../_images/signature.png" src="../_images/signature.png" />
+<img alt="../_images/editauthor.png" src="../_images/editauthor.png" />
 <figcaption>
-<p><span class="caption-text">In the Commit dialog, ticking “Customize Signature” reveals the signature editor.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
+<p><span class="caption-text">In the Commit dialog, ticking “Edit Author” reveals the author editor.</span><a class="headerlink" href="#id2" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Click the eye button (<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />) to preview the signature that will
-be embedded into the commit.</p>
+<p>Click the eye button (<img alt="" class="no-scaled-link gficon" src="../_images/view-visible.svg" style="width: 16px; height: 16px;" />) to preview the authorship
+information that will be embedded into the commit.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><span class="guilabel">Customize Signature</span> is meant for one-off adjustments.
+<p><span class="guilabel">Edit Author</span> is meant for one-off adjustments.
 If you need to set up your default identity, you can do so elsewhere:</p>
 <ul class="simple">
 <li><p><strong>System-wide identity:</strong> Go to <span class="menuselection">File ‣ Git Identity</span>
@@ -402,12 +402,12 @@ This identity will only apply to the current repo.</p></li>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="conflicts.html">
+          <a class="next-page" href="signing.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Resolving Merge Conflicts</div>
+                <div class="title">Signing Commits</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -456,7 +456,7 @@ This identity will only apply to the current repo.</p></li>
 <li><a class="reference internal" href="#setting-aside-your-commit-message-for-later">Setting aside your commit message for later</a></li>
 <li><a class="reference internal" href="#amending-a-commit">Amending a commit</a></li>
 <li><a class="reference internal" href="#cherry-picking-a-commit-from-another-branch">Cherry-picking a commit from another branch</a></li>
-<li><a class="reference internal" href="#saving-a-custom-signature-in-a-commit">Saving a custom signature in a commit</a></li>
+<li><a class="reference internal" href="#editing-a-commit-s-author-or-committer">Editing a commit’s author or committer</a></li>
 </ul>
 </li>
 </ul>
@@ -471,7 +471,7 @@ This identity will only apply to the current repo.</p></li>
 </div><script src="../_static/documentation_options.js?v=7f41d439"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="../_static/gitfourchette.js?v=b8e1d973"></script>
     </body>
 </html>
