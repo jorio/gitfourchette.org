@@ -32,7 +32,7 @@ the main menu bar. You're now ready to invoke your commands from this menu.
   commands via a pulldown menu attached to the :gficonlabel:`terminal Terminal`
   button in the toolbar.
 
-.. tip:: To select which terminal program to use, go to :menuselection:`Settings --> External Tools --> Terminal`.
+.. tip:: To select which terminal program to use, go to |cogwheel| :menuselection:`Settings --> External Tools --> Terminal`.
 
 Argument placeholders
 ---------------------
@@ -55,7 +55,7 @@ You may use the following placeholders in your commands:
       - Path to the selected file (absolute)
 
     * - $FILEDIR
-      - Path to rthe selected file's parent directory (relative)
+      - Path to the selected file's parent directory (relative)
 
     * - $FILEDIRABS
       - Path to the selected file's parent directory (absolute)
@@ -103,8 +103,17 @@ To create a **separator** in the menu, insert a comment line of dashes
 
     echo 'hello world 3'
 
+.. figure:: /assets/screens/commandstitlesep.png
+
+    The example above rendered in the Commands menu (separator and custom title).
+
 Keyboard shortcuts
 ------------------
+
+.. figure:: /assets/screens/commandsaccelerator.png
+    :align: right
+
+    A command titled :code:`&Rebase`.
 
 When you set a custom title for a command, you can define an **accelerator key**
 for this command by inserting :code:`&` before some letter in the command title.
