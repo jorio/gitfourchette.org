@@ -194,7 +194,12 @@ Commit History context menu
     * - Check Out
       - Enter "Detached HEAD" mode on this commit, or switch to a branch pointing here (if any).
 
-    * - Reset HEAD Here
+    * - Merge Into (current branch)
+      - Merge the commit into your current local branch.
+        This will let you fast-forward if possible.
+        See also: :doc:`conflicts`.
+
+    * - Reset HEAD to Here
       - Make the current HEAD point to the selected commit.
 
     * - Cherry Pick

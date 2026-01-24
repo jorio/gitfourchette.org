@@ -105,7 +105,7 @@ Sidebar context menu for remote-tracking branches
 
     * - Merge Into (current branch)
       - Merge the remote-tracking branch into your current local branch.
-        This will attempt a fast-forward if possible.
+        This will let you fast-forward if possible.
         See also: :doc:`conflicts`.
 
     * - Rename Branch on Remote
