@@ -35,4 +35,5 @@ Contents
     Signing Commits <signing>
     Merge Conflicts <conflicts>
     Blame & File History <blame>
+    Mounting Commits <mount>
     Custom Commands <commands>

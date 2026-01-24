@@ -56,5 +56,6 @@ https://gitfourchette.org
     guide/signing
     guide/conflicts
     guide/blame
+    guide/mount
     guide/commands
     limitations

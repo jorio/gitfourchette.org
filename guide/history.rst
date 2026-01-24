@@ -215,6 +215,9 @@ Commit History context menu
     * - Copy Commit Hash
       - Copy this commit's full SHA-1 hash to the clipboard.
 
+    * - Mount Commit As Folder
+      - Create a FUSE mount for this commit. See :doc:`mount`.
+
     * - Verify Signature
       - Validate the commit's GPG signature. Only available for signed commits.
         See :ref:`verify`.
