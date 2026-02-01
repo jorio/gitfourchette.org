@@ -117,7 +117,7 @@ body {
     color: var(--color-sidebar-caption-text);
     padding: var(--sidebar-item-spacing-vertical) var(--sidebar-item-spacing-horizontal);
 }
-.sidebar-current-version div { font-size: smaller; }
+.sidebar-current-version div { font-size: small; }
 
 kbd.compound { display: inline-flex; gap: 2px; }
 kbd:not(.compound) { font-size: 80%; margin: 0; min-width: 1em; text-align: center; line-height: 1.4; }
