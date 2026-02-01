@@ -10,8 +10,8 @@ NONBOOK_FILES = ['index.rst', 'guide/index.rst', 'install.rst']
 project = 'GitFourchette'
 copyright = '%Y Iliyas Jorio'
 author = 'Iliyas Jorio'
-version = "1.5.0"
-revdate = "September 2025"
+version = "1.6.0"
+revdate = "February 2026"
 
 html_context = {
     "revdate": revdate,

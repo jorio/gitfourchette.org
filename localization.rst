@@ -14,7 +14,7 @@ Head over to `GitFourchette on Weblate <https://hosted.weblate.org/projects/gitf
 
 .. rubric:: How to preview your Weblate translation in |App|
 
-Once a translation is sufficiently fleshed out, it is periodically merged from Weblate into |App|'s repo.
+Once your translation is sufficiently fleshed out, I will ship it with the next release of |App|.
 
 If you don't wait for a merge to preview your work in the UI, you can download an `.mo` file from Weblate for your language
 (e.g. `Spanish .mo file <https://hosted.weblate.org/download/gitfourchette/gitfourchette/es/?format=mo>`_).
