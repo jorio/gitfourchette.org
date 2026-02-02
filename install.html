@@ -1,17 +1,17 @@
 <!doctype html>
 <html class="no-js" lang="en" data-content_root="./">
-  <head><meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="GitFourchette User’s Guide" href="guide/index.html" /><link rel="prev" title="&lt;no title&gt;" href="index.html" />
-        <link rel="prefetch" href="_static/gf.svg" as="image" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="GitFourchette User’s Guide" href="guide/index.html"><link rel="prev" title="&lt;no title&gt;" href="index.html">
+        <link rel="prefetch" href="_static/gf.svg" as="image">
 
-    <link rel="shortcut icon" href="_static/gf.svg"/><!-- Generated with Sphinx 8.2.3 and Furo 2025.07.19 -->
+    <link rel="shortcut icon" href="_static/gf.svg"><!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
         <title>Install GitFourchette - GitFourchette</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d111a655" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=25af2a20" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=bef91c1d" />
+    <link rel="stylesheet" type="text/css" href="_static/gitfourchette.css?v=63b7cf19" />
     <link media="print" rel="stylesheet" type="text/css" href="_static/gitfourchette-print.css?v=983f0785" />
     
     
@@ -25,14 +25,14 @@
   }
   @media not print {
     body[data-theme="dark"] {
-      --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
-        --color-code-background: #2b2b2b;
-  --color-code-foreground: #f8f8f2;
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
       }
     }
@@ -147,14 +147,10 @@
   </symbol>
 </svg>
 
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
-<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation">
-  <div class="visually-hidden">Hide navigation sidebar</div>
-</label>
-<label class="overlay toc-overlay" for="__toc">
-  <div class="visually-hidden">Hide table of contents sidebar</div>
-</label>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
 
 <a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
 
@@ -164,8 +160,7 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
-        <div class="visually-hidden">Toggle site navigation sidebar</div>
-        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
       </label>
     </div>
     <div class="header-center">
@@ -173,8 +168,7 @@
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
-        <button class="theme-toggle">
-          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
           <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
           <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
           <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -182,8 +176,7 @@
         </button>
       </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
-        <div class="visually-hidden">Toggle table of contents sidebar</div>
-        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
       </label>
     </div>
   </header>
@@ -198,11 +191,9 @@
   <span class="sidebar-brand-text">GitFourchette</span>
   
 </a><div class="sidebar-current-version">
-    Current version: <b>1.5.0</b>
-    <div>
-        Released September 2025 
-        &middot; <a href="CHANGELOG.html">Changelog</a>
-    </div>
+    Current version: <b>1.6.0</b>
+    <div>Released February 2026</div>
+    <div><a href="CHANGELOG.html">What&rsquo;s New</a></div>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
@@ -212,7 +203,7 @@
   <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Install</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="guide/index.html">User’s Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of User’s Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="guide/index.html">User’s Guide</a><input aria-label="Toggle navigation of User’s Guide" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide/index.html">Welcome!</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/newrepo.html">Cloning &amp; Initializing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/uitour.html">Main Window</a></li>
@@ -227,6 +218,7 @@
 <li class="toctree-l2"><a class="reference internal" href="guide/signing.html">Signing Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/conflicts.html">Merge Conflicts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/blame.html">Blame &amp; File History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/mount.html">Mounting Commits</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/commands.html">Custom Commands</a></li>
 </ul>
 </li>
@@ -259,8 +251,7 @@
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="theme-toggle-container theme-toggle-content">
-            <button class="theme-toggle">
-              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
               <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
               <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
               <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
@@ -268,18 +259,16 @@
             </button>
           </div>
           <label class="toc-overlay-icon toc-content-icon" for="__toc">
-            <div class="visually-hidden">Toggle table of contents sidebar</div>
-            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
           </label>
         </div>
         <article role="main" id="furo-main-content">
           <section id="install-app">
 <h1>Install GitFourchette<a class="headerlink" href="#install-app" title="Link to this heading">¶</a></h1>
-<a class="reference external image-reference" href="https://flathub.org/apps/org.gitfourchette.gitfourchette"><img alt="Get GitFourchette on Flathub" class="align-right" src="_images/flathub.svg" style="width: 240.0px; height: 80.0px;" />
+<a class="reference external image-reference" href="https://flathub.org/apps/org.gitfourchette.gitfourchette"><img alt="Get GitFourchette on Flathub" class="align-right" height="80" src="_images/flathub.svg" width="240" />
 </a>
-<section id="ready-made-builds">
-<h2>Ready-made builds<a class="headerlink" href="#ready-made-builds" title="Link to this heading">¶</a></h2>
-<p>This is the easiest way to try out GitFourchette.</p>
+<section id="install-a-pre-built-package">
+<h2>Install a pre-built package<a class="headerlink" href="#install-a-pre-built-package" title="Link to this heading">¶</a></h2>
 <ul>
 <li><p><strong>Recommended: Install the Flatpak</strong></p>
 <p><a class="reference external" href="https://flathub.org/apps/org.gitfourchette.gitfourchette">Get it on Flathub</a>, or simply run:</p>
@@ -292,10 +281,23 @@ flatpak<span class="w"> </span>run<span class="w"> </span>org.gitfourchette.gitf
 <li><p>Or, grab a standalone AppImage <a class="reference external" href="https://github.com/jorio/gitfourchette/releases">from the releases</a>.</p>
 <p>(The AppImage is self-contained; your desktop environment theme will not apply to it.)</p>
 </li>
+<li><p>Unsupported, experimental <a class="reference internal" href="limitations.html#mac-and-windows"><span class="std std-ref">Mac and Windows builds</span></a> are also available.</p></li>
 </ul>
+<p>This page also contains instructions to run from source.</p>
 </section>
-<section id="run-from-source-using-your-systems-qt-libraries">
-<h2>Run from source using your system’s Qt libraries<a class="headerlink" href="#run-from-source-using-your-systems-qt-libraries" title="Link to this heading">¶</a></h2>
+<section id="recommended-git-version-2-41-or-newer">
+<h2>Recommended Git version: 2.41 or newer<a class="headerlink" href="#recommended-git-version-2-41-or-newer" title="Link to this heading">¶</a></h2>
+<p>GitFourchette works by calling <code class="docutils literal notranslate"><span class="pre">git</span></code> commands for you, so Git must be installed on your system (unless you use the Flatpak version, which comes with Git built in).</p>
+<p>GitFourchette integrates best with <strong>Git 2.41 or newer</strong>. If you have an older version of Git, some features may be missing. The oldest supported version is Git 2.34.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The Flatpak version comes with recent versions of Git and Git-LFS, so you don’t have to install them separately. You can still tell the Flatpak version to use your host system’s Git install, via <img alt="Settings" class="no-scaled-link gficon" src="_images/git-settings.svg" style="width: 16px; height: 16px;" /> <span class="menuselection">Settings ‣ Git Integration</span>.</p>
+</div>
+</section>
+<section id="how-to-set-up-app-from-source">
+<h2>How to set up GitFourchette from source<a class="headerlink" href="#how-to-set-up-app-from-source" title="Link to this heading">¶</a></h2>
+<section id="using-your-system-s-package-manager">
+<h3>Using your system’s package manager<a class="headerlink" href="#using-your-system-s-package-manager" title="Link to this heading">¶</a></h3>
 <p>This method gives you the best integration with your desktop environment.</p>
 <ol class="arabic simple">
 <li><p>With your system’s package manager, install <em>pygit2</em> (v1.14.1 or later), <em>pygments</em> and <em>pyqt6</em>:</p></li>
@@ -317,47 +319,36 @@ flatpak<span class="w"> </span>run<span class="w"> </span>org.gitfourchette.gitf
 </div>
 <ol class="arabic" start="2">
 <li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jorio/gitfourchette
-</pre></div>
-</div>
-</li>
-<li><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./gitfourchette/run.sh
+<span class="nb">cd</span><span class="w"> </span>gitfourchette
+./run.sh
 </pre></div>
 </div>
 </li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We recommend pygit2 v1.18.0 or later. However, GitFourchette will remain compatible with pygit2 v1.14.1, with a reduced feature set, at least until the current release of Ubuntu provides a newer version of pygit2.</p>
-<p>You can substitute PyQt6 with PySide6 (version 6.9.0 or later). GitFourchette is compatible with both.</p>
-<p>Pygments is an optional dependency.</p>
+<p>We recommend pygit2 v1.14.1 or later.</p>
+<p>You can substitute <code class="docutils literal notranslate"><span class="pre">pyqt6</span></code> with <code class="docutils literal notranslate"><span class="pre">pyside6</span></code> (version 6.9.0 or later). GitFourchette is compatible with both.</p>
+<p>Pygments (syntax highlighting) and mfusepy (mount commits with FUSE) are optional dependencies.</p>
 </div>
 </section>
-<section id="install-from-source-with-pip">
-<h2>Install from source with pip<a class="headerlink" href="#install-from-source-with-pip" title="Link to this heading">¶</a></h2>
-<p>The only prerequisite to install GitFourchette from source with <cite>pip</cite> is Python 3.10 or newer, which already comes standard with most Linux distributions.</p>
+<section id="using-pip">
+<h3>Using pip<a class="headerlink" href="#using-pip" title="Link to this heading">¶</a></h3>
+<p>The only prerequisite to install GitFourchette from source with <code class="docutils literal notranslate"><span class="pre">pip</span></code> is Python 3.10 or newer, which already comes standard with most Linux distributions.</p>
 <p>These two commands will install GitFourchette and its dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jorio/gitfourchette
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyqt6,pygments<span class="o">]</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyqt6,pygments,mfusepy<span class="o">]</span>
 </pre></div>
 </div>
-<p>Then, simply run <code class="docutils literal notranslate"><span class="pre">gitfourchette</span></code>.</p>
-<p>To uninstall:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>uninstall<span class="w"> </span>gitfourchette
-</pre></div>
-</div>
+<p>Then, simply run: <code class="docutils literal notranslate"><span class="pre">gitfourchette</span></code>.</p>
+<p>To uninstall, run: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">uninstall</span> <span class="pre">gitfourchette</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you prefer to use PySide6 instead of PyQt6, install GitFourchette with this command instead:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>gitfourchette<span class="o">[</span>pyside6,pygments<span class="o">]</span>
-</pre></div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command, you can substitute <code class="docutils literal notranslate"><span class="pre">pyqt6</span></code> with <code class="docutils literal notranslate"><span class="pre">pyside6</span></code>. GitFourchette is compatible with both.</p>
+<p>If you install <code class="docutils literal notranslate"><span class="pre">pyqt6</span></code> (or <code class="docutils literal notranslate"><span class="pre">pyside6</span></code>) using <code class="docutils literal notranslate"><span class="pre">pip</span></code> instead of your system’s package manager, your desktop environment’s native Qt styles (“themes”) might not be available in the application.</p>
+<p>Pygments (syntax highlighting) and mfusepy (mount commits with FUSE) are optional dependencies.</p>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Installing PyQt6 or PySide6 via pip instead of your system’s package manager
-may cause GitFourchette to ignore your desktop environment theme.</p>
-<p>Pygments is an optional dependency.</p>
-</div>
+</section>
 </section>
 </section>
 
@@ -390,7 +381,7 @@ may cause GitFourchette to ignore your desktop environment theme.</p>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2025 Iliyas Jorio
+                Copyright &#169; 2026 Iliyas Jorio
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -417,9 +408,13 @@ may cause GitFourchette to ignore your desktop environment theme.</p>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Install GitFourchette</a><ul>
-<li><a class="reference internal" href="#ready-made-builds">Ready-made builds</a></li>
-<li><a class="reference internal" href="#run-from-source-using-your-systems-qt-libraries">Run from source using your system’s Qt libraries</a></li>
-<li><a class="reference internal" href="#install-from-source-with-pip">Install from source with pip</a></li>
+<li><a class="reference internal" href="#install-a-pre-built-package">Install a pre-built package</a></li>
+<li><a class="reference internal" href="#recommended-git-version-2-41-or-newer">Recommended Git version: 2.41 or newer</a></li>
+<li><a class="reference internal" href="#how-to-set-up-app-from-source">How to set up GitFourchette from source</a><ul>
+<li><a class="reference internal" href="#using-your-system-s-package-manager">Using your system’s package manager</a></li>
+<li><a class="reference internal" href="#using-pip">Using pip</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -432,8 +427,8 @@ may cause GitFourchette to ignore your desktop environment theme.</p>
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=7f41d439"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     <script src="_static/gitfourchette.js?v=b8e1d973"></script>
     </body>
