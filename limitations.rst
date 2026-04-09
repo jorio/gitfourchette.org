@@ -20,4 +20,3 @@ Tentative feature roadmap
 The features below are still missing, but I'd love for |App| to have them. This will depend on demand, funding, and how much free time I can carve out for the project:
 
 - Rebase
-- First-class LFS support

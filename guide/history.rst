@@ -130,6 +130,19 @@ Once you've selected a commit in the Commit History, the lower half of the main 
 3. | **Diff View:** Displays the changes introduced by the commit in the selected file.
    | The Diff View is covered in detail in its own chapter: :doc:`diff`.
 
+Comparing two discontiguous commits
+-----------------------------------
+
+:gfversion:`New in v1.7.0.` By default, when you select a commit, |App| displays a diff of the commit against its first parent. But it can also be useful to compare two commits that aren't a direct parent/child pair: for example, to compare commits from two different branches.
+
+To compare two discontiguous commits, select two rows in the Graph View by :kbd:`Ctrl`-clicking them.
+
+The compared commits will be marked :gfpaira:`\-\-\-A` and :gfpairb:`+++B`. To swap the A and B sides of the diff, |rmb| right-click either commit and select :guilabel:`Swap A/B`.
+
+.. figure:: /assets/screens/graphdiffab.png
+
+    A/B comparison of two discontiguous commits.
+
 .. _back-forward:
 
 Returning to an item you've previously visited

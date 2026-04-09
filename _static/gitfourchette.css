@@ -20,6 +20,8 @@ kbd { font-family: system-ui; }
 .gfnew {color: #3d9970;}
 .gfold {color: #ff4136;}
 .gfhunk {color: #0074d9;}
+.gfpaira {color: #ff4136; font-weight: bold;}
+.gfpairb {color: #0074d9; font-weight: bold;}
 
 .gfversion {
     color: green;

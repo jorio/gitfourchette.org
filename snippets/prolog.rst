@@ -1,6 +1,8 @@
 .. role:: gfold
 .. role:: gfnew
 .. role:: gfhunk
+.. role:: gfpaira
+.. role:: gfpairb
 .. role:: gfversion
 
 .. |App| replace:: GitFourchette
