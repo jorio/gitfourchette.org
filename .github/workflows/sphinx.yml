@@ -3,7 +3,7 @@ name: Sphinx Docs
 on: [push]
 
 env:
-  PYVER: "3.13"
+  PYVER: "3.14"
 
 jobs:
   sphinx:
@@ -12,7 +12,7 @@ jobs:
     outputs:
       srchash: ${{ steps.srchash.outputs.SRCHASH }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - id: srchash
         run: |
@@ -28,7 +28,7 @@ jobs:
           fc-cache -v
           sed -E -i 's/(sans-serif|system-ui)/Inter Display/g' assets/icons/*.svg
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with: { python-version: "${{ env.PYVER }}", cache: "pip" }
 
       - name: Dependencies
@@ -41,7 +41,7 @@ jobs:
       - name: Recycle web book PDF if contents unchanged
         run: ./recyclewebpdf.sh _build/html/_static/GitFourchetteUsersGuide.pdf https://gitfourchette.org/_static/GitFourchetteUsersGuide.pdf
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with: { name: sitecontents, path: _build/html }
 
   deploy:
@@ -59,7 +59,7 @@ jobs:
         env:
           SRCHASH: ${{ needs.sphinx.outputs.SRCHASH }}
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: www
           token: ${{ secrets.GITHUB_TOKEN }}  # necessary for chaining jobs in a private repo - https://github.com/actions/checkout/issues/254#issuecomment-1966838828
@@ -70,7 +70,7 @@ jobs:
           git switch -c $PRBRANCH
           git rm -r *
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with: { name: sitecontents }
 
       - run: |
