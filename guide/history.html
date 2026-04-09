@@ -11,7 +11,7 @@
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d111a655" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
-    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=63b7cf19" />
+    <link rel="stylesheet" type="text/css" href="../_static/gitfourchette.css?v=a6f97a67" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/gitfourchette-print.css?v=983f0785" />
     
     
@@ -191,8 +191,8 @@
   <span class="sidebar-brand-text">GitFourchette</span>
   
 </a><div class="sidebar-current-version">
-    Current version: <b>1.6.0</b>
-    <div>Released February 2026</div>
+    Current version: <b>1.7.0</b>
+    <div>Released April 2026</div>
     <div><a href="../CHANGELOG.html">What&rsquo;s New</a></div>
 </div><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -397,6 +397,18 @@ To find an old commit in a long-lived repository, you may want to review
 </li>
 </ol>
 </section>
+<section id="comparing-two-discontiguous-commits">
+<h2>Comparing two discontiguous commits<a class="headerlink" href="#comparing-two-discontiguous-commits" title="Link to this heading">¶</a></h2>
+<p><span class="gfversion">New in v1.7.0.</span> By default, when you select a commit, GitFourchette displays a diff of the commit against its first parent. But it can also be useful to compare two commits that aren’t a direct parent/child pair: for example, to compare commits from two different branches.</p>
+<p>To compare two discontiguous commits, select two rows in the Graph View by <kbd class="kbd docutils literal notranslate">Ctrl</kbd>-clicking them.</p>
+<p>The compared commits will be marked <span class="gfpaira">---A</span> and <span class="gfpairb">+++B</span>. To swap the A and B sides of the diff, <img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> right-click either commit and select <span class="guilabel">Swap A/B</span>.</p>
+<figure class="align-default" id="id4">
+<img alt="../_images/graphdiffab.png" src="../_images/graphdiffab.png" />
+<figcaption>
+<p><span class="caption-text">A/B comparison of two discontiguous commits.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
 <section id="returning-to-an-item-you-ve-previously-visited">
 <span id="back-forward"></span><h2>Returning to an item you’ve previously visited<a class="headerlink" href="#returning-to-an-item-you-ve-previously-visited" title="Link to this heading">¶</a></h2>
 <p>As you navigate your repository, GitFourchette keeps track of where you’ve been.
@@ -413,17 +425,17 @@ You can switch to <strong>topological</strong> sorting in
 <p><strong>Chronological mode</strong> lets you stay on top of the latest activity in the repository.
 The most recent commits always show up at the top of the graph.
 However, the graph can get messy when multiple branches receive commits in the same time frame.</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <img alt="../_images/graphchrono.png" src="../_images/graphchrono.png" />
 <figcaption>
-<p><span class="caption-text">Chronological mode. New commits trickle into the graph in the exact order they are being made, but the intertwining of branches can get messy.</span><a class="headerlink" href="#id4" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Chronological mode. New commits trickle into the graph in the exact order they are being made, but the intertwining of branches can get messy.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p><strong>Topological mode</strong> makes the graph easier to read. It attempts to present sequences of commits within a branch in a linear fashion. Since this is not a strictly chronological mode, you may have to do more scrolling to see the latest changes in various branches.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id6">
 <img alt="../_images/graphtopo.png" src="../_images/graphtopo.png" />
 <figcaption>
-<p><span class="caption-text">Topological mode. Commits are neatly grouped according to the branch they belong to, but chronology isn’t respected across different branches.</span><a class="headerlink" href="#id5" title="Link to this image">¶</a></p>
+<p><span class="caption-text">Topological mode. Commits are neatly grouped according to the branch they belong to, but chronology isn’t respected across different branches.</span><a class="headerlink" href="#id6" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -432,9 +444,9 @@ However, the graph can get messy when multiple branches receive commits in the s
 <section id="commit-history-context-menu">
 <span id="history-cm"></span><h3>Commit History context menu<a class="headerlink" href="#commit-history-context-menu" title="Link to this heading">¶</a></h3>
 <p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on any commit in the Commit History to reveal a context menu with the following actions:</p>
-<div class="table-wrapper colwidths-given docutils container" id="id6">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Actions in the Commit History context menu</span><a class="headerlink" href="#id6" title="Link to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id7">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Actions in the Commit History context menu</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 75.0%" />
@@ -497,9 +509,9 @@ See <a class="reference internal" href="signing.html#verify"><span class="std st
 <section id="file-list-context-menu-when-exploring-a-commit">
 <span id="history-files-cm"></span><h3>File List context menu (when exploring a commit)<a class="headerlink" href="#file-list-context-menu-when-exploring-a-commit" title="Link to this heading">¶</a></h3>
 <p><img alt="Right-click" class="no-scaled-link gficon" src="../_images/rmb.svg" style="height: 16px;" /> <strong>Right-click</strong> on a file while exploring a commit to reveal a context menu with the following actions:</p>
-<div class="table-wrapper colwidths-given docutils container" id="id7">
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Actions in the File List context menu (while exploring a commit from the History)</span><a class="headerlink" href="#id7" title="Link to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id8">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Actions in the File List context menu (while exploring a commit from the History)</span><a class="headerlink" href="#id8" title="Link to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 75.0%" />
@@ -610,6 +622,7 @@ if the file still exists in your working directory
 <li><a class="reference internal" href="#author-vs-committer">Author vs. Committer</a></li>
 <li><a class="reference internal" href="#finding-a-commit">Finding a commit</a></li>
 <li><a class="reference internal" href="#exploring-the-changes-in-a-commit">Exploring the changes in a commit</a></li>
+<li><a class="reference internal" href="#comparing-two-discontiguous-commits">Comparing two discontiguous commits</a></li>
 <li><a class="reference internal" href="#returning-to-an-item-you-ve-previously-visited">Returning to an item you’ve previously visited</a></li>
 <li><a class="reference internal" href="#advanced-chronological-vs-topological-sorting">Advanced: Chronological vs. Topological sorting</a></li>
 <li><a class="reference internal" href="#context-menu-reference">Context menu reference</a><ul>
