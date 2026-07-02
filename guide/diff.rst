@@ -191,3 +191,29 @@ Some special lines can be double-clicked to select blocks of code effortlessly:
 
 Once you've selected lines from the gutter, you can |rmb| right-click to access
 the usual line selection actions (stage, discard, etc.).
+
+Diff View button strip
+----------------------
+
+:gfversion:`New in v1.9.0:` A strip of buttons above the Diff View lets you adjust the presentation of the diff.
+
+.. figure:: /assets/screens/diffviewbuttonstrip.png
+
+.. list-table::
+    :header-rows: 0
+    :class: table-cancelfont
+
+    * - :gficon:`diff-context-lines`
+      - Amount of context lines
+
+    * - :gficon:`diff-wrap`
+      - Word wrap
+
+    * - :gficon:`diff-show-whitespace`
+      - Show whitespace characters
+
+    * - :gficon:`diff-whitespace-strict`
+      - Don't ignore whitespace changes in the diff
+
+    * - :gficon:`diff-svg`
+      - SVG image preview (where applicable)
