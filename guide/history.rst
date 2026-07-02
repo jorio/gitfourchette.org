@@ -82,15 +82,26 @@ Start typing, and a yellow highlight will appear in matching commits.
 
     Searching for a word in the Commit History.
 
-You can search for:
+.. rubric:: "Info" search scope
 
-- The first couple characters of a commit's **SHA-1 hash**.
-- Any part of a **commit message**. If the search term is found beyond the first line of the message, the ellipsis (|ellip|) will be highlighted in yellow.
-- A commit's **author name**.
+The search scope is set to **Info** by default. The Info scope lets you find a piece of text in a commit's metadata:
+
+- The first couple characters of the commit's **SHA-1 hash**.
+- Any part of the **commit message**. If the term occurs beyond the first line of the message, the ellipsis (|ellip|) is highlighted in yellow.
+- The commit's **author name**.
+
+.. rubric:: "Path" search scope
+
+:gfversion:`New in v1.8.0:` Changing the search scope to **Path** lets you search for commits that touch specific files. Wildcards are supported. For example, :code:`lang/*.mo` highlights all commits that modify `.mo` files in the `lang` directory.
+
+.. figure:: /assets/screens/searchpath.png
+
+    Searching for a path in the Commit History.
 
 .. tip::
     | The :kbd:`/` key also works for bringing up the Search Bar.
     | Press :kbd:`F3` or :kbd:`Shift F3` to find the next or previous occurrence of the search term.
+    | Press :kbd:`Alt I` or :kbd:`Alt P` to switch to the "Info" or "Path" scopes, respectively.
     | Press :kbd:`Esc` to close the Search Bar.
 
 .. note::
