@@ -1,0 +1,52 @@
+name: Sync Changelog
+
+on: [workflow_dispatch]
+
+jobs:
+  sync-changelog:
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      srchash: ${{ steps.srchash.outputs.SRCHASH }}
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Get latest tag from upstream
+        run: |
+          git clone --depth 1 --no-single-branch --branch master --filter=blob:none --tags https://github.com/jorio/gitfourchette _build/upstream
+          latest_tag=$(git -C _build/upstream for-each-ref --sort=-committerdate --format='%(refname:strip=2)' refs/tags | head -n1)
+          echo "Latest tag is $latest_tag"
+          echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+          echo "PRBRANCH=sync-$latest_tag" >> $GITHUB_ENV
+
+      - name: Extract changelog
+        run: |
+          git -C _build/upstream checkout $latest_tag
+          if diff -q CHANGELOG.md _build/upstream/CHANGELOG.md ; then
+            echo "Changelog is up-to-date"
+            echo "CHANGELOG_STALE=false" >> $GITHUB_ENV
+          else
+            echo "Changelog is stale"
+            echo "CHANGELOG_STALE=true" >> $GITHUB_ENV
+          fi
+
+      - name: Update docs source per new changelog
+        if: env.CHANGELOG_STALE == 'true'
+        run: |
+          cp _build/upstream/CHANGELOG.md CHANGELOG.md
+
+      - name: Submit PR
+        if: env.CHANGELOG_STALE == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c $PRBRANCH
+          git add CHANGELOG.md
+          git commit -m "Sync changelog with $LATEST_TAG"
+          git push --set-upstream origin $PRBRANCH
+          gh pr create --base sphinx --head $PRBRANCH --fill
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

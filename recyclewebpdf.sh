@@ -5,13 +5,15 @@ set -e
 newbook="$1"
 oldbook="${1%.pdf}_OLD.pdf"
 url="$2"
+skiplines=8  # ignore changes in date or version on the title page
 
 wget -q -O "$oldbook" "$url"
 ls -l "$oldbook" "$newbook"
 
 set +e  # let diff return non-zero
 
-diff <(pdftotext "$oldbook" -) <(pdftotext "$newbook" -)
+diff <(pdftotext "$oldbook" - | tail -n +$skiplines) \
+     <(pdftotext "$newbook" - | tail -n +$skiplines)
 diffresult=$?
 
 set -e

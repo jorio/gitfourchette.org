@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, time, datetime, pathlib, re
 
 # print("TAGS", tags)
 BOOK_FILES = ['book.rst', 'guide/bookintro.rst']
@@ -7,15 +7,25 @@ NONBOOK_FILES = ['index.rst', 'guide/index.rst', 'install.rst']
 # -----------------------------------------------------------------------------
 # Project information
 
+def _get_version_and_date_from_changelog():
+    lines = pathlib.Path("CHANGELOG.md").read_text().splitlines()
+    vline = next(line for line in lines if line.startswith("## "))
+    vmatch = re.match(r"^## (\d+(?:\.\d+)+) \((20\d\d-\d\d-\d\d)\)", vline)
+    version, isodate = vmatch.groups()
+    dt = datetime.datetime.strptime(isodate, "%Y-%m-%d").replace(tzinfo=datetime.UTC)
+    return version, dt
+
+_cl_version, _cl_date = _get_version_and_date_from_changelog()
+
 project = 'GitFourchette'
 copyright = '%Y Iliyas Jorio'
 author = 'Iliyas Jorio'
-version = "1.9.0"
-revdate = "July 2026"
+version = _cl_version
+revdate = _cl_date.strftime("%B %Y")
 
 html_context = {
     "revdate": revdate,
-    "revyear": revdate.split()[-1],
+    "revyear": _cl_date.strftime("%Y"),
 }
 
 # -----------------------------------------------------------------------------
