@@ -74,7 +74,7 @@ This method gives you the best integration with your desktop environment.
 
     You can substitute ``pyqt6`` with ``pyside6`` (version 6.9.0 or later). |App| is compatible with both.
 
-    Pygments (syntax highlighting) and mfusepy (mount commits with FUSE) are optional dependencies.
+    mfusepy (mount commits with FUSE) is an optional dependency.
 
 Using pip
 ^^^^^^^^^
@@ -86,7 +86,7 @@ These two commands will install |App| and its dependencies:
 .. code-block:: bash
 
     git clone https://github.com/jorio/gitfourchette
-    pip install -e gitfourchette[pyqt6,pygments,mfusepy]
+    pip install -e gitfourchette[pyqt6,mfusepy]
 
 Then, simply run: ``gitfourchette``.
 
@@ -98,4 +98,4 @@ To uninstall, run: ``pip uninstall gitfourchette``.
 
     If you install ``pyqt6`` (or ``pyside6``) using ``pip`` instead of your system's package manager, your desktop environment's native Qt styles ("themes") might not be available in the application.
 
-    Pygments (syntax highlighting) and mfusepy (mount commits with FUSE) are optional dependencies.
+    mfusepy (mount commits with FUSE) is an optional dependency.
