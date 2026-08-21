@@ -191,7 +191,7 @@
   <span class="sidebar-brand-text">GitFourchette</span>
   
 </a><div class="sidebar-current-version">
-    Current version: <b>1.10.0</b>
+    Current version: <b>1.11.0</b>
     <div>Released August 2026</div>
     <div><a href="#">What&rsquo;s New</a></div>
 </div><form class="sidebar-search-container" method="get" action="search.html" role="search">
@@ -266,7 +266,27 @@
           <section id="gitfourchette-version-history">
 <h1>GitFourchette version history<a class="headerlink" href="#gitfourchette-version-history" title="Link to this heading">¶</a></h1>
 <section id="id1">
-<h2>1.10.0 (2026-08-01)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<h2>1.11.0 (2026-08-21)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>New features:</p>
+<ul class="simple">
+<li><p><strong>Blame specific line:</strong> Right click any line in the diff, then select “Blame Line” to find out which commit introduced this specific line.</p></li>
+<li><p><strong>Bypass pre-commit hooks</strong> via dedicated button in CommitDialog (git commit –no-verify). The button is only shown if your repo uses pre-commit hooks.</p></li>
+<li><p><strong>New platform-agnostic themes</strong> (light &amp; dark) provide a nicer default look on non-Qt environments. You can still use any Qt styles you have installed on your system.</p></li>
+</ul>
+<p>Quality of life improvements:</p>
+<ul class="simple">
+<li><p>Conflicts: You can now preview the entire “Ours” or “Theirs” revision with one click (eye button in ConflictView)</p></li>
+<li><p>Conflicts: Operations “Keep Ours” and “Accept Theirs” now ask for your confirmation and clearly explain what is going to happen</p></li>
+<li><p>CloneDialog: “Default clone location” settings are easier to access from the Browse button</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Blame: More accurate revlist when blaming a file in a branch that has diverged from the current branch</p></li>
+<li><p>Tab names were elided too aggressively with “tab close button” on and “expand tabs” off</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>1.10.0 (2026-08-01)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>CommitDialog: Dedicated “signoff” button (git commit –signoff)</p></li>
@@ -299,8 +319,8 @@
 <li><p>Enforce type checking with mypy (#2)</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>1.9.1 (2026-07-14)<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h2>
+<section id="id3">
+<h2>1.9.1 (2026-07-14)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
 <p>Quality of life improvements:</p>
 <ul class="simple">
 <li><p>Add Ghostty terminal preset (#116)</p></li>
@@ -313,8 +333,8 @@
 <li><p>Fix “empty trash” didn’t clean up trashed symlinks</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>1.9.0 (2026-07-01)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<section id="id4">
+<h2>1.9.0 (2026-07-01)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>Show/hide whitespace symbols (#108)</p></li>
@@ -344,8 +364,8 @@
 <li><p>Continued from work started in v1.5.0, more operations were rewritten to be implemented with “standard” Git instead of libgit2 for improved compatibility (New Tag, Delete Tag, Resolve by Keeping Ours/Taking Theirs).</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>1.8.0 (2026-05-21)<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<section id="id5">
+<h2>1.8.0 (2026-05-21)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p><strong>Search for commits touching a file.</strong> In the Commit History, press Ctrl+F (or /), then change the search scope from “Info” to “Paths”.</p></li>
@@ -359,12 +379,12 @@
 <li><p>Fix diff title text when returning to a pre-cached text diff</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>1.7.1 (2026-04-11)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<section id="id6">
+<h2>1.7.1 (2026-04-11)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
 <p>Fix regression in 1.7.0 where RefreshRepo couldn’t be canceled effectively.</p>
 </section>
-<section id="id6">
-<h2>1.7.0 (2026-04-09)<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h2>
+<section id="id7">
+<h2>1.7.0 (2026-04-09)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p><strong>Compare two commits.</strong> Hold the Control key while selecting two commits in the history to diff them.</p></li>
@@ -391,8 +411,8 @@
 <li><p>Fix keyboard shortcut conflicts on Cinnamon</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>1.6.0 (2026-02-01)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h2>
+<section id="id8">
+<h2>1.6.0 (2026-02-01)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p><strong>Mount commits as folders.</strong> This lets you browse the workdir at a specific point in time using your system’s file manager. Available by right-clicking a commit in the Commit History. (FUSE 3 required + new optional dependency ‘mfusepy’)</p></li>
@@ -418,8 +438,8 @@
 <li><p>Some work on Windows compatibility (experimental)</p></li>
 </ul>
 </section>
-<section id="id8">
-<h2>1.5.0 (2025-09-08)<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h2>
+<section id="id9">
+<h2>1.5.0 (2025-09-08)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
 <p><strong>Major change: Better integration with standard Git tooling.</strong> GitFourchette now uses git instead of libgit2 to edit repositories and communicate with remotes. This enables seamless integration into workflows that depend on OpenSSH, hooks, etc.</p>
 <p>The Flatpak version comes bundled with a Git distribution so you can use it without any additional setup. For more control, you can switch to your system’s Git install via <em>Settings → Git Integration</em>.</p>
 <p>New features:</p>
@@ -447,8 +467,8 @@
 </ul>
 <p>Note: Although many commands now call git, libgit2 (via pygit2) is still used internally to build a model of the repo.</p>
 </section>
-<section id="id9">
-<h2>1.4.0 (2025-07-14)<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<section id="id10">
+<h2>1.4.0 (2025-07-14)<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>Blame/File History. Within GitFourchette, right-click any file and select “Blame File”; or, drag any file in your repo from your file manager and drop it onto the main window to view its history.</p></li>
@@ -468,8 +488,8 @@
 <li><p>Flatpak distribution: Updated to Pygments 2.19.2 to fix problems with Lua syntax highlighting</p></li>
 </ul>
 </section>
-<section id="id10">
-<h2>1.3.0 (2025-05-03)<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h2>
+<section id="id11">
+<h2>1.3.0 (2025-05-03)<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
 <p><strong>Upgrade note:</strong> The terminal command template now requires the <code class="docutils literal notranslate"><span class="pre">$COMMAND</span></code> argument placeholder. Please review your terminal command in <em>Settings → External Tools → Terminal</em>.</p>
 <p>New features:</p>
 <ul class="simple">
@@ -500,8 +520,8 @@
 <li><p>Fix push couldn’t be canceled once the transfer starts (requires pygit2 1.18.0) (#22)</p></li>
 </ul>
 </section>
-<section id="id11">
-<h2>1.2.1 (2025-03-05)<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h2>
+<section id="id12">
+<h2>1.2.1 (2025-03-05)<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
 <p>User-suggested quality of life improvements:</p>
 <ul class="simple">
 <li><p>GraphView: Copy commit message from context menu (#33)</p></li>
@@ -523,8 +543,8 @@
 <li><p>Gracefully handle destruction of parent widget of external tool processes</p></li>
 </ul>
 </section>
-<section id="id12">
-<h2>1.2.0 (2025-02-19)<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<section id="id13">
+<h2>1.2.0 (2025-02-19)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>Open terminal in workdir (#18)</p></li>
@@ -566,8 +586,8 @@
 <li><p>The keyboard shortcut for “Go to Working Directory” is now Ctrl+G (formerly Ctrl+U, for “Uncommitted Changes”). On most keyboard layouts, Ctrl+G pairs nicely with Ctrl+H for “Go to HEAD”.</p></li>
 </ul>
 </section>
-<section id="id13">
-<h2>1.1.1 (2025-01-19)<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h2>
+<section id="id14">
+<h2>1.1.1 (2025-01-19)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>Option to remember passphrases in encrypted keyfiles (#15)</p></li>
@@ -586,8 +606,8 @@
 <li><p>GraphSplicer: Fix discrete branch may vanish from graph if moved past another branch by topological sorting</p></li>
 </ul>
 </section>
-<section id="id14">
-<h2>1.1.0 (2025-01-05)<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h2>
+<section id="id15">
+<h2>1.1.0 (2025-01-05)<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
 <p>New features:</p>
 <ul class="simple">
 <li><p>Syntax highlighting with Pygments (optional dependency)</p></li>
@@ -599,8 +619,8 @@
 <li><p>Improved settings dialog UI</p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>1.0.2 (2024-12-16)<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h2>
+<section id="id16">
+<h2>1.0.2 (2024-12-16)<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
 <p>Usability improvements:</p>
 <ul class="simple">
 <li><p>Support launching a Flatpak as an external diff/merge tool (#4)</p></li>
@@ -610,8 +630,8 @@
 <li><p>Fix web URLs in remote-tracking branch context menus (e.g. visit a branch on github.com)</p></li>
 </ul>
 </section>
-<section id="id16">
-<h2>1.0.1 (2024-12-03)<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<section id="id17">
+<h2>1.0.1 (2024-12-03)<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
 <p>Quality of life improvements:</p>
 <ul class="simple">
 <li><p>Friendlier ConflictView UI</p></li>
@@ -623,8 +643,8 @@
 <li><p>Fix discarding untracked non-submodule subtrees (#1)</p></li>
 </ul>
 </section>
-<section id="id17">
-<h2>1.0.0 (2024-11-16)<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
+<section id="id18">
+<h2>1.0.0 (2024-11-16)<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>First public release</p></li>
 </ul>
@@ -669,23 +689,24 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">GitFourchette version history</a><ul>
-<li><a class="reference internal" href="#id1">1.10.0 (2026-08-01)</a></li>
-<li><a class="reference internal" href="#id2">1.9.1 (2026-07-14)</a></li>
-<li><a class="reference internal" href="#id3">1.9.0 (2026-07-01)</a></li>
-<li><a class="reference internal" href="#id4">1.8.0 (2026-05-21)</a></li>
-<li><a class="reference internal" href="#id5">1.7.1 (2026-04-11)</a></li>
-<li><a class="reference internal" href="#id6">1.7.0 (2026-04-09)</a></li>
-<li><a class="reference internal" href="#id7">1.6.0 (2026-02-01)</a></li>
-<li><a class="reference internal" href="#id8">1.5.0 (2025-09-08)</a></li>
-<li><a class="reference internal" href="#id9">1.4.0 (2025-07-14)</a></li>
-<li><a class="reference internal" href="#id10">1.3.0 (2025-05-03)</a></li>
-<li><a class="reference internal" href="#id11">1.2.1 (2025-03-05)</a></li>
-<li><a class="reference internal" href="#id12">1.2.0 (2025-02-19)</a></li>
-<li><a class="reference internal" href="#id13">1.1.1 (2025-01-19)</a></li>
-<li><a class="reference internal" href="#id14">1.1.0 (2025-01-05)</a></li>
-<li><a class="reference internal" href="#id15">1.0.2 (2024-12-16)</a></li>
-<li><a class="reference internal" href="#id16">1.0.1 (2024-12-03)</a></li>
-<li><a class="reference internal" href="#id17">1.0.0 (2024-11-16)</a></li>
+<li><a class="reference internal" href="#id1">1.11.0 (2026-08-21)</a></li>
+<li><a class="reference internal" href="#id2">1.10.0 (2026-08-01)</a></li>
+<li><a class="reference internal" href="#id3">1.9.1 (2026-07-14)</a></li>
+<li><a class="reference internal" href="#id4">1.9.0 (2026-07-01)</a></li>
+<li><a class="reference internal" href="#id5">1.8.0 (2026-05-21)</a></li>
+<li><a class="reference internal" href="#id6">1.7.1 (2026-04-11)</a></li>
+<li><a class="reference internal" href="#id7">1.7.0 (2026-04-09)</a></li>
+<li><a class="reference internal" href="#id8">1.6.0 (2026-02-01)</a></li>
+<li><a class="reference internal" href="#id9">1.5.0 (2025-09-08)</a></li>
+<li><a class="reference internal" href="#id10">1.4.0 (2025-07-14)</a></li>
+<li><a class="reference internal" href="#id11">1.3.0 (2025-05-03)</a></li>
+<li><a class="reference internal" href="#id12">1.2.1 (2025-03-05)</a></li>
+<li><a class="reference internal" href="#id13">1.2.0 (2025-02-19)</a></li>
+<li><a class="reference internal" href="#id14">1.1.1 (2025-01-19)</a></li>
+<li><a class="reference internal" href="#id15">1.1.0 (2025-01-05)</a></li>
+<li><a class="reference internal" href="#id16">1.0.2 (2024-12-16)</a></li>
+<li><a class="reference internal" href="#id17">1.0.1 (2024-12-03)</a></li>
+<li><a class="reference internal" href="#id18">1.0.0 (2024-11-16)</a></li>
 </ul>
 </li>
 </ul>
