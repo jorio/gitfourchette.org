@@ -1,5 +1,37 @@
 # GitFourchette version history
 
+## 1.12.0 (2026-10-27)
+
+New features:
+
+- **Interactive Rebase:** Right-click any commit or branch, then select "Rebase". You can rearrange commits, run your rebase plan, follow its progress, and continue/abort it at any time.
+
+Quality of life improvements:
+
+- GraphView: Option to hide commit hashes (Settings → Commit History → Show commit hashes beside the graph) (#132)
+- Sidebar: Add "Reset HEAD" to local & remote branch context menus
+- Sidebar: Hide "Submodules" section in repos that don't use them
+- Single-instance mode. When you run `gitfourchette` on the command line, arguments will be forwarded to the running instance. Pass `--new` to force a new instance. (#114)
+- After updating the application, the status bar shows a discreet notification that lets you read the release notes
+- Askpass dialogs "Verify Fingerprint" and "Enter Passphrase" are now easier to distinguish at a glance by their layout
+- Error messages reporting that Git can't be launched now suggest changing the path to the Git executable
+
+Bug fixes:
+
+- Fix regression in v1.11.0 where Export/Revert Patch and Blame Lines couldn't be executed from a detached diff window
+- Fix error messages when displaying files containing U+2029 or a stray CR that's not part of a CRLF line ending
+- Fix line number gutter rarely had incorrect width
+- Fix outsized pointer over line number gutter in XWayland (#142)
+- Fix minor cosmetic issues with built-in themes and icon colors in menus
+- Fix deserialization of incomplete pygit2 signatures from settings JSON files
+- Fix F2 keyboard shortcut on remote branches in the sidebar
+
+Maintenance & packaging notes:
+
+- The Flatpak distribution now defaults to the host system's Git (if available) instead of the built-in sandboxed Git. This eliminates common issues with the sandbox when your workflow needs Git to call external programs. You can still switch to sandboxed Git in Settings → Git Integration.
+- The AppImage distribution now bundles libxcb-cursor for improved X11 compatibility, and QAdwaitaDecorations for better-looking client-side decorations in Wayland (i.e. window shadows on GNOME).
+- Continued from work started in v1.5.0, more operations were rewritten to be implemented with "standard" Git instead of libgit2 for improved compatibility (New Branch From Commit, Edit Upstream Branch, Recall Commit, Delete Branch, Rename Branch, Git Identity).
+
 ## 1.11.0 (2026-08-21)
 
 New features:
@@ -23,7 +55,7 @@ Bug fixes:
 
 New features:
 
-- CommitDialog: Dedicated "signoff" button (git commit --signoff)
+- CommitDialog: Dedicated **Signoff** button (git commit --signoff)
 - Open repo workdir in external editor (from Repo menu, or by right-clicking a repo tab) (#118)
 
 Quality of life improvements:
@@ -202,7 +234,7 @@ Note: Although many commands now call git, libgit2 (via pygit2) is still used in
 
 New features:
 
-- Blame/File History. Within GitFourchette, right-click any file and select "Blame File"; or, drag any file in your repo from your file manager and drop it onto the main window to view its history.
+- **Blame/File History:** Within GitFourchette, right-click any file and select "Blame File"; or, drag any file in your repo from your file manager and drop it onto the main window to view its history.
 
 Quality of life improvements:
 
@@ -224,7 +256,7 @@ Bug fixes:
 
 New features:
 
-- Custom terminal commands (Settings → Custom Commands) (#37).
+- **Custom terminal commands** (Settings → Custom Commands) (#37).
 - Sidebar: Hide All But This (#49). You can now show a single branch and hide all others.
 - Add file to .gitignore or .git/info/exclude from untracked file context menu (#42)
 
@@ -252,14 +284,11 @@ Two other bug fixes originally introduced in v1.2.0 had been dormant until now d
 
 ## 1.2.1 (2025-03-05)
 
-User-suggested quality of life improvements:
+Quality of life improvements:
 
 - GraphView: Copy commit message from context menu (#33)
 - Rephrase some messages (diff too large, delete untracked file) (#27, #28)
 - Add Ptyxis terminal preset (#18)
-
-Other quality of life improvements:
-
 - Friendlier messages related to 'autocrlf' and 'safecrlf' options (#30)
 - Flatpak distribution: Detach terminal process from application
 - Improve contrast between enabled/disabled SVG icons throughout the UI
@@ -278,7 +307,7 @@ New features:
 
 - Open terminal in workdir (#18)
 
-User-suggested quality of life improvements:
+Quality of life improvements:
 
 - Reword "Uncommitted changes" to "Working directory" to clear up any confusion when there are no changes (#13)
 - Always display the number of uncommitted changes in the sidebar and in the graph; update this whenever the app returns to the foreground (#13)
@@ -287,9 +316,6 @@ User-suggested quality of life improvements:
 - Allow creating a merge commit without fast-forwarding (#21)
 - Dark mode readability tweaks (#24)
 - Command line: Open arbitrary nested paths in a repo (#25)
-
-Other quality of life improvements:
-
 - Improve consistency of ellipses in menus to signify that an action can be canceled
 - Warn user if an external Flatpak isn't installed when attempting to run it (merge tool, terminals, etc.)
 - Remind user about any unstaged files when about to create an empty commit
@@ -337,7 +363,7 @@ Bug fixes:
 
 New features:
 
-- Syntax highlighting with Pygments (optional dependency)
+- **Syntax highlighting** with Pygments (optional dependency)
 
 Quality of life improvements:
 
@@ -347,7 +373,7 @@ Quality of life improvements:
 
 ## 1.0.2 (2024-12-16)
 
-Usability improvements:
+Quality of life improvements:
 
 - Support launching a Flatpak as an external diff/merge tool (#4)
 
