@@ -1,7 +1,14 @@
-Limitations
-===========
+Roadmap & Limitations
+=====================
 
 .. _mac-and-windows:
+
+
+Roadmap
+-------
+
+`Work in progress: Features I'm working on <https://github.com/jorio/gitfourchette/issues/187>`_ (on GitHub)
+
 
 Supported operating systems
 ---------------------------
@@ -13,10 +20,3 @@ It can also run on other operating systems, but I don't have the resources to su
 .. note::
 
     For now, experimental macOS builds from the CI job above are not signed/notarized. This may cause macOS to say the application is "damaged" until you remove the quarantine attribute.
-
-Tentative feature roadmap
--------------------------
-
-The features below are still missing, but I'd love for |App| to have them. This will depend on demand, funding, and how much free time I can carve out for the project:
-
-- Rebase
