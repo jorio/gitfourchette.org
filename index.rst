@@ -14,7 +14,7 @@
     localization
     limitations
     Source Code (on GitHub) <https://github.com/jorio/gitfourchette>
-    Donate 💙 <https://ko-fi.com/jorio>
+    Donate 💙 <https://ko-fi.com/jorio/donate>
 
 .. rubric:: Welcome to your new Git home
 
